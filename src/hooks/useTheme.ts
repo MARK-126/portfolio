@@ -1,28 +1,30 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useSyncExternalStore } from 'react'
 
 export type Theme = 'dark' | 'light'
 
-const STORAGE_KEY = 'theme'
+export const THEME_STORAGE_KEY = 'theme'
 
-// The initial theme is set on <html> by the inline script in index.html (dark by default).
-function readTheme(): Theme {
-  return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'
+// The theme lives on <html data-theme>, set before first paint by the inline script in root.tsx.
+function subscribe(onChange: () => void) {
+  const observer = new MutationObserver(onChange)
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+  return () => observer.disconnect()
 }
 
+const getSnapshot = (): Theme => (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark')
+const getServerSnapshot = (): Theme => 'dark'
+
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(readTheme)
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 
   const toggleTheme = useCallback(() => {
-    setTheme(current => {
-      const next: Theme = current === 'dark' ? 'light' : 'dark'
-      document.documentElement.dataset.theme = next
-      try {
-        localStorage.setItem(STORAGE_KEY, next)
-      } catch {
-        // Storage can be unavailable (private mode); the theme still applies for this visit.
-      }
-      return next
-    })
+    const next: Theme = getSnapshot() === 'dark' ? 'light' : 'dark'
+    document.documentElement.dataset.theme = next
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, next)
+    } catch {
+      // Storage can be unavailable (private mode); the theme still applies for this visit.
+    }
   }, [])
 
   return { theme, toggleTheme }

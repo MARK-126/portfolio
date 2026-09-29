@@ -7,7 +7,8 @@
     "notes": "Notas",
     "lab": "Lab",
     "contact": "Contacto",
-    "label": "Navegación principal"
+    "label": "Navegación principal",
+    "footerLabel": "Navegación del pie de página"
   },
   "hero": {
     "tags": ["Ingeniería de datos", "Pipelines", "Ciencia de datos e IA", "Psicología"],
@@ -18,6 +19,55 @@
     "ctaHire": "Contratarme",
     "ctaNotes": "Leer las notas",
     "scroll": "scroll"
+  },
+  "home": {
+    "work": {
+      "title": "Trabajo destacado",
+      "all": "Todo el trabajo",
+      "empty": "Los casos de estudio están en preparación. Pipelines, modelos y las decisiones detrás — pronto aquí."
+    },
+    "notes": {
+      "title": "Últimas notas",
+      "all": "Todas las notas",
+      "empty": "Primeras notas en camino: ingeniería de datos, IA y el lado humano de los datos."
+    },
+    "contact": {
+      "title": "¿Tienes datos que necesitan tener sentido?",
+      "text": "Pipelines, analítica o una segunda mirada sobre tu plataforma de datos. Hablemos.",
+      "cta": "Iniciar una conversación"
+    }
+  },
+  "note": {
+    "article": "Nota",
+    "link": "Enlace",
+    "external": "abre un sitio externo"
+  },
+  "pages": {
+    "work": {
+      "tag": "Trabajo",
+      "title": "Trabajo destacado.",
+      "intro": "Plataformas de datos, pipelines y proyectos de analítica — con el problema, la arquitectura y los resultados."
+    },
+    "notes": {
+      "tag": "Notas",
+      "title": "Notas.",
+      "intro": "Textos propios y lecturas seleccionadas del mundo de los datos y la IA, con un breve comentario en cada una."
+    },
+    "lab": {
+      "tag": "Lab",
+      "title": "Lab.",
+      "intro": "Experimentos y pruebas de concepto. Pequeños, rápidos y a veces rotos a propósito."
+    },
+    "contact": {
+      "tag": "Contacto",
+      "title": "Hablemos.",
+      "intro": "Cuéntame tu problema de datos. Suelo responder en dos días hábiles."
+    },
+    "soon": "Esta sección está en construcción."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "top": "Volver arriba"
   },
   "theme": {
     "toLight": "Cambiar a tema claro",

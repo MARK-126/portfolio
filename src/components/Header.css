@@ -46,8 +46,15 @@
   transition: color 0.2s ease;
 }
 
-.header__nav a:hover {
+.header__nav a:hover,
+.header__nav a.active {
   color: var(--text);
+}
+
+.header__nav a.active {
+  text-decoration: underline;
+  text-decoration-color: var(--faint);
+  text-underline-offset: 6px;
 }
 
 .header__actions {

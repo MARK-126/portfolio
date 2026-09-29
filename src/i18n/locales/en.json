@@ -7,7 +7,8 @@
     "notes": "Notes",
     "lab": "Lab",
     "contact": "Contact",
-    "label": "Main navigation"
+    "label": "Main navigation",
+    "footerLabel": "Footer navigation"
   },
   "hero": {
     "tags": ["Data engineering", "Pipelines", "Data science & AI", "Psychology"],
@@ -18,6 +19,55 @@
     "ctaHire": "Hire me",
     "ctaNotes": "Read the notes",
     "scroll": "scroll"
+  },
+  "home": {
+    "work": {
+      "title": "Selected work",
+      "all": "All work",
+      "empty": "Case studies are being written. Pipelines, models and the decisions behind them — soon here."
+    },
+    "notes": {
+      "title": "Latest notes",
+      "all": "All notes",
+      "empty": "First notes coming soon: data engineering, AI and the human side of data."
+    },
+    "contact": {
+      "title": "Got data that needs to make sense?",
+      "text": "Pipelines, analytics or a second pair of eyes on your data platform. Let's talk.",
+      "cta": "Start a conversation"
+    }
+  },
+  "note": {
+    "article": "Note",
+    "link": "Link",
+    "external": "opens external site"
+  },
+  "pages": {
+    "work": {
+      "tag": "Work",
+      "title": "Selected work.",
+      "intro": "Data platforms, pipelines and analytics projects — with the problem, the architecture and the results."
+    },
+    "notes": {
+      "tag": "Notes",
+      "title": "Notes.",
+      "intro": "My own writing plus curated reads from the data and AI world, with a short take on each."
+    },
+    "lab": {
+      "tag": "Lab",
+      "title": "Lab.",
+      "intro": "Experiments and proof-of-concepts. Small, fast and sometimes broken on purpose."
+    },
+    "contact": {
+      "tag": "Contact",
+      "title": "Let's talk.",
+      "intro": "Tell me about your data problem. I usually reply within two working days."
+    },
+    "soon": "This section is under construction."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "top": "Back to top"
   },
   "theme": {
     "toLight": "Switch to light theme",
