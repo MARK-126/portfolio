@@ -43,8 +43,8 @@
 
 .project-card__title {
   margin-top: auto;
-  font: 600 1.35rem / 1.2 var(--display);
-  letter-spacing: -0.02em;
+  font: 400 1.6rem / 1.1 var(--display);
+  letter-spacing: -0.01em;
 }
 
 .project-card__summary {

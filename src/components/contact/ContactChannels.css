@@ -21,7 +21,7 @@
 }
 
 .contact-channels__email a {
-  font: 600 1.1rem / 1.35 var(--display);
+  font: 600 1.1rem / 1.35 var(--sans);
   letter-spacing: -0.01em;
   text-decoration: underline;
   text-decoration-color: var(--faint);

@@ -7,15 +7,57 @@
     "footerLabel": "Footer navigation"
   },
   "hero": {
-    "tags": ["Data engineering", "Data science & AI", "Psychology"],
+    "status": "Available for projects",
+    "disciplines": "Data engineering × Psychology",
     "headline1": "Data is behavior.",
     "headline2": "I engineer the signal.",
     "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
     "ctaProjects": "See projects",
     "ctaHire": "Hire me",
-    "scroll": "scroll"
+    "scroll": "scroll",
+    "hint": "While you read, the panel records how you use this page. Real behavioral data, in real time — and it never leaves your browser."
+  },
+  "behavior": {
+    "label": "Live log of your behavior on this page",
+    "file": "current_session.log",
+    "live": "live",
+    "waiting": "waiting for activity…",
+    "stats": {
+      "time": "time",
+      "cursor": "cursor",
+      "scroll": "scroll",
+      "events": "events"
+    },
+    "profile": "profile:",
+    "profiles": {
+      "newcomer": "newcomer",
+      "decisive": "decisive",
+      "explorer": "curious explorer",
+      "reader": "methodical reader",
+      "observer": "thoughtful observer"
+    },
+    "confidence": "confidence {{value}}% (n={{n}}, do not publish this in a paper)",
+    "privacy": "Everything happens in your browser. Nothing is stored or sent."
   },
   "home": {
+    "approach": {
+      "title": "Approach",
+      "intro": "I studied psychology before working with data, and it shows in how I treat it: behind every row there is a person making a decision.",
+      "items": {
+        "behavior": {
+          "title": "Data describes behavior",
+          "text": "Every event is someone’s decision. I design models and metrics that respect that context, not just the schema."
+        },
+        "bias": {
+          "title": "Dashboards are read with biases",
+          "text": "Anchoring, confirmation, illusory causation. I design visualizations to help people decide, not to confirm what they already believed."
+        },
+        "trust": {
+          "title": "Trusting a number is human",
+          "text": "Quality checks, data contracts and monitoring: reliable pipelines so people can make decisions with confidence."
+        }
+      }
+    },
     "projects": {
       "title": "Projects",
       "all": "All projects",

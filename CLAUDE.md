@@ -49,6 +49,11 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
 - Plain CSS, one `.css` file next to each component, BEM-like class names. Colors only through the
   tokens in `src/index.css` (`--bg`, `--text`, `--muted`, `--faint`, `--border`...), never
   hard-coded, so both themes keep working.
-- Visual style: monochrome, editorial. Big tight display type (`--display`), uppercase mono labels
-  (`--mono`), thin borders, no accent color, no rounded cards. Respect `prefers-reduced-motion`.
+- Visual style: dark editorial "the site as a dataset". Headlines in the serif `--display`
+  (Instrument Serif, regular weight, italic for emphasis), uppercase mono labels (`--mono`), thin
+  borders, notebook-style indices (`.cell-index`, e.g. `[01]`). One accent color, amber
+  (`--accent`), used sparingly for "the signal": primary action, live data, key figures, focus.
+  Respect `prefers-reduced-motion`.
+- The hero's behavior panel (`useBehaviorLog`) only records interactions in memory in the
+  browser; never send or store them.
 - Prettier: no semicolons, single quotes, 120 columns.

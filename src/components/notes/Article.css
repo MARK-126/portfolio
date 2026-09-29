@@ -38,8 +38,8 @@
 
 .article__title {
   margin-top: 20px;
-  font: 700 clamp(2.2rem, 5.5vw, 4.25rem) / 1.02 var(--display);
-  letter-spacing: -0.035em;
+  font: 400 clamp(2.6rem, 6.5vw, 5rem) / 1 var(--display);
+  letter-spacing: -0.01em;
 }
 
 .article__summary {

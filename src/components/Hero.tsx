@@ -1,37 +1,43 @@
 import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
-import { ParticleField } from './ParticleField'
+import { BehaviorPanel } from './BehaviorPanel'
 import './Hero.css'
 
 export function Hero() {
   const { t } = useTranslation()
-  const tags = t('hero.tags', { returnObjects: true }) as string[]
 
   return (
     <section className="hero">
-      <ParticleField />
-
       <div className="hero__inner container">
-        <ul className="hero__tags">
-          {tags.map(tag => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        <p className="hero__status">
+          <span className="hero__status-dot" aria-hidden="true" />
+          <span>{t('hero.status')}</span>
+          <span className="hero__status-sep" aria-hidden="true">
+            │
+          </span>
+          <span>{t('hero.disciplines')}</span>
+        </p>
 
         <h1 className="hero__headline">
           <span>{t('hero.headline1')}</span>
-          <span className="hero__headline-accent">{t('hero.headline2')}</span>
+          <em className="hero__headline-accent">{t('hero.headline2')}</em>
         </h1>
 
-        <p className="hero__subtitle">{t('hero.subtitle')}</p>
+        <div className="hero__grid">
+          <div className="hero__copy">
+            <p className="hero__subtitle">{t('hero.subtitle')}</p>
+            <div className="hero__cta">
+              <Link to="/projects" className="button button--solid" data-track="cta_proyectos">
+                {t('hero.ctaProjects')} <span aria-hidden="true">→</span>
+              </Link>
+              <Link to="/contact" className="button button--outline" data-track="cta_contratar">
+                {t('hero.ctaHire')}
+              </Link>
+            </div>
+            <p className="hero__hint">{t('hero.hint')}</p>
+          </div>
 
-        <div className="hero__cta">
-          <Link to="/projects" className="button button--solid">
-            {t('hero.ctaProjects')}
-          </Link>
-          <Link to="/contact" className="button button--outline">
-            {t('hero.ctaHire')}
-          </Link>
+          <BehaviorPanel />
         </div>
       </div>
 

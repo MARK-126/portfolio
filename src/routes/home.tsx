@@ -7,6 +7,7 @@ import { EmptyState, HomeSection } from '../components/home/HomeSection'
 import { ProjectList } from '../components/home/ProjectList'
 import { NoteList } from '../components/notes/NoteList'
 import { ContactCta } from '../components/home/ContactCta'
+import { Approach } from '../components/home/Approach'
 import { pageMeta } from '../config/meta'
 
 export const meta: Route.MetaFunction = () =>
@@ -33,15 +34,19 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     <>
       <Hero />
       <div id="home-content">
+        <HomeSection index="01" title={t('home.approach.title')}>
+          <Approach />
+        </HomeSection>
+
         <HomeSection
-          index="01"
+          index="02"
           title={t('home.projects.title')}
           link={{ to: '/projects', label: t('home.projects.all') }}
         >
           {projects.length ? <ProjectList projects={projects} /> : <EmptyState>{t('home.projects.empty')}</EmptyState>}
         </HomeSection>
 
-        <HomeSection index="02" title={t('home.notes.title')} link={{ to: '/notes', label: t('home.notes.all') }}>
+        <HomeSection index="03" title={t('home.notes.title')} link={{ to: '/notes', label: t('home.notes.all') }}>
           {notes.length ? <NoteList notes={notes} /> : <EmptyState>{t('home.notes.empty')}</EmptyState>}
         </HomeSection>
 

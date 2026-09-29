@@ -18,7 +18,7 @@ export function Header() {
     <header className="header">
       <div className="header__inner container">
         <Link to="/" className="header__brand">
-          {site.handle}
+          {site.name}
         </Link>
 
         <nav className="header__nav" aria-label={t('nav.label')}>

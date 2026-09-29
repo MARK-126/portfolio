@@ -11,15 +11,9 @@
   margin-bottom: 48px;
 }
 
-.home-section__index {
-  color: var(--faint);
-  font: 500 0.75rem var(--mono);
-  letter-spacing: 0.12em;
-}
-
 .home-section__title {
-  font: 700 clamp(1.8rem, 3.6vw, 2.75rem) / 1.05 var(--display);
-  letter-spacing: -0.03em;
+  font: 400 clamp(2.2rem, 4.2vw, 3.25rem) / 1 var(--display);
+  letter-spacing: -0.01em;
 }
 
 .empty-state {

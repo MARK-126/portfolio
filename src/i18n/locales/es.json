@@ -7,15 +7,57 @@
     "footerLabel": "Navegación del pie de página"
   },
   "hero": {
-    "tags": ["Ingeniería de datos", "Ciencia de datos e IA", "Psicología"],
+    "status": "Disponible para proyectos",
+    "disciplines": "Ingeniería de datos × Psicología",
     "headline1": "Los datos son conducta.",
     "headline2": "Yo construyo la señal.",
     "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
     "ctaProjects": "Ver proyectos",
     "ctaHire": "Contratarme",
-    "scroll": "scroll"
+    "scroll": "scroll",
+    "hint": "Mientras lees, el panel registra cómo usas esta página. Datos reales de comportamiento, en tiempo real — y sin salir de tu navegador."
+  },
+  "behavior": {
+    "label": "Registro en vivo de tu comportamiento en esta página",
+    "file": "sesión_actual.log",
+    "live": "en vivo",
+    "waiting": "esperando actividad…",
+    "stats": {
+      "time": "tiempo",
+      "cursor": "cursor",
+      "scroll": "scroll",
+      "events": "eventos"
+    },
+    "profile": "perfil:",
+    "profiles": {
+      "newcomer": "recién llegado",
+      "decisive": "decidido/a",
+      "explorer": "explorador/a curioso/a",
+      "reader": "lector/a metódico/a",
+      "observer": "observador/a reflexivo/a"
+    },
+    "confidence": "confianza {{value}}% (n={{n}}, no lo publiques en un paper)",
+    "privacy": "Todo ocurre en tu navegador. No se guarda ni se envía nada."
   },
   "home": {
+    "approach": {
+      "title": "Enfoque",
+      "intro": "Estudié psicología antes de trabajar con datos, y se nota en cómo los trato: detrás de cada fila hay una persona tomando una decisión.",
+      "items": {
+        "behavior": {
+          "title": "Los datos describen conducta",
+          "text": "Cada evento es una decisión de alguien. Diseño modelos y métricas que respeten ese contexto, no solo el esquema."
+        },
+        "bias": {
+          "title": "Los dashboards se leen con sesgos",
+          "text": "Anclaje, confirmación, ilusión de causalidad. Pienso las visualizaciones para ayudar a decidir, no para confirmar lo que ya creíamos."
+        },
+        "trust": {
+          "title": "Confiar en un número es humano",
+          "text": "Calidad, contratos de datos y monitoreo: pipelines confiables para que las personas puedan decidir tranquilas."
+        }
+      }
+    },
     "projects": {
       "title": "Proyectos",
       "all": "Todos los proyectos",

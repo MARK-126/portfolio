@@ -18,7 +18,7 @@
 
 .header__brand {
   margin-right: auto;
-  font: 600 0.95rem var(--display);
+  font: 400 1.3rem / 1 var(--display);
   letter-spacing: -0.01em;
 }
 
@@ -40,7 +40,7 @@
 
 .header__nav a.active {
   text-decoration: underline;
-  text-decoration-color: var(--faint);
+  text-decoration-color: var(--accent);
   text-underline-offset: 6px;
 }
 

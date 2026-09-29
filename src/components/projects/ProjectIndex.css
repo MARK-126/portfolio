@@ -36,8 +36,8 @@
 }
 
 .project-row__title {
-  font: 700 clamp(1.5rem, 3vw, 2.25rem) / 1.1 var(--display);
-  letter-spacing: -0.03em;
+  font: 400 clamp(1.8rem, 3.4vw, 2.6rem) / 1.05 var(--display);
+  letter-spacing: -0.01em;
 }
 
 .project-row__summary {
