@@ -9,6 +9,7 @@ type Particle = {
   size: number
   alpha: number
   phase: number
+  source: number // index in `sources`, or -1 for the main stream entering from the left
   // Displacement caused by the pointer, eased back to 0
   ox: number
   oy: number
@@ -24,6 +25,15 @@ type Flow = {
   alpha: number
   ox: number
   oy: number
+}
+
+/** A secondary stream of raw data entering from a screen edge and merging into the wave. */
+type Source = {
+  startX: number
+  startY: number
+  mergeX: number
+  curve: number // > 1 keeps the stream near its edge longer before it turns towards the wave
+  spread: number // half-width of the stream where it enters
 }
 
 type Dust = { x: number; y: number; vx: number; vy: number; alpha: number }
@@ -83,7 +93,8 @@ function repel(
 
 /**
  * Decorative canvas: scattered white particles drift left to right and converge into an amber
- * wave — raw data becoming the signal. The wave then splits into lines flowing to each consumer of
+ * wave — raw data becoming the signal. On wide screens two fainter streams join it from the top
+ * and bottom edges (many sources, one pipeline). The wave then splits into lines flowing to each consumer of
  * the pipeline (`branches` are their labels). Everything moves away from the pointer, and particles
  * fade out around the hero's text so it stays readable.
  */
@@ -112,6 +123,7 @@ export function ParticleField({ branches }: { branches: string[] }) {
     let fanEndX = 0 // where the lines reach their final spread
     let contentRight = 0 // right edge of the page grid: labels end here
     let offsets: number[] = []
+    let sources: Source[] = []
     let textRects: Rect[] = []
     let particles: Particle[] = []
     let flows: Flow[] = []
@@ -164,30 +176,51 @@ export function ParticleField({ branches }: { branches: string[] }) {
       measureLayout()
 
       narrow = width < 900
+      // 0 up to laptop widths, 1 on large monitors, where there is room right of the headline
+      const roomy = narrow ? 0 : smoothstep(1440, 1800, width)
+      const lerp = (a: number, b: number) => a + (b - a) * roomy
       center = height * (narrow ? 0.82 : 0.6)
       amplitude = Math.min(narrow ? 55 : 150, height * 0.13)
       // The lines finish opening before the labels, which end at the page grid's right edge
       fanEndX = contentRight - (narrow ? 0 : 170)
-      splitX = narrow ? fanEndX - 140 : Math.min(width * 0.64, fanEndX - 260)
+      splitX = narrow ? fanEndX - 140 : Math.min(width * lerp(0.64, 0.62), fanEndX - lerp(260, 320))
 
+      // On large monitors the fan opens over most of the height (more room above the wave than below)
       const lineCount = Math.max(1, labelsRef.current.length)
       const spread = Math.min(narrow ? 45 : 170, height * 0.17)
+      const up = lerp(spread, height * 0.4)
+      const down = lerp(spread, height * 0.24)
       offsets = Array.from({ length: lineCount }, (_, index) =>
-        lineCount === 1 ? 0 : (index / (lineCount - 1) - 0.5) * 2 * spread,
+        lineCount === 1 ? 0 : -up + (index / (lineCount - 1)) * (up + down),
       )
 
+      // Secondary sources: one rising from the bottom edge and, on large monitors, one falling from
+      // the top edge into the split (on smaller screens it would run behind the whole headline)
+      sources = narrow
+        ? []
+        : [
+            { startX: splitX * 0.3, startY: height + 20, mergeX: splitX * 0.8, curve: 0.9, spread: 32 },
+            ...(width >= 1600 ? [{ startX: splitX * 0.55, startY: -20, mergeX: splitX, curve: 2.5, spread: 22 }] : []),
+          ]
+
       const count = Math.round(Math.min(3000, (width * height) / 400))
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * splitX,
-        noise: (Math.random() - 0.5) * 2,
-        band: (Math.random() - 0.5) * 2,
-        speed: 0.12 + Math.random() * 0.32,
-        size: Math.random() < 0.85 ? 1.3 : 1.9,
-        alpha: 0.35 + Math.random() * 0.65,
-        phase: Math.random() * Math.PI * 2,
-        ox: 0,
-        oy: 0,
-      }))
+      particles = Array.from({ length: count }, () => {
+        // Most particles belong to the main stream; the rest are split between the secondary sources
+        const source = sources.length && Math.random() < 0.3 ? Math.floor(Math.random() * sources.length) : -1
+        const startX = source >= 0 ? sources[source].startX : 0
+        return {
+          x: startX + Math.random() * (splitX - startX),
+          source,
+          noise: (Math.random() - 0.5) * 2,
+          band: (Math.random() - 0.5) * 2,
+          speed: 0.12 + Math.random() * 0.32,
+          size: Math.random() < 0.85 ? 1.3 : 1.9,
+          alpha: 0.35 + Math.random() * 0.65,
+          phase: Math.random() * Math.PI * 2,
+          ox: 0,
+          oy: 0,
+        }
+      })
 
       // Dots flowing along the delivery lines, from the split to the right edge of the screen
       const perLine = Math.round((width - splitX) / 3)
@@ -265,11 +298,20 @@ export function ParticleField({ branches }: { branches: string[] }) {
 
       for (const p of particles) {
         const progress = p.x / splitX
-        // 0 = raw noise on the left, 1 = on the signal wave
-        const order = smoothstep(0.35, 0.82, progress)
+        const source = p.source >= 0 ? sources[p.source] : undefined
+        // How far a secondary stream has travelled from its edge to the wave (0..1)
+        const along = source ? Math.min(1, Math.max(0, (p.x - source.startX) / (source.mergeX - source.startX))) : 0
+        // 0 = raw noise, 1 = on the signal wave
+        const order = source ? smoothstep(0.55, 1, along) : smoothstep(0.35, 0.82, progress)
         // The wave flattens right before the split, so every line starts at the same point
         const envelope = 1 - smoothstep(0.75, 1, progress)
-        const rawY = height * (0.58 + p.noise * 0.34) + Math.sin(t * 0.45 + p.phase + p.x * 0.004) * 30
+        const drift = Math.sin(t * 0.45 + p.phase + p.x * 0.004)
+        const rawY = source
+          ? source.startY +
+            (center - source.startY) * along ** source.curve +
+            p.noise * source.spread * (1 - along * 0.7) +
+            drift * 8
+          : height * (0.58 + p.noise * 0.34) + drift * 30
         const phase = (p.x / wavelength) * Math.PI * 2
         const waveY =
           center +
@@ -288,7 +330,9 @@ export function ParticleField({ branches }: { branches: string[] }) {
           Math.round(raw[1] + (signal[1] - raw[1]) * mix),
           Math.round(raw[2] + (signal[2] - raw[2]) * mix),
         ]
-        const fade = (smoothstep(0.1, 0.5, progress) * 0.8 + 0.2) * textClearance(x, y, textRects)
+        // Secondary streams stay faint until they join the wave
+        const entry = source ? 0.3 + 0.7 * smoothstep(0.3, 1, along) : smoothstep(0.1, 0.5, progress) * 0.8 + 0.2
+        const fade = entry * textClearance(x, y, textRects)
 
         if (fade > 0.01) {
           ctx.fillStyle = rgba(color, p.alpha * fade)
@@ -298,7 +342,7 @@ export function ParticleField({ branches }: { branches: string[] }) {
         if (animate) {
           p.x += p.speed * (1 - order * 0.35)
           // Particles "enter the pipeline" at the split and come back as new raw data
-          if (p.x > splitX) p.x = 0
+          if (p.x > splitX) p.x = source ? source.startX : 0
         }
       }
     }

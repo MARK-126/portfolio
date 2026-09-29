@@ -52,8 +52,9 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
   uppercase mono labels (`--mono`), thin borders, notebook-style indices (`.cell-index`, e.g.
   `[01]`). White/grey plus one accent, amber (`--accent`), used sparingly for "the signal": the
   accent words of the headline, the primary action, the end of the particle wave, key figures.
-  The hero background is `ParticleField`: white noise converging into an amber wave that splits
-  into lines of dots flowing to each consumer of the pipeline (`hero.branches` labels, right-aligned
+  The hero background is `ParticleField`: white noise (a main stream from the left plus fainter
+  streams from the bottom and, on large monitors, the top edge) converging into an amber wave that splits
+  into lines of dots flowing to each consumer of the pipeline (the fan opens over most of the height on large monitors) (`hero.branches` labels, right-aligned
   to the page grid). Everything reacts to the pointer, and particles fade around the hero's text
   (measured from the DOM) so it stays readable. The headline uses a white-to-amber gradient with a
   subtle grey entry and bottom shade; gradient text is padded (with negative margins) so
