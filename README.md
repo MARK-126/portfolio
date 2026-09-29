@@ -36,17 +36,20 @@ src/
 
 ## Deploying
 
-The site is hosted on **Cloudflare Pages**, connected to this GitHub repository: every push to
-`main` publishes https://www.marcosdataengineer.cloud, and every other branch gets a preview URL.
+The site is hosted on **Cloudflare Workers** (static assets only), connected to this GitHub
+repository: every push to `main` publishes https://www.marcosdataengineer.cloud. `wrangler.jsonc`
+tells Wrangler to serve `build/client` as static files, so it does not try to set up a server-side
+React Router app.
 
-| Setting                | Value          |
-| ---------------------- | -------------- |
-| Production branch      | `main`         |
-| Build command          | `yarn build`   |
-| Build output directory | `build/client` |
-| Node version           | `.node-version` (22) |
+| Setting           | Value                |
+| ----------------- | -------------------- |
+| Production branch | `main`               |
+| Build command     | `yarn build`         |
+| Deploy command    | `npx wrangler deploy` |
+| Node version      | `.node-version` (22) |
+| Yarn version      | `packageManager` in `package.json` (1.22.22) |
 
-The build also writes `404.html` (served by Cloudflare Pages for unknown URLs), `sitemap.xml` and
+The build also writes `404.html` (served for unknown URLs), `sitemap.xml` and
 `robots.txt`. The production URL lives in `src/config/site.ts` (`url`) and is used for canonical
 links, social previews (`public/og.png`) and the sitemap.
 

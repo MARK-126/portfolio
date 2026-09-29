@@ -1,0 +1,11 @@
+// Cloudflare Workers deploy: the site is fully prerendered, so the Worker only serves static files
+// from build/client (no server code). Unknown URLs get the prerendered 404.html.
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-09-26",
+  "assets": {
+    "directory": "./build/client",
+    "not_found_handling": "404-page",
+  },
+}
