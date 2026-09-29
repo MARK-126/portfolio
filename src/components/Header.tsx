@@ -18,8 +18,7 @@ export function Header() {
     <header className="header">
       <div className="header__inner container">
         <Link to="/" className="header__brand">
-          <span className="header__name">{site.handle}</span>
-          <span className="header__tagline">{t('header.tagline')}</span>
+          {site.handle}
         </Link>
 
         <nav className="header__nav" aria-label={t('nav.label')}>

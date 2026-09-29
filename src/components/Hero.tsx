@@ -32,13 +32,10 @@ export function Hero() {
           <Link to="/contact" className="button button--outline">
             {t('hero.ctaHire')}
           </Link>
-          <Link to="/notes" className="button button--link">
-            {t('hero.ctaNotes')} <span aria-hidden="true">→</span>
-          </Link>
         </div>
       </div>
 
-      <a href="#home-content" className="hero__footer container">
+      <a href="#home-content" className="hero__scroll">
         <span>{t('hero.scroll')}</span>
         <span className="hero__scroll-line" aria-hidden="true" />
       </a>

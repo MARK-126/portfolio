@@ -1,7 +1,4 @@
 {
-  "header": {
-    "tagline": "data engineer who reads people too"
-  },
   "nav": {
     "work": "Work",
     "notes": "Notes",
@@ -11,13 +8,12 @@
     "footerLabel": "Footer navigation"
   },
   "hero": {
-    "tags": ["Data engineering", "Pipelines", "Data science & AI", "Psychology"],
+    "tags": ["Data engineering", "Data science & AI", "Psychology"],
     "headline1": "Data is behavior.",
     "headline2": "I engineer the signal.",
     "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
     "ctaWork": "See my work",
     "ctaHire": "Hire me",
-    "ctaNotes": "Read the notes",
     "scroll": "scroll"
   },
   "home": {

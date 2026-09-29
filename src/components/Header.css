@@ -17,22 +17,9 @@
 }
 
 .header__brand {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
   margin-right: auto;
-  min-width: 0;
-}
-
-.header__name {
   font: 600 0.95rem var(--display);
   letter-spacing: -0.01em;
-}
-
-.header__tagline {
-  color: var(--faint);
-  font-size: 0.8rem;
-  white-space: nowrap;
 }
 
 .header__nav {
@@ -95,12 +82,6 @@
 
 .theme-toggle {
   border: 1px solid var(--border);
-}
-
-@media (max-width: 900px) {
-  .header__tagline {
-    display: none;
-  }
 }
 
 @media (max-width: 640px) {
