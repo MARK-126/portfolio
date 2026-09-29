@@ -4,13 +4,15 @@
     "notes": "Notes",
     "contact": "Contact",
     "label": "Main navigation",
-    "footerLabel": "Footer navigation"
+    "footerLabel": "Footer navigation",
+    "back": "Back"
   },
   "hero": {
     "disciplines": "Data engineering",
     "headline1": "Data is behavior.",
     "headline2": "I engineer",
     "headline2Accent": "the signal.",
+    "branches": ["analytics", "product", "machine learning", "business"],
     "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
     "ctaProjects": "See projects",
     "ctaHire": "Hire me",
@@ -80,7 +82,6 @@
     "writtenIn": "Written in {{lang}}"
   },
   "projects": {
-    "back": "All projects",
     "role": "Role",
     "year": "Year",
     "stack": "Stack",
@@ -104,7 +105,6 @@
     "emptyFilter": "No projects of this type yet."
   },
   "notes": {
-    "back": "All notes",
     "readingTime_one": "{{count}} min read",
     "readingTime_other": "{{count}} min read",
     "tags": "Tags",

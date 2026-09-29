@@ -27,8 +27,8 @@
 }
 
 .filter-tabs button[aria-pressed='true'] {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .filter-tabs__count {

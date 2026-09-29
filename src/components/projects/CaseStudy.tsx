@@ -1,7 +1,7 @@
-import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import type { ProjectDetail } from '../../content/types'
 import { Pager } from '../Pager'
+import { BackLink } from '../BackLink'
 import { ProjectBody } from './ProjectBody'
 import './CaseStudy.css'
 
@@ -16,9 +16,7 @@ export function CaseStudy({ project }: { project: ProjectDetail }) {
   return (
     <article className="case-study container">
       <header className="case-study__header">
-        <Link to={base} className="case-study__back">
-          <span aria-hidden="true">←</span> {t('projects.back')}
-        </Link>
+        <BackLink fallback="/projects" />
         <h1 className="case-study__title" lang={project.lang}>
           {project.title}
         </h1>

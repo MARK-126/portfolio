@@ -2,20 +2,6 @@
   padding-block: 72px 96px;
 }
 
-.case-study__back {
-  display: inline-flex;
-  gap: 8px;
-  color: var(--faint);
-  font: 500 0.72rem var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: color 0.2s ease;
-}
-
-.case-study__back:hover {
-  color: var(--text);
-}
-
 .case-study__title {
   max-width: 18ch;
   margin-top: 40px;

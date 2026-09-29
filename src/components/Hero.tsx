@@ -5,10 +5,11 @@ import './Hero.css'
 
 export function Hero() {
   const { t } = useTranslation()
+  const branches = t('hero.branches', { returnObjects: true }) as string[]
 
   return (
     <section className="hero">
-      <ParticleField />
+      <ParticleField branches={branches} />
 
       <div className="hero__inner container">
         <p className="hero__status">

@@ -1,8 +1,8 @@
-import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import type { NoteDetail } from '../../content/types'
 import { formatDate } from '../../utils/date'
 import { Pager } from '../Pager'
+import { BackLink } from '../BackLink'
 import { LangBadge } from './LangBadge'
 import '../Prose.css'
 import './Article.css'
@@ -13,9 +13,7 @@ export function Article({ article }: { article: NoteDetail }) {
   return (
     <article className="article container">
       <header className="article__header">
-        <Link to="/notes" className="article__back">
-          <span aria-hidden="true">←</span> {t('notes.back')}
-        </Link>
+        <BackLink fallback="/notes" />
 
         <p className="article__meta">
           <time dateTime={article.date}>{formatDate(article.date, i18n.resolvedLanguage)}</time>

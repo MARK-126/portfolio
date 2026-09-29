@@ -4,13 +4,15 @@
     "notes": "Notas",
     "contact": "Contacto",
     "label": "Navegación principal",
-    "footerLabel": "Navegación del pie de página"
+    "footerLabel": "Navegación del pie de página",
+    "back": "Volver"
   },
   "hero": {
     "disciplines": "Ingeniería de datos",
     "headline1": "Los datos son conducta.",
     "headline2": "Yo construyo",
     "headline2Accent": "la señal.",
+    "branches": ["analítica", "producto", "machine learning", "negocio"],
     "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
     "ctaProjects": "Ver proyectos",
     "ctaHire": "Contratarme",
@@ -80,7 +82,6 @@
     "writtenIn": "Escrito en {{lang}}"
   },
   "projects": {
-    "back": "Todos los proyectos",
     "role": "Rol",
     "year": "Año",
     "stack": "Stack",
@@ -104,7 +105,6 @@
     "emptyFilter": "Todavía no hay proyectos de este tipo."
   },
   "notes": {
-    "back": "Todas las notas",
     "readingTime_one": "{{count}} min de lectura",
     "readingTime_other": "{{count}} min de lectura",
     "tags": "Etiquetas",

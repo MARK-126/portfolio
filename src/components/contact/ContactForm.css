@@ -53,9 +53,9 @@
 }
 
 .contact-form__topics input:checked + span {
-  border-color: var(--text);
-  background: var(--text);
-  color: var(--bg);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .contact-form__topics input:focus-visible + span {
