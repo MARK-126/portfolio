@@ -7,7 +7,7 @@ import './CaseStudy.css'
 
 export function CaseStudy({ project }: { project: ProjectDetail }) {
   const { t } = useTranslation()
-  const base = `/${project.section}`
+  const base = '/projects'
   const links = [
     { key: 'repo', href: project.repo },
     { key: 'demo', href: project.demo },
@@ -17,7 +17,7 @@ export function CaseStudy({ project }: { project: ProjectDetail }) {
     <article className="case-study container">
       <header className="case-study__header">
         <Link to={base} className="case-study__back">
-          <span aria-hidden="true">←</span> {t(`${project.section}.back`)}
+          <span aria-hidden="true">←</span> {t('projects.back')}
         </Link>
         <h1 className="case-study__title" lang={project.lang}>
           {project.title}
@@ -28,37 +28,41 @@ export function CaseStudy({ project }: { project: ProjectDetail }) {
       </header>
 
       <dl className="case-study__facts">
+        <div>
+          <dt>{t('projects.type')}</dt>
+          <dd>{t(`projects.types.${project.type}`)}</dd>
+        </div>
         {project.status && (
           <div>
-            <dt>{t('work.status')}</dt>
+            <dt>{t('projects.status')}</dt>
             <dd>{project.status}</dd>
           </div>
         )}
         {project.role && (
           <div>
-            <dt>{t('work.role')}</dt>
+            <dt>{t('projects.role')}</dt>
             <dd>{project.role}</dd>
           </div>
         )}
         <div>
-          <dt>{t('work.year')}</dt>
+          <dt>{t('projects.year')}</dt>
           <dd>
             <time dateTime={project.date}>{project.date.slice(0, 4)}</time>
           </dd>
         </div>
         {project.stack.length > 0 && (
           <div>
-            <dt>{t('work.stack')}</dt>
+            <dt>{t('projects.stack')}</dt>
             <dd>{project.stack.join(', ')}</dd>
           </div>
         )}
         {links.length > 0 && (
           <div>
-            <dt>{t('work.links')}</dt>
+            <dt>{t('projects.links')}</dt>
             <dd className="case-study__links">
               {links.map(({ key, href }) => (
                 <a key={key} href={href} target="_blank" rel="noreferrer">
-                  {t(`work.${key}`)} <span aria-hidden="true">↗</span>
+                  {t(`projects.${key}`)} <span aria-hidden="true">↗</span>
                 </a>
               ))}
             </dd>
@@ -67,7 +71,7 @@ export function CaseStudy({ project }: { project: ProjectDetail }) {
       </dl>
 
       {project.highlights.length > 0 && (
-        <section className="case-study__highlights" aria-label={t('work.results')} lang={project.lang}>
+        <section className="case-study__highlights" aria-label={t('projects.results')} lang={project.lang}>
           <ul>
             {project.highlights.map(highlight => (
               <li key={highlight}>{highlight}</li>
@@ -81,7 +85,7 @@ export function CaseStudy({ project }: { project: ProjectDetail }) {
       <div className="case-study__body prose" lang={project.lang} dangerouslySetInnerHTML={{ __html: project.html }} />
 
       <Pager
-        label={t(`${project.section}.more`)}
+        label={t('projects.more')}
         previous={project.previous && { to: `${base}/${project.previous.slug}`, title: project.previous.title }}
         next={project.next && { to: `${base}/${project.next.slug}`, title: project.next.title }}
       />

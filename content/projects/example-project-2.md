@@ -1,7 +1,7 @@
 ---
 title: Señales de churn a partir de conversaciones de soporte
 date: 2026-05-10
-section: work
+type: practice
 summary: Pipeline de NLP que convierte tickets de soporte en señales semanales de riesgo de churn para el equipo de customer success.
 role: Ingeniero de datos y analista
 stack: [Python, Airflow, dbt, Postgres]

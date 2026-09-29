@@ -1,4 +1,4 @@
-import type { ProjectDetail, ProjectSection, ProjectSummary } from './types'
+import { projectTypes, type ProjectDetail, type ProjectSummary, type ProjectType } from './types'
 import {
   DEFAULT_CONTENT_LANG,
   asString,
@@ -18,7 +18,7 @@ function toSummary({ slug, data }: MarkdownFile): ProjectSummary {
     slug,
     title: asString(data.title, slug),
     date: asString(data.date),
-    section: data.section === 'lab' ? 'lab' : 'work',
+    type: projectTypes.includes(data.type as ProjectType) ? (data.type as ProjectType) : 'practice',
     summary: asString(data.summary),
     stack: asStringArray(data.stack),
     featured: data.featured === true,
@@ -37,29 +37,23 @@ function publishedFiles() {
     .filter(({ data }) => isPublished(data))
 }
 
-export function getProjects(section?: ProjectSection): ProjectSummary[] {
-  return publishedFiles()
-    .map(toSummary)
-    .filter(project => !section || project.section === section)
-    .sort(byDateDesc)
+export function getProjects(): ProjectSummary[] {
+  return publishedFiles().map(toSummary).sort(byDateDesc)
 }
 
-/** Full project with rendered body and its neighbours in the same section. */
-export function getProject(section: ProjectSection, slug: string): ProjectDetail | undefined {
+/** Full project with rendered body and its neighbouring projects. */
+export function getProject(slug: string): ProjectDetail | undefined {
   const file = publishedFiles().find(file => file.slug === slug)
   if (!file) return undefined
 
-  const project = toSummary(file)
-  if (project.section !== section) return undefined
-
-  const siblings = getProjects(section)
-  const index = siblings.findIndex(item => item.slug === slug)
+  const projects = getProjects()
+  const index = projects.findIndex(item => item.slug === slug)
   const link = (item?: ProjectSummary) => item && { slug: item.slug, title: item.title }
 
   return {
-    ...project,
+    ...toSummary(file),
     html: renderMarkdown(file.body),
-    previous: link(siblings[index - 1]),
-    next: link(siblings[index + 1]),
+    previous: link(projects[index - 1]),
+    next: link(projects[index + 1]),
   }
 }

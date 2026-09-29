@@ -1,17 +1,15 @@
 import { data, useLoaderData, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
 import { getProject } from '../content/projects.server'
 import { slugFromRequest } from '../content/slug.server'
-import type { ProjectSection } from '../content/types'
-import { CaseStudy } from '../components/work/CaseStudy'
+import { CaseStudy } from '../components/projects/CaseStudy'
 import { pageMeta } from '../config/meta'
 
-// Shared by one static route per project, for both /work/<slug> and /lab/<slug> (see
-// src/routes.ts), so it uses React Router's generic types and reads section and slug from the URL.
+// Shared by one static route per project (see src/routes.ts), so it uses React Router's generic
+// types and reads the slug from the URL instead of a route param.
 
 // Runs at build time.
 export function loader({ request }: LoaderFunctionArgs) {
-  const section: ProjectSection = new URL(request.url).pathname.startsWith('/lab/') ? 'lab' : 'work'
-  const project = getProject(section, slugFromRequest(request))
+  const project = getProject(slugFromRequest(request))
   if (!project) throw data('Project not found', { status: 404 })
   return { project }
 }

@@ -24,10 +24,10 @@ yarn prettier:write  # format
 content/               # Markdown notes and projects (see content/README.md)
 src/
   root.tsx             # HTML layout, header/footer, theme script, error page
-  routes.ts            # route table: /, /work(/<project>), /notes(/<article>), /lab(/<experiment>), /contact, 404
+  routes.ts            # route table: /, /projects(/<project>), /notes(/<article>), /contact, 404
   routes/              # one module per route (meta, loader, component)
   content/             # build-time Markdown loaders (*.server.ts never reach the browser)
-  components/          # Header, Footer, Hero, ParticleField, PageIntro, Pager, home/, work/, notes/
+  components/          # Header, Footer, Hero, PageIntro, Pager, FilterTabs, home/, projects/, notes/, contact/
   config/              # site data (name, links), sections, page meta helper
   hooks/               # useTheme, useLanguage
   i18n/                # i18next setup + locales/en.json, locales/es.json

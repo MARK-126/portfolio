@@ -1,7 +1,7 @@
 ---
 title: Ingesta en streaming para analítica de producto
 date: 2026-08-01
-section: work
+type: practice
 summary: Pipeline de eventos desde la app hasta el data warehouse, con validación de esquema y dashboards casi en tiempo real.
 role: Ingeniero de datos
 stack: [Kafka, Spark, dbt, BigQuery]

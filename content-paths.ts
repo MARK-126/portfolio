@@ -21,8 +21,7 @@ export function contentSlugs(folder: string, filter: (data: Frontmatter) => bool
     .map(file => file.replace(/\.md$/, ''))
 }
 
-export const workProjectSlugs = () => contentSlugs('projects', data => data.section !== 'lab')
-export const labProjectSlugs = () => contentSlugs('projects', data => data.section === 'lab')
+export const projectSlugs = () => contentSlugs('projects')
 
 // Only articles get their own page; link notes point to the external source.
 export const noteArticleSlugs = () => contentSlugs('notes', data => data.type !== 'link')

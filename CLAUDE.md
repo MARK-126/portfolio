@@ -8,7 +8,8 @@ React 19 + React Router 8 (framework mode, static prerender) + TypeScript + Vite
 - **Do not add `Co-Authored-By` or any other AI attribution lines (e.g. `Claude-Session`) to commit
   messages.** Write plain, descriptive commit messages.
 - Branches: `page/main` holds the shared layout and home page; each section is built in its own
-  branch created from it: `page/work`, `page/notes`, `page/lab`, `page/contact`.
+  branch created from the previous one: `page/work` → `page/notes` → `page/contact` → `page/lab` →
+  `page/projects` (work and lab merged into /projects).
 
 ## Commands
 
@@ -28,7 +29,7 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
 - `react-router.config.ts`: `ssr: false` + `prerender` → every route is static HTML. Anything in a
   route `loader` runs at build time only. `/404` is prerendered and copied to `build/client/404.html`.
 - `src/routes.ts` is the route table; route modules live in `src/routes/`. Content pages (e.g.
-  case studies) are **one static route per Markdown file** (`content-paths.ts` lists them), not a
+  projects) are **one static route per Markdown file** (`content-paths.ts` lists them), not a
   dynamic `:slug` route: `ssr: false` forbids loaders on routes that are not prerendered, and static
   routes let unknown URLs fall through to the `*` 404 route. Their loaders read the slug from the
   URL (strip the `.data` suffix). Restart `yarn dev` after adding a content file.

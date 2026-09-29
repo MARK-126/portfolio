@@ -23,13 +23,16 @@ export type NoteDetail = NoteSummary & {
   next?: Pick<NoteSummary, 'slug' | 'title'>
 }
 
-export type ProjectSection = 'work' | 'lab'
+/** Practice projects and quick experiments; a "professional" type can be added later. */
+export type ProjectType = 'practice' | 'experiment'
+
+export const projectTypes: ProjectType[] = ['practice', 'experiment']
 
 export type ProjectSummary = {
   slug: string
   title: string
   date: string
-  section: ProjectSection
+  type: ProjectType
   summary: string
   stack: string[]
   featured: boolean
@@ -39,7 +42,7 @@ export type ProjectSummary = {
   highlights: string[]
   repo?: string
   demo?: string
-  /** Free text for experiments, e.g. "prototype", "in progress", "archived". */
+  /** Free text, e.g. "prototipo", "en curso", "archivado". */
   status?: string
   /** Language the project is written in (BCP 47, e.g. "es"). */
   lang: string

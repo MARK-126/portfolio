@@ -26,8 +26,8 @@ export function Hero() {
         <p className="hero__subtitle">{t('hero.subtitle')}</p>
 
         <div className="hero__cta">
-          <Link to="/work" className="button button--solid">
-            {t('hero.ctaWork')}
+          <Link to="/projects" className="button button--solid">
+            {t('hero.ctaProjects')}
           </Link>
           <Link to="/contact" className="button button--outline">
             {t('hero.ctaHire')}

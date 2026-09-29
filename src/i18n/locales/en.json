@@ -1,8 +1,7 @@
 {
   "nav": {
-    "work": "Work",
+    "projects": "Projects",
     "notes": "Notes",
-    "lab": "Lab",
     "contact": "Contact",
     "label": "Main navigation",
     "footerLabel": "Footer navigation"
@@ -12,15 +11,15 @@
     "headline1": "Data is behavior.",
     "headline2": "I engineer the signal.",
     "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
-    "ctaWork": "See my work",
+    "ctaProjects": "See projects",
     "ctaHire": "Hire me",
     "scroll": "scroll"
   },
   "home": {
-    "work": {
-      "title": "Selected work",
-      "all": "All work",
-      "empty": "Case studies are being written. Pipelines, models and the decisions behind them — soon here."
+    "projects": {
+      "title": "Projects",
+      "all": "All projects",
+      "empty": "Projects are on the way: pipelines, models and the decisions behind them."
     },
     "notes": {
       "title": "Latest notes",
@@ -39,8 +38,8 @@
     "external": "opens external site",
     "writtenIn": "Written in {{lang}}"
   },
-  "work": {
-    "back": "All work",
+  "projects": {
+    "back": "All projects",
     "role": "Role",
     "year": "Year",
     "stack": "Stack",
@@ -49,12 +48,19 @@
     "demo": "Live demo",
     "results": "Results",
     "more": "More projects",
-    "status": "Status"
-  },
-  "lab": {
-    "back": "All experiments",
-    "more": "More experiments",
-    "empty": "Experiments coming soon: small tests with data, AI and anything worth trying."
+    "status": "Status",
+    "type": "Type",
+    "types": {
+      "practice": "Practice",
+      "experiment": "Experiment"
+    },
+    "filter": "Filter projects by type",
+    "filters": {
+      "all": "All",
+      "practice": "Practice",
+      "experiment": "Experiments"
+    },
+    "emptyFilter": "No projects of this type yet."
   },
   "notes": {
     "back": "All notes",
@@ -104,20 +110,15 @@
     "copied": "Copied"
   },
   "pages": {
-    "work": {
-      "tag": "Work",
-      "title": "Selected work.",
-      "intro": "Data platforms, pipelines and analytics projects — with the problem, the architecture and the results."
+    "projects": {
+      "tag": "Projects",
+      "title": "Projects.",
+      "intro": "Practice projects and experiments in data engineering, data science and AI — with the problem, the approach and what I learned."
     },
     "notes": {
       "tag": "Notes",
       "title": "Notes.",
       "intro": "My own writing plus curated reads from the data and AI world, with a short take on each."
-    },
-    "lab": {
-      "tag": "Lab",
-      "title": "Lab.",
-      "intro": "Experiments and proof-of-concepts. Small, fast and sometimes broken on purpose."
     },
     "contact": {
       "tag": "Contact",

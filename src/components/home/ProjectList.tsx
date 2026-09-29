@@ -1,16 +1,22 @@
 import { Link } from 'react-router'
+import { useTranslation } from 'react-i18next'
 import type { ProjectSummary } from '../../content/types'
 import './ProjectList.css'
 
 export function ProjectList({ projects }: { projects: ProjectSummary[] }) {
+  const { t } = useTranslation()
+
   return (
     <ol className="project-list">
       {projects.map((project, index) => (
         <li key={project.slug}>
-          <Link to={`/${project.section}/${project.slug}`} className="project-card">
+          <Link to={`/projects/${project.slug}`} className="project-card">
             <span className="project-card__top">
               <span>{String(index + 1).padStart(2, '0')}</span>
-              {project.status && <span className="project-card__status">{project.status}</span>}
+              <span className="project-card__status">
+                {t(`projects.types.${project.type}`)}
+                {project.status && ` · ${project.status}`}
+              </span>
             </span>
             <h3 className="project-card__title" lang={project.lang}>
               {project.title}

@@ -1,8 +1,7 @@
 {
   "nav": {
-    "work": "Trabajo",
+    "projects": "Proyectos",
     "notes": "Notas",
-    "lab": "Lab",
     "contact": "Contacto",
     "label": "Navegación principal",
     "footerLabel": "Navegación del pie de página"
@@ -12,15 +11,15 @@
     "headline1": "Los datos son conducta.",
     "headline2": "Yo construyo la señal.",
     "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
-    "ctaWork": "Ver mi trabajo",
+    "ctaProjects": "Ver proyectos",
     "ctaHire": "Contratarme",
     "scroll": "scroll"
   },
   "home": {
-    "work": {
-      "title": "Trabajo destacado",
-      "all": "Todo el trabajo",
-      "empty": "Los casos de estudio están en preparación. Pipelines, modelos y las decisiones detrás — pronto aquí."
+    "projects": {
+      "title": "Proyectos",
+      "all": "Todos los proyectos",
+      "empty": "Los proyectos están en camino: pipelines, modelos y las decisiones detrás."
     },
     "notes": {
       "title": "Últimas notas",
@@ -39,8 +38,8 @@
     "external": "abre un sitio externo",
     "writtenIn": "Escrito en {{lang}}"
   },
-  "work": {
-    "back": "Todo el trabajo",
+  "projects": {
+    "back": "Todos los proyectos",
     "role": "Rol",
     "year": "Año",
     "stack": "Stack",
@@ -49,12 +48,19 @@
     "demo": "Demo en vivo",
     "results": "Resultados",
     "more": "Más proyectos",
-    "status": "Estado"
-  },
-  "lab": {
-    "back": "Todos los experimentos",
-    "more": "Más experimentos",
-    "empty": "Experimentos en camino: pruebas pequeñas con datos, IA y todo lo que valga la pena intentar."
+    "status": "Estado",
+    "type": "Tipo",
+    "types": {
+      "practice": "Práctica",
+      "experiment": "Experimento"
+    },
+    "filter": "Filtrar proyectos por tipo",
+    "filters": {
+      "all": "Todos",
+      "practice": "Práctica",
+      "experiment": "Experimentos"
+    },
+    "emptyFilter": "Todavía no hay proyectos de este tipo."
   },
   "notes": {
     "back": "Todas las notas",
@@ -104,20 +110,15 @@
     "copied": "Copiado"
   },
   "pages": {
-    "work": {
-      "tag": "Trabajo",
-      "title": "Trabajo destacado.",
-      "intro": "Plataformas de datos, pipelines y proyectos de analítica — con el problema, la arquitectura y los resultados."
+    "projects": {
+      "tag": "Proyectos",
+      "title": "Proyectos.",
+      "intro": "Proyectos de práctica y experimentos de ingeniería de datos, ciencia de datos e IA — con el problema, el enfoque y lo que aprendí."
     },
     "notes": {
       "tag": "Notas",
       "title": "Notas.",
       "intro": "Textos propios y lecturas seleccionadas del mundo de los datos y la IA, con un breve comentario en cada una."
-    },
-    "lab": {
-      "tag": "Lab",
-      "title": "Lab.",
-      "intro": "Experimentos y pruebas de concepto. Pequeños, rápidos y a veces rotos a propósito."
     },
     "contact": {
       "tag": "Contacto",

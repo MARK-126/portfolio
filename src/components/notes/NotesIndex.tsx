@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { NoteSummary, NoteType } from '../../content/types'
 import { EmptyState } from '../home/HomeSection'
+import { FilterTabs } from '../FilterTabs'
 import { NoteList } from './NoteList'
 import './NotesIndex.css'
 
@@ -16,17 +17,15 @@ export function NotesIndex({ notes }: { notes: NoteSummary[] }) {
 
   const visible = filter === 'all' ? notes : notes.filter(note => note.type === filter)
   const years = [...new Set(visible.map(note => note.date.slice(0, 4)))]
-  const count = (value: Filter) => (value === 'all' ? notes.length : notes.filter(note => note.type === value).length)
+  const options = filters.map(value => ({
+    value,
+    label: t(`notes.filters.${value}`),
+    count: value === 'all' ? notes.length : notes.filter(note => note.type === value).length,
+  }))
 
   return (
     <>
-      <div className="notes-filter" role="group" aria-label={t('notes.filter')}>
-        {filters.map(value => (
-          <button key={value} type="button" aria-pressed={filter === value} onClick={() => setFilter(value)}>
-            {t(`notes.filters.${value}`)} <span className="notes-filter__count">{count(value)}</span>
-          </button>
-        ))}
-      </div>
+      <FilterTabs label={t('notes.filter')} options={options} value={filter} onChange={setFilter} />
 
       {visible.length === 0 ? (
         <EmptyState>{t('notes.emptyFilter')}</EmptyState>

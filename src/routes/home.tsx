@@ -33,8 +33,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     <>
       <Hero />
       <div id="home-content">
-        <HomeSection index="01" title={t('home.work.title')} link={{ to: '/work', label: t('home.work.all') }}>
-          {projects.length ? <ProjectList projects={projects} /> : <EmptyState>{t('home.work.empty')}</EmptyState>}
+        <HomeSection
+          index="01"
+          title={t('home.projects.title')}
+          link={{ to: '/projects', label: t('home.projects.all') }}
+        >
+          {projects.length ? <ProjectList projects={projects} /> : <EmptyState>{t('home.projects.empty')}</EmptyState>}
         </HomeSection>
 
         <HomeSection index="02" title={t('home.notes.title')} link={{ to: '/notes', label: t('home.notes.all') }}>

@@ -37,9 +37,9 @@ Notes are grouped by year on `/notes`. Articles show an estimated reading time.
 ---
 title: Ingesta en streaming para analítica de producto
 date: 2026-08-01
-section: work # work = real projects (/work), lab = experiments (/lab)
+type: practice # practice | experiment (filter on /projects)
 summary: One or two sentences shown in lists.
-status: prototipo # optional, shown on lab cards and pages
+status: prototipo # optional, e.g. en curso, archivado
 role: Ingeniero de datos # optional
 stack: [Kafka, Spark, dbt]
 highlights: # optional, big figures on the project page
@@ -53,11 +53,14 @@ draft: true # optional
 ---
 ```
 
-The body is the case study. Each project gets its own page at `/work/<file-name>` or
-`/lab/<file-name>`. Suggested structures:
+The body is the case study. Each project gets its own page at `/projects/<file-name>`.
+Suggested structures:
 
-- Work (`example-project.md`): Contexto → Problema → Enfoque → Resultados → Qué aprendí.
-- Lab (`example-experiment.md`): La pregunta → Qué probé → Resultado.
+- Practice project (`example-project.md`): Contexto → Problema → Enfoque → Resultados → Qué aprendí.
+- Experiment (`example-experiment.md`): La pregunta → Qué probé → Resultado.
+
+To add another type later (e.g. `professional`), add it to `projectTypes` in `src/content/types.ts`
+and its labels in the locale files.
 
 ## Writing in Markdown
 

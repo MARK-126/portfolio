@@ -1,0 +1,36 @@
+.filter-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+  border: 1px solid var(--border);
+}
+
+.filter-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: 500 0.72rem var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.filter-tabs button:hover {
+  color: var(--text);
+}
+
+.filter-tabs button[aria-pressed='true'] {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.filter-tabs__count {
+  opacity: 0.6;
+}
