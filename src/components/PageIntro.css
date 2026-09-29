@@ -1,6 +1,5 @@
 .page-intro {
-  padding-block: 120px 96px;
-  min-height: 60svh;
+  padding-block: 120px 80px;
 }
 
 .page-intro__tag {
@@ -21,6 +20,10 @@
   margin-top: 28px;
   color: var(--muted);
   font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+}
+
+.page-intro__actions {
+  margin-top: 48px;
 }
 
 .page-intro__soon {

@@ -24,7 +24,7 @@ yarn prettier:write  # format
 content/               # Markdown notes and projects (see content/README.md)
 src/
   root.tsx             # HTML layout, header/footer, theme script, error page
-  routes.ts            # route table: /, /work, /notes, /lab, /contact
+  routes.ts            # route table: /, /work, /work/<project>, /notes, /lab, /contact, 404
   routes/              # one module per route (meta, loader, component)
   content/             # build-time Markdown loaders (*.server.ts never reach the browser)
   components/          # Header, Footer, Hero, ParticleField, PageIntro, home/ previews
@@ -33,6 +33,11 @@ src/
   i18n/                # i18next setup + locales/en.json, locales/es.json
   index.css            # design tokens (colors per theme) and shared styles
 ```
+
+## Deploying
+
+Upload `build/client` to any static host. Unknown URLs should be answered with `404.html`
+(Netlify, Cloudflare Pages, GitHub Pages and Vercel do this by default for static sites).
 
 ## Content
 

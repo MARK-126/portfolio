@@ -26,9 +26,12 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
 ## Architecture
 
 - `react-router.config.ts`: `ssr: false` + `prerender` → every route is static HTML. Anything in a
-  route `loader` runs at build time only. Dynamic routes (e.g. `/work/:slug`) must be listed in
-  `prerender`.
-- `src/routes.ts` is the route table; route modules live in `src/routes/`.
+  route `loader` runs at build time only. `/404` is prerendered and copied to `build/client/404.html`.
+- `src/routes.ts` is the route table; route modules live in `src/routes/`. Content pages (e.g.
+  case studies) are **one static route per Markdown file** (`content-paths.ts` lists them), not a
+  dynamic `:slug` route: `ssr: false` forbids loaders on routes that are not prerendered, and static
+  routes let unknown URLs fall through to the `*` 404 route. Their loaders read the slug from the
+  URL (strip the `.data` suffix). Restart `yarn dev` after adding a content file.
 - `src/content/*.server.ts` read Markdown from `content/` at build time; they must never be
   imported by client-only code. Frontmatter format is documented in `content/README.md`.
   `draft: true` files show only in `yarn dev`.

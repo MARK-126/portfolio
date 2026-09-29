@@ -1,0 +1,133 @@
+/* Typography for long-form content rendered from Markdown (case studies, notes). */
+.prose {
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.prose > * + * {
+  margin-top: 1.25em;
+}
+
+.prose h2,
+.prose h3 {
+  color: var(--text);
+  font-family: var(--display);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.prose h2 {
+  margin-top: 2.5em;
+  font-size: 1.75rem;
+}
+
+.prose h3 {
+  margin-top: 2em;
+  font-size: 1.3rem;
+}
+
+.prose h2 + *,
+.prose h3 + * {
+  margin-top: 0.75em;
+}
+
+.prose strong {
+  color: var(--text);
+}
+
+.prose a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--faint);
+  text-underline-offset: 4px;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--text);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25em;
+}
+
+.prose ul {
+  list-style: square;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li + li {
+  margin-top: 0.4em;
+}
+
+.prose li::marker {
+  color: var(--faint);
+}
+
+.prose blockquote {
+  margin-inline: 0;
+  padding-left: 1.25em;
+  border-left: 2px solid var(--text);
+  color: var(--text);
+  font-size: 1.15rem;
+}
+
+.prose code {
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font: 0.85em var(--mono);
+}
+
+.prose pre {
+  overflow-x: auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  line-height: 1.6;
+}
+
+.prose pre code {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.prose table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.prose th,
+.prose td {
+  padding: 10px 16px 10px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.prose th {
+  color: var(--text);
+  font: 500 0.72rem var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

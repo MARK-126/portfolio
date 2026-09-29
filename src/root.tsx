@@ -1,5 +1,6 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from 'react-router'
 import type { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { Route } from './+types/root'
 import './i18n'
 import './index.css'
@@ -56,18 +57,22 @@ export default function App() {
   )
 }
 
+// Shown by the SPA fallback page (URLs that were not prerendered) until the app loads.
+export function HydrateFallback() {
+  return null
+}
+
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  const { t } = useTranslation()
   const notFound = isRouteErrorResponse(error) && error.status === 404
+  if (!notFound && import.meta.env.DEV) console.error(error) // eslint-disable-line no-console
+  const key = notFound ? 'notFound' : 'error'
 
   return (
     <>
       <Header />
       <main>
-        <PageIntro
-          tag={notFound ? '404' : 'Error'}
-          title={notFound ? 'Nothing here.' : 'Something broke.'}
-          intro={notFound ? 'This page does not exist (yet).' : 'An unexpected error occurred.'}
-        />
+        <PageIntro tag={notFound ? '404' : 'Error'} title={t(`${key}.title`)} intro={t(`${key}.intro`)} />
       </main>
       <Footer />
     </>

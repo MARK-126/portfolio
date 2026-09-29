@@ -26,10 +26,13 @@
   display: flex;
   gap: 14px;
   max-width: 40rem;
-  margin-left: 96px;
   padding: 28px 0;
   color: var(--muted);
   font: 0.85rem/1.7 var(--mono);
+}
+
+.home-section .empty-state {
+  margin-left: 96px;
 }
 
 .empty-state__cursor {
@@ -57,7 +60,7 @@
     justify-self: start;
   }
 
-  .empty-state {
+  .home-section .empty-state {
     margin-left: 0;
   }
 }

@@ -42,7 +42,17 @@ export default defineConfig([
       'react-refresh/only-export-components': [
         'error',
         {
-          allowExportNames: ['meta', 'links', 'loader', 'clientLoader', 'headers', 'handle', 'Layout', 'ErrorBoundary'],
+          allowExportNames: [
+            'meta',
+            'links',
+            'loader',
+            'clientLoader',
+            'headers',
+            'handle',
+            'Layout',
+            'ErrorBoundary',
+            'HydrateFallback',
+          ],
         },
       ],
     },

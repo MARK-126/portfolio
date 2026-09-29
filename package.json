@@ -19,6 +19,7 @@
     "eslint-plugin-react-x": "^5.22.1",
     "i18next": "^26.4.2",
     "isbot": "^5",
+    "marked": "^18.0.14",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-i18next": "^17.0.15",

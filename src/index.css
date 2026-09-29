@@ -65,13 +65,29 @@ h1,
 h2,
 h3,
 p,
-ul {
+ul,
+ol {
   margin: 0;
 }
 
-ul {
+ul,
+ol {
   padding: 0;
   list-style: none;
+}
+
+/* Sticky footer: main grows so short pages still push the footer down */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.page-section {
+  padding-bottom: 120px;
 }
 
 a {

@@ -42,6 +42,19 @@
     "link": "Enlace",
     "external": "abre un sitio externo"
   },
+  "work": {
+    "back": "Todo el trabajo",
+    "role": "Rol",
+    "year": "Año",
+    "stack": "Stack",
+    "links": "Enlaces",
+    "repo": "Repositorio",
+    "demo": "Demo en vivo",
+    "results": "Resultados",
+    "more": "Más proyectos",
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
   "pages": {
     "work": {
       "tag": "Trabajo",
@@ -64,6 +77,15 @@
       "intro": "Cuéntame tu problema de datos. Suelo responder en dos días hábiles."
     },
     "soon": "Esta sección está en construcción."
+  },
+  "notFound": {
+    "title": "Aquí no hay nada.",
+    "intro": "Esta página no existe, o todavía no. La señal está en otra parte.",
+    "home": "Volver al inicio"
+  },
+  "error": {
+    "title": "Algo se rompió.",
+    "intro": "Ocurrió un error inesperado. Prueba recargando la página."
   },
   "footer": {
     "rights": "Todos los derechos reservados.",

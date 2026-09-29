@@ -33,8 +33,18 @@ title: Streaming ingestion for product analytics
 date: 2026-08-01
 section: work # work = real projects, lab = experiments
 summary: One or two sentences shown in lists.
+role: Data engineer # optional
 stack: [Kafka, Spark, dbt]
+highlights: # optional, big figures on the case study page
+  - 15 min → 2 min data freshness
+  - −35% warehouse cost
+repo: https://github.com/... # optional
+demo: https://... # optional
 featured: true # shown on the home page
 draft: true # optional
 ---
 ```
+
+The body is the case study, written in Markdown (headings, lists, code blocks, tables, images).
+Each `work` project gets its own page at `/work/<file-name>`. See `example-project.md` for a
+suggested structure: Context → Problem → Approach → Results → What I learned.

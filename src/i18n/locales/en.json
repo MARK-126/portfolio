@@ -42,6 +42,19 @@
     "link": "Link",
     "external": "opens external site"
   },
+  "work": {
+    "back": "All work",
+    "role": "Role",
+    "year": "Year",
+    "stack": "Stack",
+    "links": "Links",
+    "repo": "Repository",
+    "demo": "Live demo",
+    "results": "Results",
+    "more": "More projects",
+    "previous": "Previous",
+    "next": "Next"
+  },
   "pages": {
     "work": {
       "tag": "Work",
@@ -64,6 +77,15 @@
       "intro": "Tell me about your data problem. I usually reply within two working days."
     },
     "soon": "This section is under construction."
+  },
+  "notFound": {
+    "title": "Nothing here.",
+    "intro": "This page does not exist, or not yet. The signal is somewhere else.",
+    "home": "Back to home"
+  },
+  "error": {
+    "title": "Something broke.",
+    "intro": "An unexpected error occurred. Try reloading the page."
   },
   "footer": {
     "rights": "All rights reserved.",

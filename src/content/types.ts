@@ -23,4 +23,17 @@ export type ProjectSummary = {
   summary: string
   stack: string[]
   featured: boolean
+  /** What you did on the project, e.g. "Data engineer". */
+  role?: string
+  /** Short results shown as big figures, e.g. "−40% pipeline runtime". */
+  highlights: string[]
+  repo?: string
+  demo?: string
+}
+
+export type ProjectDetail = ProjectSummary & {
+  /** Case study body rendered from Markdown to HTML at build time. */
+  html: string
+  previous?: Pick<ProjectSummary, 'slug' | 'title'>
+  next?: Pick<ProjectSummary, 'slug' | 'title'>
 }
