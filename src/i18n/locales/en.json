@@ -68,6 +68,35 @@
     "previous": "Previous",
     "next": "Next"
   },
+  "contact": {
+    "topicLabel": "What is it about?",
+    "topics": {
+      "project": "A project",
+      "job": "A job opportunity",
+      "other": "Something else"
+    },
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "A few lines about the context, the data and what you need.",
+    "send": "Send message",
+    "sending": "Sending…",
+    "errors": {
+      "name": "Please tell me your name.",
+      "email": "That email does not look right.",
+      "message": "Write at least a couple of words (10 characters)."
+    },
+    "error": "The message could not be sent. Please try again or write to {{email}}.",
+    "notConfigured": "The form is not active yet. Write to {{email}} in the meantime.",
+    "sent": {
+      "title": "Message sent.",
+      "text": "Thanks for writing. I will get back to you by email.",
+      "again": "Send another message"
+    },
+    "direct": "Or reach me directly",
+    "copy": "Copy email",
+    "copied": "Copied"
+  },
   "pages": {
     "work": {
       "tag": "Work",
@@ -87,7 +116,7 @@
     "contact": {
       "tag": "Contact",
       "title": "Let's talk.",
-      "intro": "Tell me about your data problem. I usually reply within two working days."
+      "intro": "Tell me about your data problem, a project or an opportunity. Use the form or write to me directly."
     },
     "soon": "This section is under construction."
   },

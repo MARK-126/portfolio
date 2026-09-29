@@ -4,7 +4,12 @@ export const site = {
   handle: 'marcosrio',
   links: {
     github: 'https://github.com/MARK-126',
-    linkedin: '',
-    email: '',
+    linkedin: 'https://www.linkedin.com/in/marcos-rio/',
+    email: 'dataengineermarcos@gmail.com',
   },
+  /**
+   * Web3Forms access key for the contact form (https://web3forms.com: enter your email and the key
+   * is sent to you). It is meant to be public. While empty, the form points visitors to the email.
+   */
+  contactFormKey: '3a5ac8f7-f33f-42b4-b1e6-7ca414d4f2bb' as string,
 } as const

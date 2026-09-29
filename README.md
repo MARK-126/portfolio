@@ -39,6 +39,13 @@ src/
 Upload `build/client` to any static host. Unknown URLs should be answered with `404.html`
 (Netlify, Cloudflare Pages, GitHub Pages and Vercel do this by default for static sites).
 
+## Contact form
+
+The form on `/contact` posts directly from the browser to [Web3Forms](https://web3forms.com), which
+emails each message; no backend is needed. The access key lives in `src/config/site.ts`
+(`contactFormKey`) and is public by design. With an empty key the form is disabled and points to
+the email address instead.
+
 ## Content
 
 Notes and projects are Markdown files in `content/`. Adding a file and rebuilding publishes it.

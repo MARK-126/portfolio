@@ -68,6 +68,35 @@
     "previous": "Anterior",
     "next": "Siguiente"
   },
+  "contact": {
+    "topicLabel": "¿Sobre qué es?",
+    "topics": {
+      "project": "Un proyecto",
+      "job": "Una oportunidad laboral",
+      "other": "Otra cosa"
+    },
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "messagePlaceholder": "Unas líneas sobre el contexto, los datos y lo que necesitas.",
+    "send": "Enviar mensaje",
+    "sending": "Enviando…",
+    "errors": {
+      "name": "Dime tu nombre, por favor.",
+      "email": "Ese correo no parece válido.",
+      "message": "Escribe al menos un par de palabras (10 caracteres)."
+    },
+    "error": "No se pudo enviar el mensaje. Intenta de nuevo o escribe a {{email}}.",
+    "notConfigured": "El formulario todavía no está activo. Mientras tanto, escribe a {{email}}.",
+    "sent": {
+      "title": "Mensaje enviado.",
+      "text": "Gracias por escribir. Te respondo por correo.",
+      "again": "Enviar otro mensaje"
+    },
+    "direct": "O escríbeme directamente",
+    "copy": "Copiar correo",
+    "copied": "Copiado"
+  },
   "pages": {
     "work": {
       "tag": "Trabajo",
@@ -87,7 +116,7 @@
     "contact": {
       "tag": "Contacto",
       "title": "Hablemos.",
-      "intro": "Cuéntame tu problema de datos. Suelo responder en dos días hábiles."
+      "intro": "Cuéntame tu problema de datos, un proyecto o una oportunidad. Usa el formulario o escríbeme directamente."
     },
     "soon": "Esta sección está en construcción."
   },

@@ -1,6 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import type { Route } from './+types/contact'
-import { SectionPlaceholder } from '../components/SectionPlaceholder'
+import { PageIntro } from '../components/PageIntro'
+import { ContactForm } from '../components/contact/ContactForm'
+import { ContactChannels } from '../components/contact/ContactChannels'
 import { pageMeta } from '../config/meta'
+import './contact.css'
 
 export const meta: Route.MetaFunction = () =>
   pageMeta({
@@ -9,5 +13,15 @@ export const meta: Route.MetaFunction = () =>
   })
 
 export default function Contact() {
-  return <SectionPlaceholder section="contact" />
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <PageIntro tag={t('pages.contact.tag')} title={t('pages.contact.title')} intro={t('pages.contact.intro')} />
+      <section className="container page-section contact-layout">
+        <ContactForm />
+        <ContactChannels />
+      </section>
+    </>
+  )
 }

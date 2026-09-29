@@ -180,7 +180,9 @@ button {
 .button--link {
   height: auto;
   padding: 4px 0;
+  border-width: 0 0 1px;
   border-bottom: 1px solid var(--faint);
+  background: transparent;
 }
 
 .button--link:hover {
