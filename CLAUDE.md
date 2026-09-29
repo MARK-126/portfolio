@@ -53,8 +53,11 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
   `[01]`). White/grey plus one accent, amber (`--accent`), used sparingly for "the signal": the
   accent words of the headline, the primary action, the end of the particle wave, key figures.
   The hero background is `ParticleField`: white noise converging into an amber wave that splits
-  into static lines, one per consumer of the pipeline (`hero.branches` labels). The headline uses a
-  white-to-amber gradient. Keep the hero uncluttered. Inner pages start with `BackLink` (history
+  into lines of dots flowing to each consumer of the pipeline (`hero.branches` labels, right-aligned
+  to the page grid). Everything reacts to the pointer, and particles fade around the hero's text
+  (measured from the DOM) so it stays readable. The headline uses a white-to-amber gradient with a
+  subtle grey entry and bottom shade; gradient text is padded (with negative margins) so
+  descenders are not clipped at the tight line height. Keep the hero uncluttered. Inner pages start with `BackLink` (history
   back, or the parent section when the visitor landed directly) via `PageIntro`. Respect `prefers-reduced-motion`.
 - The behavior panel (`BehaviorPanel` / `useBehaviorLog`) lives in the "Tu comportamiento como
   dato" project, embedded with `<div data-embed="behavior-panel"></div>` (see
