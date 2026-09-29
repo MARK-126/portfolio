@@ -7,7 +7,7 @@ React 19 + React Router 8 (framework mode, static prerender) + TypeScript + Vite
 
 - **Do not add `Co-Authored-By` or any other AI attribution lines (e.g. `Claude-Session`) to commit
   messages.** Write plain, descriptive commit messages.
-- `main` is deployed by Cloudflare Pages. Work happens on `page/*` branches that are merged into
+- `main` is deployed by Cloudflare Workers (static assets only, `wrangler.jsonc`). Work happens on `page/*` branches that are merged into
   `main` through pull requests.
 
 ## Commands
