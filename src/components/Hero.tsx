@@ -11,7 +11,6 @@ export function Hero() {
       <div className="hero__inner container">
         <p className="hero__status">
           <span className="hero__status-dot" aria-hidden="true" />
-          <span>{t('hero.status')}</span>
           <span className="hero__status-sep" aria-hidden="true">
             │
           </span>
