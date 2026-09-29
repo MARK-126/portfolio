@@ -55,6 +55,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  line-height: 1.51;
 }
 
 .hero__subtitle {
