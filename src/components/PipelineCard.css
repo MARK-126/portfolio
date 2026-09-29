@@ -1,0 +1,109 @@
+.pipeline {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: 0.875rem;
+  overflow: hidden;
+}
+
+.pipeline__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.pipeline__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.pipeline__dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.pipeline__stages {
+  position: relative;
+  margin: 0;
+  padding: 24px 20px;
+  list-style: none;
+  display: grid;
+  gap: 18px;
+}
+
+/* Vertical connector between the nodes */
+.pipeline__stages::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  bottom: 36px;
+  left: 25px;
+  width: 1px;
+  background: linear-gradient(var(--accent), var(--border));
+}
+
+.pipeline__stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px 10px 0;
+  opacity: 0;
+  animation: stage-in 0.5s ease forwards;
+  animation-delay: calc(var(--i) * 0.25s + 0.2s);
+}
+
+.pipeline__node {
+  flex: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--surface);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.pipeline__step {
+  color: var(--muted);
+}
+
+.pipeline__ok {
+  margin-left: auto;
+  color: var(--success);
+}
+
+.pipeline__status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pipeline__stage {
+    opacity: 1;
+  }
+}

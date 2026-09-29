@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# Portfolio — Marcos Rio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio as a Data Engineer. Built with React 19, TypeScript, Vite and plain CSS.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+yarn dev             # local dev server
+yarn build           # type-check + production build
+yarn preview         # serve the production build
+yarn lint            # ESLint
+yarn prettier:write  # format
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Structure
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
 ```
+src/
+  config/site.ts       # name and social links (empty link = hidden)
+  i18n/                # i18next setup + locales/en.json, locales/es.json
+  hooks/useTheme.ts    # dark (default) / light theme, persisted in localStorage
+  components/          # Header, Hero, PipelineCard, Icons (+ their CSS)
+  index.css            # design tokens (colors per theme) and shared styles
+```
+
+## Theming
+
+Colors are CSS custom properties defined in `src/index.css` for `[data-theme='dark']` and
+`[data-theme='light']`. The theme is applied to `<html>` by an inline script in `index.html`
+before first paint, so there is no flash. Dark is always the default.
+
+## Translations
+
+English is the default language. Texts live in `src/i18n/locales/*.json`; to add a language,
+create a new JSON file with the same keys and register it in `src/i18n/index.ts`.

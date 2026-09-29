@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "news": "Noticias",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "label": "Navegación principal"
+  },
+  "hero": {
+    "status": "Disponible para nuevos proyectos",
+    "title": "Ingeniero de Datos",
+    "subtitle": "Diseño y construyo pipelines y plataformas de datos confiables que convierten datos en decisiones.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contactar"
+  },
+  "pipeline": {
+    "label": "Diagrama de pipeline de datos",
+    "ingest": "ingesta",
+    "transform": "transformación",
+    "serve": "consumo",
+    "healthy": "operativo"
+  },
+  "theme": {
+    "toLight": "Cambiar a tema claro",
+    "toDark": "Cambiar a tema oscuro"
+  },
+  "language": {
+    "label": "Cambiar idioma"
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Correo"
+  }
+}
