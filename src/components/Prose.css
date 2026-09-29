@@ -14,19 +14,18 @@
 .prose h3 {
   color: var(--text);
   font-family: var(--display);
-  font-weight: 400;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .prose h2 {
   margin-top: 2.5em;
-  font-size: 2.1rem;
+  font-size: 1.75rem;
 }
 
 .prose h3 {
   margin-top: 2em;
-  font-size: 1.55rem;
+  font-size: 1.3rem;
 }
 
 .prose h2 + *,

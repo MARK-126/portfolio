@@ -37,7 +37,7 @@ src/
 ## Deploying
 
 The site is hosted on **Cloudflare Pages**, connected to this GitHub repository: every push to
-`main` publishes https://www.dataengineermarcos.cloud, and every other branch gets a preview URL.
+`main` publishes https://www.marcosdataengineer.cloud, and every other branch gets a preview URL.
 
 | Setting                | Value          |
 | ---------------------- | -------------- |

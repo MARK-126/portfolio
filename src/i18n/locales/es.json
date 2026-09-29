@@ -9,12 +9,12 @@
   "hero": {
     "disciplines": "Ingeniería de datos",
     "headline1": "Los datos son conducta.",
-    "headline2": "Yo construyo la señal.",
+    "headline2": "Yo construyo",
+    "headline2Accent": "la señal.",
     "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
     "ctaProjects": "Ver proyectos",
     "ctaHire": "Contratarme",
-    "scroll": "scroll",
-    "hint": "Mientras lees, el panel registra cómo usas esta página. Datos reales de comportamiento, en tiempo real — y sin salir de tu navegador."
+    "scroll": "scroll"
   },
   "behavior": {
     "label": "Registro en vivo de tu comportamiento en esta página",

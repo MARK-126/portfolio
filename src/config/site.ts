@@ -2,7 +2,7 @@
 export const site = {
   name: 'Marcos Rio',
   /** Production URL, used for canonical links, social previews and the sitemap. */
-  url: 'https://www.dataengineermarcos.cloud',
+  url: 'https://www.marcosdataengineer.cloud',
   handle: 'marcosrio',
   links: {
     github: 'https://github.com/MARK-126',
