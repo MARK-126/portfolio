@@ -5,28 +5,20 @@ import { site } from '../config/site'
 import { MoonIcon, SunIcon } from './Icons'
 import './Header.css'
 
-const sections = ['news', 'projects', 'contact'] as const
-
-function initials(name: string) {
-  return name
-    .split(' ')
-    .map(part => part[0])
-    .join('')
-}
+const sections = ['work', 'notes', 'lab', 'contact'] as const
 
 export function Header() {
   const { t, i18n } = useTranslation()
   const { theme, toggleTheme } = useTheme()
   const current = i18n.resolvedLanguage
+  const themeLabel = theme === 'dark' ? t('theme.toLight') : t('theme.toDark')
 
   return (
     <header className="header">
       <div className="header__inner container">
-        <a href="#top" className="header__brand" aria-label={site.name}>
-          <span className="header__logo" aria-hidden="true">
-            {initials(site.name)}
-          </span>
-          <span className="header__name">{site.name}</span>
+        <a href="#top" className="header__brand">
+          <span className="header__name">{site.handle}</span>
+          <span className="header__tagline">{t('header.tagline')}</span>
         </a>
 
         <nav className="header__nav" aria-label={t('nav.label')}>
@@ -46,18 +38,18 @@ export function Header() {
                 aria-pressed={current === lng}
                 onClick={() => void i18n.changeLanguage(lng)}
               >
-                {lng.toUpperCase()}
+                {lng}
               </button>
             ))}
           </div>
           <button
             type="button"
-            className="icon-button"
+            className="theme-toggle"
             onClick={toggleTheme}
-            aria-label={theme === 'dark' ? t('theme.toLight') : t('theme.toDark')}
-            title={theme === 'dark' ? t('theme.toLight') : t('theme.toDark')}
+            aria-label={themeLabel}
+            title={themeLabel}
           >
-            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            {theme === 'dark' ? <SunIcon width={15} height={15} /> : <MoonIcon width={15} height={15} />}
           </button>
         </div>
       </div>

@@ -1,23 +1,23 @@
 {
+  "header": {
+    "tagline": "data engineer who reads people too"
+  },
   "nav": {
-    "news": "News",
-    "projects": "Projects",
-    "contact": "Contact",
+    "work": "work",
+    "notes": "notes",
+    "lab": "lab",
+    "contact": "contact",
     "label": "Main navigation"
   },
   "hero": {
-    "status": "Available for new projects",
-    "title": "Data Engineer",
-    "subtitle": "I design and build reliable data pipelines and platforms that turn raw data into decisions.",
-    "ctaProjects": "View projects",
-    "ctaContact": "Get in touch"
-  },
-  "pipeline": {
-    "label": "Data pipeline diagram",
-    "ingest": "ingest",
-    "transform": "transform",
-    "serve": "serve",
-    "healthy": "healthy"
+    "tags": ["Data engineering", "Pipelines", "Data science & AI", "Psychology"],
+    "headline1": "Data is behavior.",
+    "headline2": "I engineer the signal.",
+    "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
+    "ctaWork": "See my work",
+    "ctaHire": "Hire me",
+    "ctaNotes": "Read the notes",
+    "scroll": "scroll"
   },
   "theme": {
     "toLight": "Switch to light theme",

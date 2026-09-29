@@ -19,7 +19,7 @@ src/
   config/site.ts       # name and social links (empty link = hidden)
   i18n/                # i18next setup + locales/en.json, locales/es.json
   hooks/useTheme.ts    # dark (default) / light theme, persisted in localStorage
-  components/          # Header, Hero, PipelineCard, Icons (+ their CSS)
+  components/          # Header, Hero, ParticleField (canvas background), Icons (+ their CSS)
   index.css            # design tokens (colors per theme) and shared styles
 ```
 

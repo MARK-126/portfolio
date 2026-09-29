@@ -1,23 +1,23 @@
 {
+  "header": {
+    "tagline": "ingeniero de datos que también lee personas"
+  },
   "nav": {
-    "news": "Noticias",
-    "projects": "Proyectos",
-    "contact": "Contacto",
+    "work": "trabajo",
+    "notes": "notas",
+    "lab": "lab",
+    "contact": "contacto",
     "label": "Navegación principal"
   },
   "hero": {
-    "status": "Disponible para nuevos proyectos",
-    "title": "Ingeniero de Datos",
-    "subtitle": "Diseño y construyo pipelines y plataformas de datos confiables que convierten datos en decisiones.",
-    "ctaProjects": "Ver proyectos",
-    "ctaContact": "Contactar"
-  },
-  "pipeline": {
-    "label": "Diagrama de pipeline de datos",
-    "ingest": "ingesta",
-    "transform": "transformación",
-    "serve": "consumo",
-    "healthy": "operativo"
+    "tags": ["Ingeniería de datos", "Pipelines", "Ciencia de datos e IA", "Psicología"],
+    "headline1": "Los datos son conducta.",
+    "headline2": "Yo construyo la señal.",
+    "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
+    "ctaWork": "Ver mi trabajo",
+    "ctaHire": "Contratarme",
+    "ctaNotes": "Leer las notas",
+    "scroll": "scroll"
   },
   "theme": {
     "toLight": "Cambiar a tema claro",

@@ -12,34 +12,33 @@
 .header__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   height: 100%;
 }
 
 .header__brand {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
+  align-items: baseline;
+  gap: 14px;
+  margin-right: auto;
+  min-width: 0;
 }
 
-.header__logo {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  border: 1px solid var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent);
-  font: 500 0.8rem var(--mono);
+.header__name {
+  font: 600 0.95rem var(--display);
+  letter-spacing: -0.01em;
+}
+
+.header__tagline {
+  color: var(--faint);
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .header__nav {
   display: flex;
   gap: 28px;
-  font-size: 0.925rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
@@ -54,39 +53,51 @@
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .lang-switch {
   display: flex;
-  padding: 3px;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
 }
 
-.lang-switch button {
-  padding: 4px 8px;
+.lang-switch button,
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  height: 28px;
+  min-width: 30px;
+  padding: 0 7px;
   border: 0;
-  border-radius: 7px;
   background: transparent;
-  color: var(--muted);
-  font: 500 0.75rem var(--mono);
+  color: var(--faint);
+  font: 500 0.7rem var(--mono);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.lang-switch button:hover,
+.theme-toggle:hover {
+  color: var(--text);
 }
 
 .lang-switch button[aria-pressed='true'] {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--text);
+  color: var(--bg);
 }
 
-@media (max-width: 720px) {
-  .header__nav {
+.theme-toggle {
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .header__tagline {
     display: none;
   }
 }
 
-@media (max-width: 420px) {
-  .header__name {
+@media (max-width: 640px) {
+  .header__nav {
     display: none;
   }
 }
