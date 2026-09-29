@@ -34,9 +34,10 @@
     }
   },
   "note": {
-    "article": "Note",
+    "article": "Article",
     "link": "Link",
-    "external": "opens external site"
+    "external": "opens external site",
+    "writtenIn": "Written in {{lang}}"
   },
   "work": {
     "back": "All work",
@@ -47,7 +48,23 @@
     "repo": "Repository",
     "demo": "Live demo",
     "results": "Results",
-    "more": "More projects",
+    "more": "More projects"
+  },
+  "notes": {
+    "back": "All notes",
+    "readingTime_one": "{{count}} min read",
+    "readingTime_other": "{{count}} min read",
+    "tags": "Tags",
+    "more": "More notes",
+    "filter": "Filter notes by type",
+    "filters": {
+      "all": "All",
+      "article": "Articles",
+      "link": "Links"
+    },
+    "emptyFilter": "Nothing here yet for this filter."
+  },
+  "pager": {
     "previous": "Previous",
     "next": "Next"
   },
@@ -92,7 +109,11 @@
     "toDark": "Switch to dark theme"
   },
   "language": {
-    "label": "Change language"
+    "label": "Change language",
+    "names": {
+      "en": "English",
+      "es": "Spanish"
+    }
   },
   "social": {
     "github": "GitHub",

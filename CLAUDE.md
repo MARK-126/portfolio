@@ -42,7 +42,9 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
 ## Conventions
 
 - **Every UI string goes through i18n** and must exist in both `src/i18n/locales/en.json` and
-  `es.json`. English is the default. Content in `content/` is single-language.
+  `es.json`. English is the default UI language. Content in `content/` is single-language, written
+  in Spanish by default (`lang` frontmatter overrides it); mark content elements with `lang` and
+  use `LangBadge` where content language may differ from the UI.
 - Plain CSS, one `.css` file next to each component, BEM-like class names. Colors only through the
   tokens in `src/index.css` (`--bg`, `--text`, `--muted`, `--faint`, `--border`...), never
   hard-coded, so both themes keep working.

@@ -5,7 +5,7 @@ import { getProjects } from '../content/projects.server'
 import { Hero } from '../components/Hero'
 import { EmptyState, HomeSection } from '../components/home/HomeSection'
 import { ProjectList } from '../components/home/ProjectList'
-import { NoteList } from '../components/home/NoteList'
+import { NoteList } from '../components/notes/NoteList'
 import { ContactCta } from '../components/home/ContactCta'
 import { pageMeta } from '../config/meta'
 

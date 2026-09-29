@@ -11,6 +11,16 @@ export type NoteSummary = {
   /** Publication the link points to, e.g. "dbt Labs blog". */
   source?: string
   tags: string[]
+  /** Language the note is written in (BCP 47, e.g. "es"). */
+  lang: string
+}
+
+export type NoteDetail = NoteSummary & {
+  /** Article body rendered from Markdown to HTML at build time. */
+  html: string
+  readingMinutes: number
+  previous?: Pick<NoteSummary, 'slug' | 'title'>
+  next?: Pick<NoteSummary, 'slug' | 'title'>
 }
 
 export type ProjectSection = 'work' | 'lab'

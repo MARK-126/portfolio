@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import type { ProjectDetail } from '../../content/types'
+import { Pager } from '../Pager'
 import '../Prose.css'
 import './CaseStudy.css'
 
@@ -68,24 +69,11 @@ export function CaseStudy({ project }: { project: ProjectDetail }) {
       {/* eslint-disable-next-line react-dom/no-dangerously-set-innerhtml */}
       <div className="case-study__body prose" dangerouslySetInnerHTML={{ __html: project.html }} />
 
-      {(project.previous || project.next) && (
-        <nav className="case-study__pager" aria-label={t('work.more')}>
-          {project.previous ? (
-            <Link to={`/work/${project.previous.slug}`} className="case-study__pager-link">
-              <span className="case-study__pager-label">← {t('work.previous')}</span>
-              <span className="case-study__pager-title">{project.previous.title}</span>
-            </Link>
-          ) : (
-            <span />
-          )}
-          {project.next && (
-            <Link to={`/work/${project.next.slug}`} className="case-study__pager-link case-study__pager-link--next">
-              <span className="case-study__pager-label">{t('work.next')} →</span>
-              <span className="case-study__pager-title">{project.next.title}</span>
-            </Link>
-          )}
-        </nav>
-      )}
+      <Pager
+        label={t('work.more')}
+        previous={project.previous && { to: `/work/${project.previous.slug}`, title: project.previous.title }}
+        next={project.next && { to: `/work/${project.next.slug}`, title: project.next.title }}
+      />
     </article>
   )
 }

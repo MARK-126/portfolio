@@ -1,5 +1,6 @@
 import { data, useLoaderData, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
 import { getProject } from '../content/projects.server'
+import { slugFromRequest } from '../content/slug.server'
 import { CaseStudy } from '../components/work/CaseStudy'
 import { pageMeta } from '../config/meta'
 
@@ -8,10 +9,7 @@ import { pageMeta } from '../config/meta'
 
 // Runs at build time.
 export function loader({ request }: LoaderFunctionArgs) {
-  // Prerendering requests both /work/<slug> (HTML) and /work/<slug>.data (loader data).
-  const path = new URL(request.url).pathname.replace(/\/$/, '').replace(/\.data$/, '')
-  const slug = path.split('/').pop() ?? ''
-  const project = getProject('work', slug)
+  const project = getProject('work', slugFromRequest(request))
   if (!project) throw data('Project not found', { status: 404 })
   return { project }
 }

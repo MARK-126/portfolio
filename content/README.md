@@ -9,21 +9,24 @@ Files with `draft: true` are only visible when running `yarn dev`.
 
 Two types:
 
-- `article` — your own writing. The body is the article.
-- `link` — a summary of someone else's piece, pointing to it with `url` and `source`.
+- `article` — your own writing. The body is the article, published at `/notes/<file-name>`.
+- `link` — your summary of someone else's piece. It links straight to `url`; the body is not published.
 
 ```yaml
 ---
-title: Why every data pipeline needs a contract
+title: Por qué cada pipeline de datos necesita un contrato
 date: 2026-09-20 # yyyy-mm-dd
 type: article # article | link
-summary: One or two sentences shown in lists.
+lang: es # optional, defaults to es; shows a language tag when it differs from the UI language
+summary: One or two sentences shown in lists (for links, your take on the piece).
 url: https://... # link notes only
 source: dbt Labs blog # link notes only
-tags: [data engineering]
+tags: [ingeniería de datos]
 draft: true # optional
 ---
 ```
+
+Notes are grouped by year on `/notes`. Articles show an estimated reading time.
 
 ## Projects (`content/projects/*.md`)
 

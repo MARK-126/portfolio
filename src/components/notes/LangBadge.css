@@ -1,0 +1,12 @@
+.lang-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 1px 5px;
+  border: 1px solid var(--border);
+  color: var(--faint);
+  font: 500 0.62rem var(--mono);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
