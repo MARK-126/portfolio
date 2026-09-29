@@ -106,6 +106,17 @@
   border: 1px solid var(--border);
 }
 
+.prose figure {
+  margin-inline: 0;
+}
+
+.prose figcaption {
+  margin-top: 10px;
+  color: var(--faint);
+  font: 0.75rem/1.5 var(--mono);
+  letter-spacing: 0.04em;
+}
+
 .prose hr {
   border: 0;
   border-top: 1px solid var(--border);

@@ -1,9 +1,12 @@
 # Content
 
 Notes and projects are Markdown files with YAML frontmatter. Add a file, commit, and it
-appears on the site at the next build. The file name becomes the URL slug.
+appears on the site at the next build. The file name becomes the URL slug, so use lowercase words
+joined by hyphens (e.g. `contratos-de-datos.md` → `/notes/contratos-de-datos`).
 
-Files with `draft: true` are only visible when running `yarn dev`.
+Files with `draft: true` are only visible when running `yarn dev`. Restart `yarn dev` after adding
+a new file so its page is registered. Content is in Spanish by default; set `lang: en` on anything
+written in English.
 
 ## Notes (`content/notes/*.md`)
 
@@ -32,22 +35,52 @@ Notes are grouped by year on `/notes`. Articles show an estimated reading time.
 
 ```yaml
 ---
-title: Streaming ingestion for product analytics
+title: Ingesta en streaming para analítica de producto
 date: 2026-08-01
-section: work # work = real projects, lab = experiments
+section: work # work = real projects (/work), lab = experiments (/lab)
 summary: One or two sentences shown in lists.
-role: Data engineer # optional
+status: prototipo # optional, shown on lab cards and pages
+role: Ingeniero de datos # optional
 stack: [Kafka, Spark, dbt]
-highlights: # optional, big figures on the case study page
-  - 15 min → 2 min data freshness
-  - −35% warehouse cost
+highlights: # optional, big figures on the project page
+  - Frescura de 15 min → 2 min
+  - −35% costo del warehouse
 repo: https://github.com/... # optional
 demo: https://... # optional
 featured: true # shown on the home page
+lang: es # optional, defaults to es
 draft: true # optional
 ---
 ```
 
-The body is the case study, written in Markdown (headings, lists, code blocks, tables, images).
-Each `work` project gets its own page at `/work/<file-name>`. See `example-project.md` for a
-suggested structure: Context → Problem → Approach → Results → What I learned.
+The body is the case study. Each project gets its own page at `/work/<file-name>` or
+`/lab/<file-name>`. Suggested structures:
+
+- Work (`example-project.md`): Contexto → Problema → Enfoque → Resultados → Qué aprendí.
+- Lab (`example-experiment.md`): La pregunta → Qué probé → Resultado.
+
+## Writing in Markdown
+
+Headings (`##`), **bold**, _italic_, [links](https://...), lists, `code`, code blocks with
+` ``` `, tables, quotes (`>`) and images are supported.
+
+## Images
+
+1. Save the image under `public/images/`, in a folder per page, e.g.
+   `public/images/notes/contratos-de-datos/diagrama.png`.
+2. Reference it from the Markdown with a path starting at `/images`:
+
+```md
+![What the image shows](/images/notes/contratos-de-datos/diagrama.png)
+```
+
+Add a title in quotes to show a caption below the image (only when the image is alone in its
+paragraph):
+
+```md
+![What the image shows](/images/notes/contratos-de-datos/diagrama.png "Figura 1. Flujo del contrato")
+```
+
+Tips: always write the alt text (it describes the image for screen readers and search engines),
+prefer `.webp` or `.png` under ~300 KB and about 1600 px wide. Images from other sites also work
+with their full URL, but they can disappear if that site changes.

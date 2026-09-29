@@ -10,7 +10,7 @@ export function ProjectIndex({ projects }: { projects: ProjectSummary[] }) {
         <li key={project.slug}>
           <Link to={`/work/${project.slug}`} className="project-row">
             <span className="project-row__index">{String(index + 1).padStart(2, '0')}</span>
-            <span className="project-row__main">
+            <span className="project-row__main" lang={project.lang}>
               <span className="project-row__title">{project.title}</span>
               <span className="project-row__summary">{project.summary}</span>
             </span>

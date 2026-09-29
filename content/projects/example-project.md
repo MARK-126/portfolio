@@ -1,40 +1,41 @@
 ---
-title: Streaming ingestion for product analytics
+title: Ingesta en streaming para analítica de producto
 date: 2026-08-01
 section: work
-summary: Event pipeline from app to warehouse with schema validation and near real-time dashboards.
-role: Data engineer
+summary: Pipeline de eventos desde la app hasta el data warehouse, con validación de esquema y dashboards casi en tiempo real.
+role: Ingeniero de datos
 stack: [Kafka, Spark, dbt, BigQuery]
 highlights:
-  - 15 min → 2 min data freshness
-  - 0 silent schema breaks
-  - −35% warehouse cost
+  - Frescura de 15 min → 2 min
+  - 0 roturas silenciosas de esquema
+  - −35% costo del warehouse
 repo: https://github.com/MARK-126
 featured: true
 draft: true
 ---
 
-> Example case study. Use it as a template: keep the headings, replace the text, remove `draft: true`.
+> Caso de estudio de ejemplo. Úsalo como plantilla: mantén los títulos, reemplaza el texto y quita
+> `draft: true`.
 
-## Context
+## Contexto
 
-Who was the client or team, what did the product do, and why did the data matter? One or two
-short paragraphs.
+¿Para quién era el proyecto, qué hacía el producto y por qué importaban los datos? Uno o dos
+párrafos cortos.
 
-## Problem
+## Problema
 
-What was broken or missing? Be concrete: numbers, symptoms, who was affected.
+¿Qué estaba roto o faltaba? Sé concreto: números, síntomas, a quién afectaba.
 
-- Dashboards refreshed once a day, too late for the growth team.
-- Schema changes in the app broke downstream models without warning.
+- Los dashboards se actualizaban una vez por día, demasiado tarde para el equipo de growth.
+- Los cambios de esquema en la app rompían los modelos sin aviso.
 
-## Approach
+## Enfoque
 
-How you designed the solution and **why** — the trade-offs you considered.
+Cómo diseñaste la solución y **por qué**: las alternativas que evaluaste.
 
-1. Events validated against a schema registry at ingestion.
-2. Spark Structured Streaming into partitioned tables.
-3. dbt models with tests on freshness and volume.
+1. Eventos validados contra un schema registry en la ingesta.
+2. Spark Structured Streaming hacia tablas particionadas.
+3. Modelos dbt con tests de frescura y volumen.
 
 ```sql
 select event_name, count(*) as events
@@ -43,10 +44,10 @@ where event_date = current_date()
 group by 1
 ```
 
-## Results
+## Resultados
 
-What changed after it shipped. Mirror the `highlights` above with some context.
+Qué cambió después de ponerlo en producción. Retoma los `highlights` con contexto.
 
-## What I learned
+## Qué aprendí
 
-One honest paragraph: what you would do differently next time.
+Un párrafo honesto: qué harías distinto la próxima vez.

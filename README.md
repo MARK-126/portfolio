@@ -24,7 +24,7 @@ yarn prettier:write  # format
 content/               # Markdown notes and projects (see content/README.md)
 src/
   root.tsx             # HTML layout, header/footer, theme script, error page
-  routes.ts            # route table: /, /work, /work/<project>, /notes, /notes/<article>, /lab, /contact, 404
+  routes.ts            # route table: /, /work(/<project>), /notes(/<article>), /lab(/<experiment>), /contact, 404
   routes/              # one module per route (meta, loader, component)
   content/             # build-time Markdown loaders (*.server.ts never reach the browser)
   components/          # Header, Footer, Hero, ParticleField, PageIntro, Pager, home/, work/, notes/
@@ -48,8 +48,9 @@ the email address instead.
 
 ## Content
 
-Notes and projects are Markdown files in `content/`. Adding a file and rebuilding publishes it.
-See [`content/README.md`](content/README.md) for the frontmatter format.
+Notes and projects are Markdown files in `content/`, images go in `public/images/`. Adding a file
+and rebuilding publishes it. See [`content/README.md`](content/README.md) for the frontmatter
+format, Markdown features and how to add images.
 
 ## Theming
 

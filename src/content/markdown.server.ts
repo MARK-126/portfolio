@@ -1,5 +1,8 @@
-import { marked } from 'marked'
+import { Marked } from 'marked'
 import { parse } from 'yaml'
+
+/** Content is written in Spanish unless its frontmatter sets `lang`. */
+export const DEFAULT_CONTENT_LANG = 'es'
 
 export type MarkdownFile = {
   slug: string
@@ -17,9 +20,32 @@ export function parseMarkdown(path: string, raw: string): MarkdownFile {
   return { slug, data: (parse(match[1]) ?? {}) as Record<string, unknown>, body: match[2] }
 }
 
+const escapeAttr = (value: string) =>
+  value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+const imageTag = (href: string, alt: string) =>
+  `<img src="${escapeAttr(href)}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async">`
+
+const markdown = new Marked({
+  gfm: true,
+  renderer: {
+    // Images load lazily so long pages stay fast
+    image({ href, text }) {
+      return imageTag(href, text)
+    },
+    // An image alone in its paragraph with a title becomes a figure with caption:
+    // ![Alt text](/images/notes/diagram.png "Caption shown below the image")
+    paragraph({ tokens }) {
+      const [token] = tokens
+      if (tokens.length !== 1 || token.type !== 'image' || !token.title) return false
+      return `<figure>${imageTag(token.href, token.text)}<figcaption>${escapeAttr(token.title)}</figcaption></figure>\n`
+    },
+  },
+})
+
 /** Renders trusted, repo-owned Markdown to HTML (build time only). */
 export function renderMarkdown(body: string): string {
-  return marked.parse(body, { async: false, gfm: true })
+  return markdown.parse(body, { async: false })
 }
 
 export function asString(value: unknown, fallback = ''): string {

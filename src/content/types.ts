@@ -39,6 +39,10 @@ export type ProjectSummary = {
   highlights: string[]
   repo?: string
   demo?: string
+  /** Free text for experiments, e.g. "prototype", "in progress", "archived". */
+  status?: string
+  /** Language the project is written in (BCP 47, e.g. "es"). */
+  lang: string
 }
 
 export type ProjectDetail = ProjectSummary & {

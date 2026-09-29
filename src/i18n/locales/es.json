@@ -48,7 +48,13 @@
     "repo": "Repositorio",
     "demo": "Demo en vivo",
     "results": "Resultados",
-    "more": "Más proyectos"
+    "more": "Más proyectos",
+    "status": "Estado"
+  },
+  "lab": {
+    "back": "Todos los experimentos",
+    "more": "Más experimentos",
+    "empty": "Experimentos en camino: pruebas pequeñas con datos, IA y todo lo que valga la pena intentar."
   },
   "notes": {
     "back": "Todas las notas",
@@ -117,8 +123,7 @@
       "tag": "Contacto",
       "title": "Hablemos.",
       "intro": "Cuéntame tu problema de datos, un proyecto o una oportunidad. Usa el formulario o escríbeme directamente."
-    },
-    "soon": "Esta sección está en construcción."
+    }
   },
   "notFound": {
     "title": "Aquí no hay nada.",

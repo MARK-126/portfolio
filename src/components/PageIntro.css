@@ -26,19 +26,6 @@
   margin-top: 48px;
 }
 
-.page-intro__soon {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 48px;
-  padding: 10px 16px;
-  border: 1px dashed var(--border);
-  color: var(--faint);
-  font: 0.72rem var(--mono);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 @media (max-width: 640px) {
   .page-intro {
     padding-block: 80px 64px;

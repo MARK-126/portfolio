@@ -25,9 +25,20 @@
   background: var(--surface);
 }
 
-.project-card__index {
+.project-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
   color: var(--faint);
   font: 0.72rem var(--mono);
+}
+
+.project-card__status {
+  padding: 2px 8px;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .project-card__title {

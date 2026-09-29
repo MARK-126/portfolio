@@ -1,5 +1,6 @@
 import type { ProjectDetail, ProjectSection, ProjectSummary } from './types'
 import {
+  DEFAULT_CONTENT_LANG,
   asString,
   asStringArray,
   byDateDesc,
@@ -25,6 +26,8 @@ function toSummary({ slug, data }: MarkdownFile): ProjectSummary {
     highlights: asStringArray(data.highlights),
     repo: asString(data.repo) || undefined,
     demo: asString(data.demo) || undefined,
+    status: asString(data.status) || undefined,
+    lang: asString(data.lang) || DEFAULT_CONTENT_LANG,
   }
 }
 
