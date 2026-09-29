@@ -8,13 +8,13 @@ export type Language = (typeof languages)[number]
 
 export const LANGUAGE_STORAGE_KEY = 'lang'
 
-// Pages are prerendered in English. A language the visitor picked is restored
+// Pages are prerendered in Spanish. A language the visitor picked is restored
 // after hydration (see useSavedLanguage), so server and client HTML match.
 i18n.use(initReactI18next).init({
   resources: { en: { translation: en }, es: { translation: es } },
-  lng: 'en',
+  lng: 'es',
   supportedLngs: languages,
-  fallbackLng: 'en',
+  fallbackLng: 'es',
   interpolation: { escapeValue: false },
 })
 

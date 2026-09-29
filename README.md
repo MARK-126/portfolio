@@ -60,6 +60,7 @@ before first paint, so there is no flash. Dark is always the default.
 
 ## Translations
 
-English is the default language and the one pages are prerendered in; a language chosen by the
-visitor is restored after load. Texts live in `src/i18n/locales/*.json`; to add a language, create
-a new JSON file with the same keys and register it in `src/i18n/index.ts`.
+Spanish is the default language and the one pages are prerendered in; English is available from
+the language switch and a visitor's choice is restored after load. Texts live in
+`src/i18n/locales/*.json`; to add a language, create a new JSON file with the same keys and
+register it in `src/i18n/index.ts`.

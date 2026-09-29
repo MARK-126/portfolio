@@ -22,7 +22,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
         type: 'article',
         publishedTime: loaderData.article.date,
       })
-    : pageMeta({ title: 'Not found', description: 'This note does not exist.' })
+    : pageMeta({ title: 'No encontrada', description: 'Esta nota no existe.' })
 
 export default function NoteArticle() {
   const { article } = useLoaderData<typeof loader>()

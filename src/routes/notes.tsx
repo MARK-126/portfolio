@@ -8,8 +8,8 @@ import { pageMeta } from '../config/meta'
 
 export const meta: Route.MetaFunction = () =>
   pageMeta({
-    title: 'Notes',
-    description: 'Writing and curated reads on data engineering, AI and the human side of data.',
+    title: 'Notas',
+    description: 'Textos propios y lecturas seleccionadas sobre ingeniería de datos, IA y el lado humano de los datos.',
   })
 
 // Runs at build time.

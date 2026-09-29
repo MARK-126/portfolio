@@ -8,8 +8,8 @@ import './contact.css'
 
 export const meta: Route.MetaFunction = () =>
   pageMeta({
-    title: 'Contact',
-    description: 'Get in touch with Marcos Rio about data engineering, analytics or AI projects.',
+    title: 'Contacto',
+    description: 'Escríbele a Marcos Rio sobre proyectos de ingeniería de datos, analítica o IA.',
   })
 
 export default function Contact() {

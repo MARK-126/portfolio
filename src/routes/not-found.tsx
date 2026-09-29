@@ -5,7 +5,7 @@ import { PageIntro } from '../components/PageIntro'
 import { pageMeta } from '../config/meta'
 
 export const meta: Route.MetaFunction = () => [
-  ...pageMeta({ title: 'Not found', description: 'This page does not exist.' }),
+  ...pageMeta({ title: 'No encontrada', description: 'Esta página no existe.' }),
   { name: 'robots', content: 'noindex' },
 ]
 

@@ -11,7 +11,7 @@ type PageMetaOptions = {
 
 /** Title, description and social preview tags for a route's `meta` export. */
 export function pageMeta({ title, description, type = 'website', publishedTime }: PageMetaOptions) {
-  const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · Data Engineer`
+  const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · Ingeniero de datos`
 
   return [
     { title: fullTitle },

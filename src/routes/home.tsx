@@ -12,7 +12,7 @@ import { pageMeta } from '../config/meta'
 export const meta: Route.MetaFunction = () =>
   pageMeta({
     description:
-      'Marcos Rio — Data Engineer with a background in psychology. Data pipelines, analytics and AI, built for the people behind the data.',
+      'Marcos Rio — ingeniero de datos con formación en psicología. Pipelines, analítica e IA pensados para las personas detrás de los datos.',
   })
 
 // Runs at build time; the page ships with the data already rendered.
