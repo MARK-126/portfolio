@@ -141,6 +141,20 @@ button {
   padding-inline: var(--gutter);
 }
 
+/* Large monitors (22" and up, ~1920px wide): use more of the screen, text keeps its reading width */
+@media (min-width: 1600px) {
+  :root {
+    --container: 1440px;
+    --gutter: 64px;
+  }
+}
+
+@media (min-width: 2400px) {
+  :root {
+    --container: 1680px;
+  }
+}
+
 @media (max-width: 900px) {
   :root {
     --gutter: 24px;
