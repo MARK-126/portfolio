@@ -9,6 +9,8 @@
   --faint: #6e6e73;
   --accent: #f5b041;
   --accent-rgb: 245, 176, 65;
+  --accent-2: #ffd98a;
+  --headline-warm: #f3d2a0;
   --particle-rgb: 235, 235, 240;
   --accent-soft: rgba(245, 176, 65, 0.12);
   --accent-contrast: #1a1204;
@@ -25,6 +27,8 @@
   --faint: #76767c;
   --accent: #a4570b;
   --accent-rgb: 164, 87, 11;
+  --accent-2: #c97a1a;
+  --headline-warm: #6b3f14;
   --particle-rgb: 20, 20, 24;
   --accent-soft: rgba(164, 87, 11, 0.1);
   --accent-contrast: #ffffff;

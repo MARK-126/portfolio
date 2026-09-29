@@ -41,9 +41,20 @@
   letter-spacing: -0.035em;
 }
 
+/* Like the particles: white on the left, warming up to amber on the right */
+.hero__headline > span {
+  background: linear-gradient(100deg, var(--text) 35%, var(--headline-warm) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* The signal */
 .hero__headline-accent {
-  color: var(--accent);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero__subtitle {

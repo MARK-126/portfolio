@@ -6,20 +6,6 @@
   max-width: 48rem;
 }
 
-.article__back {
-  display: inline-flex;
-  gap: 8px;
-  color: var(--faint);
-  font: 500 0.72rem var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: color 0.2s ease;
-}
-
-.article__back:hover {
-  color: var(--text);
-}
-
 .article__meta {
   display: flex;
   flex-wrap: wrap;

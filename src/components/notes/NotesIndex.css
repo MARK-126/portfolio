@@ -4,7 +4,7 @@
 
 .notes-year__title {
   margin-bottom: 16px;
-  color: var(--faint);
+  color: var(--accent);
   font: 500 0.75rem var(--mono);
   letter-spacing: 0.16em;
 }

@@ -1,0 +1,23 @@
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  font: 500 0.72rem var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+.back-link__arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.back-link:hover .back-link__arrow {
+  transform: translateX(-4px);
+}
