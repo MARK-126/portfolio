@@ -1,7 +1,4 @@
 {
-  "header": {
-    "tagline": "ingeniero de datos que también lee personas"
-  },
   "nav": {
     "work": "Trabajo",
     "notes": "Notas",
@@ -11,13 +8,12 @@
     "footerLabel": "Navegación del pie de página"
   },
   "hero": {
-    "tags": ["Ingeniería de datos", "Pipelines", "Ciencia de datos e IA", "Psicología"],
+    "tags": ["Ingeniería de datos", "Ciencia de datos e IA", "Psicología"],
     "headline1": "Los datos son conducta.",
     "headline2": "Yo construyo la señal.",
     "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
     "ctaWork": "Ver mi trabajo",
     "ctaHire": "Contratarme",
-    "ctaNotes": "Leer las notas",
     "scroll": "scroll"
   },
   "home": {

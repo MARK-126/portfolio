@@ -4,9 +4,19 @@
   flex-direction: column;
   justify-content: center;
   min-height: calc(100svh - var(--header-h));
-  padding-block: 96px 64px;
+  padding-block: 64px 120px;
   overflow: hidden;
   isolation: isolate;
+}
+
+/* Soft glow behind the particle field: gives the negative space some depth */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(ellipse 55% 60% at 75% 50%, var(--hero-glow), transparent 70%);
+  pointer-events: none;
 }
 
 .hero__inner {
@@ -64,27 +74,32 @@
   margin-top: 40px;
 }
 
-.hero__cta .button--link {
-  margin-left: 12px;
-}
-
-.hero__footer {
+/* Centered scroll cue: label above a vertical line with a moving segment */
+.hero__scroll {
   position: absolute;
-  inset-inline: 0;
-  bottom: 24px;
+  bottom: 28px;
+  left: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  padding: 8px;
+  transform: translateX(-50%);
   color: var(--faint);
   font: 0.65rem var(--mono);
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.hero__scroll:hover {
+  color: var(--text);
 }
 
 .hero__scroll-line {
   position: relative;
-  width: 64px;
-  height: 1px;
+  width: 1px;
+  height: 48px;
   background: var(--border);
   overflow: hidden;
 }
@@ -93,26 +108,28 @@
   content: '';
   position: absolute;
   inset: 0;
-  width: 40%;
+  height: 40%;
   background: var(--text);
   animation: scan 2.4s ease-in-out infinite;
 }
 
 @keyframes scan {
   from {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
   to {
-    transform: translateX(250%);
+    transform: translateY(250%);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero::before {
+    background: radial-gradient(ellipse 90% 45% at 60% 85%, var(--hero-glow), transparent 70%);
   }
 }
 
 @media (max-width: 640px) {
   .hero {
-    padding-block: 72px 80px;
-  }
-
-  .hero__cta .button--link {
-    margin-left: 0;
+    padding-block: 64px 128px;
   }
 }
