@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import type { ProjectDetail } from '../../content/types'
 import { Pager } from '../Pager'
-import '../Prose.css'
+import { ProjectBody } from './ProjectBody'
 import './CaseStudy.css'
 
 export function CaseStudy({ project }: { project: ProjectDetail }) {
@@ -80,9 +80,7 @@ export function CaseStudy({ project }: { project: ProjectDetail }) {
         </section>
       )}
 
-      {/* Body is rendered at build time from Markdown files in this repo (trusted content). */}
-      {/* eslint-disable-next-line react-dom/no-dangerously-set-innerhtml */}
-      <div className="case-study__body prose" lang={project.lang} dangerouslySetInnerHTML={{ __html: project.html }} />
+      <ProjectBody html={project.html} lang={project.lang} />
 
       <Pager
         label={t('projects.more')}

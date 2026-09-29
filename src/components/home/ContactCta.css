@@ -8,8 +8,8 @@
 
 .contact-cta__title {
   max-width: 16ch;
-  font: 400 clamp(2.6rem, 6.5vw, 5.25rem) / 0.98 var(--display);
-  letter-spacing: -0.01em;
+  font: 700 clamp(2.2rem, 5.5vw, 4.5rem) / 1 var(--display);
+  letter-spacing: -0.035em;
 }
 
 .contact-cta__text {

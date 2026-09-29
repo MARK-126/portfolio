@@ -4,72 +4,53 @@
   flex-direction: column;
   justify-content: center;
   min-height: calc(100svh - var(--header-h));
-  padding-block: 72px 128px;
+  padding-block: 64px 128px;
   overflow: hidden;
   isolation: isolate;
 }
 
-/* Faint dataset grid, fading out towards the edges */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 100% 56px,
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 56px 100%;
-  mask-image: radial-gradient(ellipse 70% 70% at 60% 45%, #000 30%, transparent 80%);
-  pointer-events: none;
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero__status {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 8px 12px;
+  gap: 12px;
   color: var(--muted);
   font: 0.75rem var(--mono);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .hero__status-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft);
-}
-
-.hero__status-sep {
-  color: var(--faint);
 }
 
 .hero__headline {
   display: flex;
   flex-direction: column;
+  max-width: 16ch;
   margin-top: 28px;
-  font: 400 clamp(3rem, 8.4vw, 7.5rem) / 0.95 var(--display);
-  letter-spacing: -0.015em;
+  font: 700 clamp(2.6rem, 7.2vw, 5.75rem) / 0.98 var(--display);
+  letter-spacing: -0.035em;
 }
 
-/* The signal: italic and amber */
+/* The signal */
 .hero__headline-accent {
   color: var(--accent);
-  font-style: italic;
-}
-
-.hero__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 56px;
-  align-items: start;
-  margin-top: 56px;
 }
 
 .hero__subtitle {
-  max-width: 32rem;
+  max-width: 34rem;
+  margin-top: 32px;
   color: var(--muted);
-  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
   line-height: 1.65;
 }
 
@@ -77,16 +58,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 32px;
-}
-
-.hero__hint {
-  max-width: 30rem;
-  margin-top: 32px;
-  padding-left: 14px;
-  border-left: 1px solid var(--accent);
-  color: var(--faint);
-  font: 0.75rem/1.6 var(--mono);
+  margin-top: 40px;
 }
 
 /* Centered scroll cue: label above a vertical line with a moving segment */
@@ -108,7 +80,7 @@
 }
 
 .hero__scroll:hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
 .hero__scroll-line {
@@ -124,7 +96,7 @@
   position: absolute;
   inset: 0;
   height: 40%;
-  background: var(--accent);
+  background: var(--text);
   animation: scan 2.4s ease-in-out infinite;
 }
 
@@ -137,19 +109,8 @@
   }
 }
 
-@media (max-width: 960px) {
-  .hero__grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
 @media (max-width: 640px) {
   .hero {
-    padding-block: 48px 120px;
-  }
-
-  .hero__grid {
-    margin-top: 36px;
+    padding-block: 64px 128px;
   }
 }

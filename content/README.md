@@ -62,6 +62,16 @@ Suggested structures:
 To add another type later (e.g. `professional`), add it to `projectTypes` in `src/content/types.ts`
 and its labels in the locale files.
 
+## Interactive embeds
+
+A project body can include an interactive component by writing this on its own line:
+
+```md
+<div data-embed="behavior-panel"></div>
+```
+
+Available embeds are registered in `src/components/projects/ProjectBody.tsx`.
+
 ## Writing in Markdown
 
 Headings (`##`), **bold**, _italic_, [links](https://...), lists, `code`, code blocks with

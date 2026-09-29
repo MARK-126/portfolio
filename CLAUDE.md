@@ -7,9 +7,8 @@ React 19 + React Router 8 (framework mode, static prerender) + TypeScript + Vite
 
 - **Do not add `Co-Authored-By` or any other AI attribution lines (e.g. `Claude-Session`) to commit
   messages.** Write plain, descriptive commit messages.
-- Branches: `page/main` holds the shared layout and home page; each section is built in its own
-  branch created from the previous one: `page/work` → `page/notes` → `page/contact` → `page/lab` →
-  `page/projects` (work and lab merged into /projects).
+- `main` is deployed by Cloudflare Pages. Work happens on `page/*` branches that are merged into
+  `main` through pull requests.
 
 ## Commands
 
@@ -49,11 +48,14 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
 - Plain CSS, one `.css` file next to each component, BEM-like class names. Colors only through the
   tokens in `src/index.css` (`--bg`, `--text`, `--muted`, `--faint`, `--border`...), never
   hard-coded, so both themes keep working.
-- Visual style: dark editorial "the site as a dataset". Headlines in the serif `--display`
-  (Instrument Serif, regular weight, italic for emphasis), uppercase mono labels (`--mono`), thin
-  borders, notebook-style indices (`.cell-index`, e.g. `[01]`). One accent color, amber
-  (`--accent`), used sparingly for "the signal": primary action, live data, key figures, focus.
-  Respect `prefers-reduced-motion`.
-- The hero's behavior panel (`useBehaviorLog`) only records interactions in memory in the
+- Visual style: minimal, dark, editorial. Big tight grotesk headlines (`--display`, Inter Tight),
+  uppercase mono labels (`--mono`), thin borders, notebook-style indices (`.cell-index`, e.g.
+  `[01]`). White/grey plus one accent, amber (`--accent`), used sparingly for "the signal": the
+  accent words of the headline, the primary action, the end of the particle wave, key figures.
+  The hero background is `ParticleField`: white noise converging into an amber wave. Keep the hero
+  uncluttered. Respect `prefers-reduced-motion`.
+- The behavior panel (`BehaviorPanel` / `useBehaviorLog`) lives in the "Tu comportamiento como
+  dato" project, embedded with `<div data-embed="behavior-panel"></div>` (see
+  `src/components/projects/ProjectBody.tsx`). It only records interactions in memory in the
   browser; never send or store them.
 - Prettier: no semicolons, single quotes, 120 columns.

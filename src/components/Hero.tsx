@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
-import { BehaviorPanel } from './BehaviorPanel'
+import { ParticleField } from './ParticleField'
 import './Hero.css'
 
 export function Hero() {
@@ -8,35 +8,30 @@ export function Hero() {
 
   return (
     <section className="hero">
+      <ParticleField />
+
       <div className="hero__inner container">
         <p className="hero__status">
           <span className="hero__status-dot" aria-hidden="true" />
-          <span className="hero__status-sep" aria-hidden="true">
-            │
-          </span>
           <span>{t('hero.disciplines')}</span>
         </p>
 
         <h1 className="hero__headline">
           <span>{t('hero.headline1')}</span>
-          <em className="hero__headline-accent">{t('hero.headline2')}</em>
+          <span>
+            {t('hero.headline2')} <span className="hero__headline-accent">{t('hero.headline2Accent')}</span>
+          </span>
         </h1>
 
-        <div className="hero__grid">
-          <div className="hero__copy">
-            <p className="hero__subtitle">{t('hero.subtitle')}</p>
-            <div className="hero__cta">
-              <Link to="/projects" className="button button--solid" data-track="cta_proyectos">
-                {t('hero.ctaProjects')} <span aria-hidden="true">→</span>
-              </Link>
-              <Link to="/contact" className="button button--outline" data-track="cta_contratar">
-                {t('hero.ctaHire')}
-              </Link>
-            </div>
-            <p className="hero__hint">{t('hero.hint')}</p>
-          </div>
+        <p className="hero__subtitle">{t('hero.subtitle')}</p>
 
-          <BehaviorPanel />
+        <div className="hero__cta">
+          <Link to="/projects" className="button button--solid">
+            {t('hero.ctaProjects')} <span aria-hidden="true">→</span>
+          </Link>
+          <Link to="/contact" className="button button--outline">
+            {t('hero.ctaHire')}
+          </Link>
         </div>
       </div>
 

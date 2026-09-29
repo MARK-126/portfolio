@@ -19,8 +19,8 @@
 .case-study__title {
   max-width: 18ch;
   margin-top: 40px;
-  font: 400 clamp(2.8rem, 7.5vw, 5.75rem) / 0.98 var(--display);
-  letter-spacing: -0.01em;
+  font: 700 clamp(2.4rem, 6.5vw, 5rem) / 1 var(--display);
+  letter-spacing: -0.035em;
 }
 
 .case-study__summary {
@@ -80,8 +80,8 @@
   padding: 28px;
   background: var(--bg);
   color: var(--accent);
-  font: 400 clamp(1.5rem, 2.6vw, 1.9rem) / 1.15 var(--display);
-  letter-spacing: -0.01em;
+  font: 700 clamp(1.25rem, 2.2vw, 1.6rem) / 1.2 var(--display);
+  letter-spacing: -0.02em;
 }
 
 .case-study__body {

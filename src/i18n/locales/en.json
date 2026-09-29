@@ -7,15 +7,14 @@
     "footerLabel": "Footer navigation"
   },
   "hero": {
-    "status": "Available for projects",
-    "disciplines": "Data engineering × Psychology",
+    "disciplines": "Data engineering",
     "headline1": "Data is behavior.",
-    "headline2": "I engineer the signal.",
+    "headline2": "I engineer",
+    "headline2Accent": "the signal.",
     "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
     "ctaProjects": "See projects",
     "ctaHire": "Hire me",
-    "scroll": "scroll",
-    "hint": "While you read, the panel records how you use this page. Real behavioral data, in real time — and it never leaves your browser."
+    "scroll": "scroll"
   },
   "behavior": {
     "label": "Live log of your behavior on this page",
