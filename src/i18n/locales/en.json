@@ -3,10 +3,10 @@
     "tagline": "data engineer who reads people too"
   },
   "nav": {
-    "work": "work",
-    "notes": "notes",
-    "lab": "lab",
-    "contact": "contact",
+    "work": "Work",
+    "notes": "Notes",
+    "lab": "Lab",
+    "contact": "Contact",
     "label": "Main navigation"
   },
   "hero": {
