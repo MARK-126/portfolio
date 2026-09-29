@@ -6,8 +6,9 @@ import { EmptyState } from '../components/home/HomeSection'
 import { NotesIndex } from '../components/notes/NotesIndex'
 import { pageMeta } from '../config/meta'
 
-export const meta: Route.MetaFunction = () =>
+export const meta: Route.MetaFunction = ({ location }) =>
   pageMeta({
+    path: location.pathname,
     title: 'Notas',
     description: 'Textos propios y lecturas seleccionadas sobre ingeniería de datos, IA y el lado humano de los datos.',
   })

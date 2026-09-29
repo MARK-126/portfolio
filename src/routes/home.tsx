@@ -10,8 +10,9 @@ import { ContactCta } from '../components/home/ContactCta'
 import { Approach } from '../components/home/Approach'
 import { pageMeta } from '../config/meta'
 
-export const meta: Route.MetaFunction = () =>
+export const meta: Route.MetaFunction = ({ location }) =>
   pageMeta({
+    path: location.pathname,
     description:
       'Marcos Rio — ingeniero de datos con formación en psicología. Pipelines, analítica e IA pensados para las personas detrás de los datos.',
   })

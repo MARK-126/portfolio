@@ -6,8 +6,9 @@ import { EmptyState } from '../components/home/HomeSection'
 import { ProjectsIndex } from '../components/projects/ProjectsIndex'
 import { pageMeta } from '../config/meta'
 
-export const meta: Route.MetaFunction = () =>
+export const meta: Route.MetaFunction = ({ location }) =>
   pageMeta({
+    path: location.pathname,
     title: 'Proyectos',
     description: 'Proyectos y experimentos de ingeniería de datos, ciencia de datos e IA de Marcos Rio.',
   })

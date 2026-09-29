@@ -36,8 +36,19 @@ src/
 
 ## Deploying
 
-Upload `build/client` to any static host. Unknown URLs should be answered with `404.html`
-(Netlify, Cloudflare Pages, GitHub Pages and Vercel do this by default for static sites).
+The site is hosted on **Cloudflare Pages**, connected to this GitHub repository: every push to
+`main` publishes https://www.dataengineermarcos.cloud, and every other branch gets a preview URL.
+
+| Setting                | Value          |
+| ---------------------- | -------------- |
+| Production branch      | `main`         |
+| Build command          | `yarn build`   |
+| Build output directory | `build/client` |
+| Node version           | `.node-version` (22) |
+
+The build also writes `404.html` (served by Cloudflare Pages for unknown URLs), `sitemap.xml` and
+`robots.txt`. The production URL lives in `src/config/site.ts` (`url`) and is used for canonical
+links, social previews (`public/og.png`) and the sitemap.
 
 ## Contact form
 

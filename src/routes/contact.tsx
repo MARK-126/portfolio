@@ -6,8 +6,9 @@ import { ContactChannels } from '../components/contact/ContactChannels'
 import { pageMeta } from '../config/meta'
 import './contact.css'
 
-export const meta: Route.MetaFunction = () =>
+export const meta: Route.MetaFunction = ({ location }) =>
   pageMeta({
+    path: location.pathname,
     title: 'Contacto',
     description: 'Escríbele a Marcos Rio sobre proyectos de ingeniería de datos, analítica o IA.',
   })

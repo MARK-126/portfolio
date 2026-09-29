@@ -14,9 +14,10 @@ export function loader({ request }: LoaderFunctionArgs) {
   return { article }
 }
 
-export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
+export const meta: MetaFunction<typeof loader> = ({ loaderData, location }) =>
   loaderData
     ? pageMeta({
+        path: location.pathname,
         title: loaderData.article.title,
         description: loaderData.article.summary,
         type: 'article',

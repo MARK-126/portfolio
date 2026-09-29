@@ -14,9 +14,9 @@ export function loader({ request }: LoaderFunctionArgs) {
   return { project }
 }
 
-export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
+export const meta: MetaFunction<typeof loader> = ({ loaderData, location }) =>
   loaderData
-    ? pageMeta({ title: loaderData.project.title, description: loaderData.project.summary })
+    ? pageMeta({ path: location.pathname, title: loaderData.project.title, description: loaderData.project.summary })
     : pageMeta({ title: 'No encontrado', description: 'Este proyecto no existe.' })
 
 export default function Project() {

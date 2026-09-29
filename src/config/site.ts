@@ -1,6 +1,8 @@
 // Personal data and links shown on the site. Leave a link empty to hide it.
 export const site = {
   name: 'Marcos Rio',
+  /** Production URL, used for canonical links, social previews and the sitemap. */
+  url: 'https://www.dataengineermarcos.cloud',
   handle: 'marcosrio',
   links: {
     github: 'https://github.com/MARK-126',
