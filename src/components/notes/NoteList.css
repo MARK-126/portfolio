@@ -1,0 +1,77 @@
+.note-list {
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.note-row {
+  display: grid;
+  grid-template-columns: 112px 72px 1fr auto;
+  align-items: baseline;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.note-row:hover {
+  background: var(--surface);
+}
+
+.note-row__date,
+.note-row__type,
+.note-row__meta {
+  color: var(--faint);
+  font: 0.72rem var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.note-row__date {
+  white-space: nowrap;
+}
+
+.note-row__type {
+  color: var(--muted);
+}
+
+.note-row__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.note-row__title {
+  font: 400 1.4rem / 1.2 var(--display);
+  letter-spacing: -0.01em;
+}
+
+.note-row__summary {
+  max-width: 44rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.note-row__meta {
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.note-row:hover .note-row__meta {
+  color: var(--text);
+}
+
+@media (max-width: 720px) {
+  .note-row {
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+  }
+
+  .note-row__body {
+    grid-column: 1 / -1;
+  }
+
+  .note-row__meta {
+    display: none;
+  }
+}

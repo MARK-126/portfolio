@@ -1,0 +1,200 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "notes": "Notes",
+    "contact": "Contact",
+    "label": "Main navigation",
+    "footerLabel": "Footer navigation"
+  },
+  "hero": {
+    "status": "Available for projects",
+    "disciplines": "Data engineering × Psychology",
+    "headline1": "Data is behavior.",
+    "headline2": "I engineer the signal.",
+    "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
+    "ctaProjects": "See projects",
+    "ctaHire": "Hire me",
+    "scroll": "scroll",
+    "hint": "While you read, the panel records how you use this page. Real behavioral data, in real time — and it never leaves your browser."
+  },
+  "behavior": {
+    "label": "Live log of your behavior on this page",
+    "file": "current_session.log",
+    "live": "live",
+    "waiting": "waiting for activity…",
+    "stats": {
+      "time": "time",
+      "cursor": "cursor",
+      "scroll": "scroll",
+      "events": "events"
+    },
+    "profile": "profile:",
+    "profiles": {
+      "newcomer": "newcomer",
+      "decisive": "decisive",
+      "explorer": "curious explorer",
+      "reader": "methodical reader",
+      "observer": "thoughtful observer"
+    },
+    "confidence": "confidence {{value}}% (n={{n}}, do not publish this in a paper)",
+    "privacy": "Everything happens in your browser. Nothing is stored or sent."
+  },
+  "home": {
+    "approach": {
+      "title": "Approach",
+      "intro": "I studied psychology before working with data, and it shows in how I treat it: behind every row there is a person making a decision.",
+      "items": {
+        "behavior": {
+          "title": "Data describes behavior",
+          "text": "Every event is someone’s decision. I design models and metrics that respect that context, not just the schema."
+        },
+        "bias": {
+          "title": "Dashboards are read with biases",
+          "text": "Anchoring, confirmation, illusory causation. I design visualizations to help people decide, not to confirm what they already believed."
+        },
+        "trust": {
+          "title": "Trusting a number is human",
+          "text": "Quality checks, data contracts and monitoring: reliable pipelines so people can make decisions with confidence."
+        }
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "all": "All projects",
+      "empty": "Projects are on the way: pipelines, models and the decisions behind them."
+    },
+    "notes": {
+      "title": "Latest notes",
+      "all": "All notes",
+      "empty": "First notes coming soon: data engineering, AI and the human side of data."
+    },
+    "contact": {
+      "title": "Got data that needs to make sense?",
+      "text": "Pipelines, analytics or a second pair of eyes on your data platform. Let's talk.",
+      "cta": "Start a conversation"
+    }
+  },
+  "note": {
+    "article": "Article",
+    "link": "Link",
+    "external": "opens external site",
+    "writtenIn": "Written in {{lang}}"
+  },
+  "projects": {
+    "back": "All projects",
+    "role": "Role",
+    "year": "Year",
+    "stack": "Stack",
+    "links": "Links",
+    "repo": "Repository",
+    "demo": "Live demo",
+    "results": "Results",
+    "more": "More projects",
+    "status": "Status",
+    "type": "Type",
+    "types": {
+      "practice": "Practice",
+      "experiment": "Experiment"
+    },
+    "filter": "Filter projects by type",
+    "filters": {
+      "all": "All",
+      "practice": "Practice",
+      "experiment": "Experiments"
+    },
+    "emptyFilter": "No projects of this type yet."
+  },
+  "notes": {
+    "back": "All notes",
+    "readingTime_one": "{{count}} min read",
+    "readingTime_other": "{{count}} min read",
+    "tags": "Tags",
+    "more": "More notes",
+    "filter": "Filter notes by type",
+    "filters": {
+      "all": "All",
+      "article": "Articles",
+      "link": "Links"
+    },
+    "emptyFilter": "Nothing here yet for this filter."
+  },
+  "pager": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "contact": {
+    "topicLabel": "What is it about?",
+    "topics": {
+      "project": "A project",
+      "job": "A job opportunity",
+      "other": "Something else"
+    },
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "A few lines about the context, the data and what you need.",
+    "send": "Send message",
+    "sending": "Sending…",
+    "errors": {
+      "name": "Please tell me your name.",
+      "email": "That email does not look right.",
+      "message": "Write at least a couple of words (10 characters)."
+    },
+    "error": "The message could not be sent. Please try again or write to {{email}}.",
+    "notConfigured": "The form is not active yet. Write to {{email}} in the meantime.",
+    "sent": {
+      "title": "Message sent.",
+      "text": "Thanks for writing. I will get back to you by email.",
+      "again": "Send another message"
+    },
+    "direct": "Or reach me directly",
+    "copy": "Copy email",
+    "copied": "Copied"
+  },
+  "pages": {
+    "projects": {
+      "tag": "Projects",
+      "title": "Projects.",
+      "intro": "Practice projects and experiments in data engineering, data science and AI — with the problem, the approach and what I learned."
+    },
+    "notes": {
+      "tag": "Notes",
+      "title": "Notes.",
+      "intro": "My own writing plus curated reads from the data and AI world, with a short take on each."
+    },
+    "contact": {
+      "tag": "Contact",
+      "title": "Let's talk.",
+      "intro": "Tell me about your data problem, a project or an opportunity. Use the form or write to me directly."
+    }
+  },
+  "notFound": {
+    "title": "Nothing here.",
+    "intro": "This page does not exist, or not yet. The signal is somewhere else.",
+    "home": "Back to home"
+  },
+  "error": {
+    "title": "Something broke.",
+    "intro": "An unexpected error occurred. Try reloading the page."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "top": "Back to top"
+  },
+  "theme": {
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme"
+  },
+  "language": {
+    "label": "Change language",
+    "names": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  }
+}

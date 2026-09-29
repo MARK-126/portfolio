@@ -1,0 +1,200 @@
+{
+  "nav": {
+    "projects": "Proyectos",
+    "notes": "Notas",
+    "contact": "Contacto",
+    "label": "Navegación principal",
+    "footerLabel": "Navegación del pie de página"
+  },
+  "hero": {
+    "status": "Disponible para proyectos",
+    "disciplines": "Ingeniería de datos × Psicología",
+    "headline1": "Los datos son conducta.",
+    "headline2": "Yo construyo la señal.",
+    "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
+    "ctaProjects": "Ver proyectos",
+    "ctaHire": "Contratarme",
+    "scroll": "scroll",
+    "hint": "Mientras lees, el panel registra cómo usas esta página. Datos reales de comportamiento, en tiempo real — y sin salir de tu navegador."
+  },
+  "behavior": {
+    "label": "Registro en vivo de tu comportamiento en esta página",
+    "file": "sesión_actual.log",
+    "live": "en vivo",
+    "waiting": "esperando actividad…",
+    "stats": {
+      "time": "tiempo",
+      "cursor": "cursor",
+      "scroll": "scroll",
+      "events": "eventos"
+    },
+    "profile": "perfil:",
+    "profiles": {
+      "newcomer": "recién llegado",
+      "decisive": "decidido/a",
+      "explorer": "explorador/a curioso/a",
+      "reader": "lector/a metódico/a",
+      "observer": "observador/a reflexivo/a"
+    },
+    "confidence": "confianza {{value}}% (n={{n}}, no lo publiques en un paper)",
+    "privacy": "Todo ocurre en tu navegador. No se guarda ni se envía nada."
+  },
+  "home": {
+    "approach": {
+      "title": "Enfoque",
+      "intro": "Estudié psicología antes de trabajar con datos, y se nota en cómo los trato: detrás de cada fila hay una persona tomando una decisión.",
+      "items": {
+        "behavior": {
+          "title": "Los datos describen conducta",
+          "text": "Cada evento es una decisión de alguien. Diseño modelos y métricas que respeten ese contexto, no solo el esquema."
+        },
+        "bias": {
+          "title": "Los dashboards se leen con sesgos",
+          "text": "Anclaje, confirmación, ilusión de causalidad. Pienso las visualizaciones para ayudar a decidir, no para confirmar lo que ya creíamos."
+        },
+        "trust": {
+          "title": "Confiar en un número es humano",
+          "text": "Calidad, contratos de datos y monitoreo: pipelines confiables para que las personas puedan decidir tranquilas."
+        }
+      }
+    },
+    "projects": {
+      "title": "Proyectos",
+      "all": "Todos los proyectos",
+      "empty": "Los proyectos están en camino: pipelines, modelos y las decisiones detrás."
+    },
+    "notes": {
+      "title": "Últimas notas",
+      "all": "Todas las notas",
+      "empty": "Primeras notas en camino: ingeniería de datos, IA y el lado humano de los datos."
+    },
+    "contact": {
+      "title": "¿Tienes datos que necesitan tener sentido?",
+      "text": "Pipelines, analítica o una segunda mirada sobre tu plataforma de datos. Hablemos.",
+      "cta": "Iniciar una conversación"
+    }
+  },
+  "note": {
+    "article": "Artículo",
+    "link": "Enlace",
+    "external": "abre un sitio externo",
+    "writtenIn": "Escrito en {{lang}}"
+  },
+  "projects": {
+    "back": "Todos los proyectos",
+    "role": "Rol",
+    "year": "Año",
+    "stack": "Stack",
+    "links": "Enlaces",
+    "repo": "Repositorio",
+    "demo": "Demo en vivo",
+    "results": "Resultados",
+    "more": "Más proyectos",
+    "status": "Estado",
+    "type": "Tipo",
+    "types": {
+      "practice": "Práctica",
+      "experiment": "Experimento"
+    },
+    "filter": "Filtrar proyectos por tipo",
+    "filters": {
+      "all": "Todos",
+      "practice": "Práctica",
+      "experiment": "Experimentos"
+    },
+    "emptyFilter": "Todavía no hay proyectos de este tipo."
+  },
+  "notes": {
+    "back": "Todas las notas",
+    "readingTime_one": "{{count}} min de lectura",
+    "readingTime_other": "{{count}} min de lectura",
+    "tags": "Etiquetas",
+    "more": "Más notas",
+    "filter": "Filtrar notas por tipo",
+    "filters": {
+      "all": "Todas",
+      "article": "Artículos",
+      "link": "Enlaces"
+    },
+    "emptyFilter": "Todavía no hay nada para este filtro."
+  },
+  "pager": {
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "contact": {
+    "topicLabel": "¿Sobre qué es?",
+    "topics": {
+      "project": "Un proyecto",
+      "job": "Una oportunidad laboral",
+      "other": "Otra cosa"
+    },
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "messagePlaceholder": "Unas líneas sobre el contexto, los datos y lo que necesitas.",
+    "send": "Enviar mensaje",
+    "sending": "Enviando…",
+    "errors": {
+      "name": "Dime tu nombre, por favor.",
+      "email": "Ese correo no parece válido.",
+      "message": "Escribe al menos un par de palabras (10 caracteres)."
+    },
+    "error": "No se pudo enviar el mensaje. Intenta de nuevo o escribe a {{email}}.",
+    "notConfigured": "El formulario todavía no está activo. Mientras tanto, escribe a {{email}}.",
+    "sent": {
+      "title": "Mensaje enviado.",
+      "text": "Gracias por escribir. Te respondo por correo.",
+      "again": "Enviar otro mensaje"
+    },
+    "direct": "O escríbeme directamente",
+    "copy": "Copiar correo",
+    "copied": "Copiado"
+  },
+  "pages": {
+    "projects": {
+      "tag": "Proyectos",
+      "title": "Proyectos.",
+      "intro": "Proyectos de práctica y experimentos de ingeniería de datos, ciencia de datos e IA — con el problema, el enfoque y lo que aprendí."
+    },
+    "notes": {
+      "tag": "Notas",
+      "title": "Notas.",
+      "intro": "Textos propios y lecturas seleccionadas del mundo de los datos y la IA, con un breve comentario en cada una."
+    },
+    "contact": {
+      "tag": "Contacto",
+      "title": "Hablemos.",
+      "intro": "Cuéntame tu problema de datos, un proyecto o una oportunidad. Usa el formulario o escríbeme directamente."
+    }
+  },
+  "notFound": {
+    "title": "Aquí no hay nada.",
+    "intro": "Esta página no existe, o todavía no. La señal está en otra parte.",
+    "home": "Volver al inicio"
+  },
+  "error": {
+    "title": "Algo se rompió.",
+    "intro": "Ocurrió un error inesperado. Prueba recargando la página."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "top": "Volver arriba"
+  },
+  "theme": {
+    "toLight": "Cambiar a tema claro",
+    "toDark": "Cambiar a tema oscuro"
+  },
+  "language": {
+    "label": "Cambiar idioma",
+    "names": {
+      "en": "inglés",
+      "es": "español"
+    }
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Correo"
+  }
+}

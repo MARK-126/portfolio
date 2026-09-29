@@ -8,7 +8,7 @@ import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'build', '.react-router']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -33,6 +33,28 @@ export default defineConfig([
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       'prefer-const': 'warn',
       'react/no-unescaped-entities': 'off',
+    },
+  },
+  {
+    // React Router route modules export these alongside the component
+    files: ['src/root.tsx', 'src/routes/**/*.tsx'],
+    rules: {
+      'react-refresh/only-export-components': [
+        'error',
+        {
+          allowExportNames: [
+            'meta',
+            'links',
+            'loader',
+            'clientLoader',
+            'headers',
+            'handle',
+            'Layout',
+            'ErrorBoundary',
+            'HydrateFallback',
+          ],
+        },
+      ],
     },
   },
 ])
