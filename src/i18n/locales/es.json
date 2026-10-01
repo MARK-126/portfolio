@@ -170,19 +170,19 @@
       "title": "Hablemos.",
       "intro": "Cuéntame tu problema de datos, un proyecto o una oportunidad. Usa el formulario o escríbeme directamente.",
       "team": {
-        "title": "Cómo trabajo con equipos",
+        "title": "Cómo trabajo con tu equipo",
         "items": {
           "firstToKnow": {
             "title": "El problema lo encontramos antes que el usuario",
-            "text": "Tests y alertas de frescura, volumen y nulos en cada pipeline. Si algo falla, el equipo lo sabe antes de que llegue a un dashboard."
+            "text": "Tests y alertas de frescura, volumen y nulos en cada pipeline. Si algo falla, tu equipo se entera antes de que llegue a un dashboard."
           },
           "product": {
-            "title": "Los datos son un producto del equipo",
-            "text": "Documentados, con un responsable y pensados para quien los usa. Una tabla que nadie entiende es una tabla que nadie usa."
+            "title": "Datos pensados como un producto",
+            "text": "Documentados, con un responsable y al servicio de quienes los usan en tu equipo. Una tabla que nadie entiende es una tabla que nadie usa."
           },
           "small": {
             "title": "Chico y en producción",
-            "text": "Mejor un pipeline simple funcionando esta semana que uno perfecto el mes que viene. Después se itera con uso real."
+            "text": "Mejor un pipeline simple funcionando esta semana que uno perfecto el mes que viene. Después iteramos juntos con uso real."
           }
         }
       }
