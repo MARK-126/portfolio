@@ -134,8 +134,10 @@
   }
 }
 
+/* Narrow screens: the text sits near the top and the free space goes to the particles below it */
 @media (max-width: 640px) {
   .hero {
-    padding-block: 64px 128px;
+    justify-content: flex-start;
+    padding-block: 40px 128px;
   }
 }

@@ -163,6 +163,8 @@ button {
 
 @media (max-width: 640px) {
   :root {
+    /* The header gets a second row with the section links */
+    --header-h: 96px;
     --gutter: 16px;
   }
 }
