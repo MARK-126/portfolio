@@ -30,9 +30,6 @@ export function Hero() {
           <Link to="/projects" className="button button--solid">
             {t('hero.ctaProjects')} <span aria-hidden="true">→</span>
           </Link>
-          <Link to="/contact" className="button button--outline">
-            {t('hero.ctaHire')}
-          </Link>
         </div>
       </div>
 
