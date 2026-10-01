@@ -3,6 +3,7 @@ import type { Route } from './+types/contact'
 import { PageIntro } from '../components/PageIntro'
 import { ContactForm } from '../components/contact/ContactForm'
 import { ContactChannels } from '../components/contact/ContactChannels'
+import { TeamPrinciples } from '../components/contact/TeamPrinciples'
 import { pageMeta } from '../config/meta'
 import './contact.css'
 
@@ -19,6 +20,7 @@ export default function Contact() {
   return (
     <>
       <PageIntro tag={t('pages.contact.tag')} title={t('pages.contact.title')} intro={t('pages.contact.intro')} />
+      <TeamPrinciples />
       <section className="container page-section contact-layout">
         <ContactForm />
         <ContactChannels />

@@ -12,7 +12,7 @@
   "hero": {
     "disciplines": "Data engineering",
     "headline1": "Data is behavior.",
-    "headline2": "I engineer",
+    "headline2": "We engineer",
     "headline2Accent": "the signal.",
     "branches": ["analytics", "product", "machine learning", "business"],
     "subtitle": "Almost three years building data pipelines and analytics. Finishing a degree in Data Science & AI, about to graduate as a psychologist — I understand the systems and the people behind the rows.",
@@ -44,19 +44,22 @@
   "home": {
     "approach": {
       "title": "Approach",
-      "intro": "I studied psychology before working with data, and it shows in how I treat it: behind every row there is a person making a decision.",
+      "intro": "Psychology and data share a problem: measuring things you can’t observe directly. Three ideas from psychometrics I apply to every pipeline.",
       "items": {
-        "behavior": {
-          "title": "Data describes behavior",
-          "text": "Every event is someone’s decision. I design models and metrics that respect that context, not just the schema."
+        "validity": {
+          "label": "Validity",
+          "title": "Does it measure what it claims to?",
+          "text": "“Active users” can mean whoever opened the app or whoever did something in it. Before building a metric I write down which behavior it has to capture and check it against real cases."
         },
-        "bias": {
-          "title": "Dashboards are read with biases",
-          "text": "Anchoring, confirmation, illusory causation. I design visualizations to help people decide, not to confirm what they already believed."
+        "reliability": {
+          "label": "Reliability",
+          "title": "Same input, same result",
+          "text": "A pipeline that runs twice has to return the same number. Idempotent loads, tests and versioned sources: if a value changes, it should be because what it measures changed."
         },
-        "trust": {
-          "title": "Trusting a number is human",
-          "text": "Quality checks, data contracts and monitoring: reliable pipelines so people can make decisions with confidence."
+        "goodhart": {
+          "label": "Goodhart",
+          "title": "When the metric becomes the target",
+          "text": "A number people chase stops measuring what it used to. So every key metric comes with another one that keeps it honest: sales alongside returns, speed alongside errors."
         }
       }
     },
@@ -165,7 +168,24 @@
     "contact": {
       "tag": "Contact",
       "title": "Let's talk.",
-      "intro": "Tell me about your data problem, a project or an opportunity. Use the form or write to me directly."
+      "intro": "Tell me about your data problem, a project or an opportunity. Use the form or write to me directly.",
+      "team": {
+        "title": "How I work with teams",
+        "items": {
+          "firstToKnow": {
+            "title": "We find the problem before the user does",
+            "text": "Freshness, volume and null checks with alerts on every pipeline. If something breaks, the team knows before it reaches a dashboard."
+          },
+          "product": {
+            "title": "Data is a team product",
+            "text": "Documented, owned and designed for the people who use it. A table nobody understands is a table nobody uses."
+          },
+          "small": {
+            "title": "Small and in production",
+            "text": "A simple pipeline running this week beats a perfect one next month. Then we iterate with real usage."
+          }
+        }
+      }
     }
   },
   "notFound": {
