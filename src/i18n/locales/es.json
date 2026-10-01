@@ -12,7 +12,7 @@
   "hero": {
     "disciplines": "Ingeniería de datos",
     "headline1": "Los datos son conducta.",
-    "headline2": "Yo construyo",
+    "headline2": "Construimos",
     "headline2Accent": "la señal.",
     "branches": ["analítica", "producto", "machine learning", "negocio"],
     "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
@@ -44,19 +44,22 @@
   "home": {
     "approach": {
       "title": "Enfoque",
-      "intro": "Estudié psicología antes de trabajar con datos, y se nota en cómo los trato: detrás de cada fila hay una persona tomando una decisión.",
+      "intro": "La psicología y los datos comparten un problema: medir cosas que no se ven directamente. Tres ideas de la psicometría que aplico a cada pipeline.",
       "items": {
-        "behavior": {
-          "title": "Los datos describen conducta",
-          "text": "Cada evento es una decisión de alguien. Diseño modelos y métricas que respeten ese contexto, no solo el esquema."
+        "validity": {
+          "label": "Validez",
+          "title": "¿Mide lo que dice medir?",
+          "text": "«Usuarios activos» puede ser quien abrió la app o quien hizo algo en ella. Antes de construir una métrica escribo qué conducta tiene que capturar y la contrasto con casos reales."
         },
-        "bias": {
-          "title": "Los dashboards se leen con sesgos",
-          "text": "Anclaje, confirmación, ilusión de causalidad. Pienso las visualizaciones para ayudar a decidir, no para confirmar lo que ya creíamos."
+        "reliability": {
+          "label": "Confiabilidad",
+          "title": "Misma entrada, mismo resultado",
+          "text": "Un pipeline que corre dos veces tiene que dar el mismo número. Cargas idempotentes, tests y fuentes versionadas: si un valor cambia, que sea porque cambió lo que mide."
         },
-        "trust": {
-          "title": "Confiar en un número es humano",
-          "text": "Calidad, contratos de datos y monitoreo: pipelines confiables para que las personas puedan decidir tranquilas."
+        "goodhart": {
+          "label": "Goodhart",
+          "title": "Cuando la métrica se vuelve objetivo",
+          "text": "Un número que se persigue deja de medir lo que medía. Por eso cada indicador principal va con otro que lo controla: ventas junto a devoluciones, velocidad junto a errores."
         }
       }
     },
@@ -165,7 +168,24 @@
     "contact": {
       "tag": "Contacto",
       "title": "Hablemos.",
-      "intro": "Cuéntame tu problema de datos, un proyecto o una oportunidad. Usa el formulario o escríbeme directamente."
+      "intro": "Cuéntame tu problema de datos, un proyecto o una oportunidad. Usa el formulario o escríbeme directamente.",
+      "team": {
+        "title": "Cómo trabajo con equipos",
+        "items": {
+          "firstToKnow": {
+            "title": "El problema lo encontramos antes que el usuario",
+            "text": "Tests y alertas de frescura, volumen y nulos en cada pipeline. Si algo falla, el equipo lo sabe antes de que llegue a un dashboard."
+          },
+          "product": {
+            "title": "Los datos son un producto del equipo",
+            "text": "Documentados, con un responsable y pensados para quien los usa. Una tabla que nadie entiende es una tabla que nadie usa."
+          },
+          "small": {
+            "title": "Chico y en producción",
+            "text": "Mejor un pipeline simple funcionando esta semana que uno perfecto el mes que viene. Después se itera con uso real."
+          }
+        }
+      }
     }
   },
   "notFound": {

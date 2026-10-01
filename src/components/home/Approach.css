@@ -25,9 +25,19 @@
   border-left: 1px solid var(--border);
 }
 
+/* "01  VALIDITY": the psychometric concept each principle comes from */
+.approach__label {
+  display: flex;
+  gap: 12px;
+  color: var(--faint);
+  font: 500 0.75rem var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .approach__number {
   color: var(--accent);
-  font: 500 0.75rem var(--mono);
+  letter-spacing: 0;
 }
 
 .approach__title {
