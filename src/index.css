@@ -163,9 +163,14 @@ button {
 
 @media (max-width: 640px) {
   :root {
-    /* The header gets a second row with the section links */
-    --header-h: 96px;
     --gutter: 16px;
+  }
+}
+
+/* The header is fixed (not sticky) on narrow screens: keep the content below it */
+@media (max-width: 640px) {
+  body {
+    padding-top: var(--header-h);
   }
 }
 
