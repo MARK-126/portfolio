@@ -16,7 +16,7 @@
     "headline2": "Construyamos",
     "headline2Accent": "la señal.",
     "branches": ["analítica", "producto", "machine learning", "negocio"],
-    "subtitle": "Desarrollador backend con casi tres años trabajando con bases de datos, SQL y, hoy, integración de IA. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
+    "subtitle": "Casi tres años trabajando con datos: modelado en PostgreSQL, SQL analítico e integración de IA. Terminando Ciencia de Datos e IA y Psicología — entiendo los sistemas y a las personas detrás de cada fila.",
     "ctaProjects": "Ver proyectos",
     "scroll": "scroll"
   },
@@ -168,12 +168,12 @@
     },
     "about": {
       "tag": "Sobre mí",
-      "title": "Del backend a los datos.",
-      "intro": "Hoy construyo APIs y bases de datos; lo que busco es construir pipelines.",
+      "title": "De la fuente a la decisión.",
+      "intro": "Modelo bases de datos, escribo SQL para reportes y conecto IA a los datos.",
       "photoAlt": "Marcos Rio con un mate, en la montaña nevada de Mendoza.",
       "bio": [
-        "Soy desarrollador en una empresa de software desde 2024. Mi trabajo diario pasa por las bases de datos: modelado en PostgreSQL, migraciones, SQL para reportes y, hoy, integración de IA para que la analítica se pueda consultar en lenguaje natural.",
-        "Busco mi primer rol como data engineer y, mientras tanto, construyo proyectos de práctica. Antes y en paralelo fui docente: siete años en una escuela secundaria técnica y clases en la carrera de Psicología, donde estoy terminando la tesis."
+        "Desde 2024 trabajo en una empresa de software donde mi día a día pasa por los datos: diseñé el modelo en PostgreSQL de la plataforma, migré datos desde un sistema legacy y armo las métricas que alimentan reportes y dashboards. Hoy integro IA para que esa analítica se pueda consultar en lenguaje natural.",
+        "En paralelo termino la tecnicatura en Ciencia de Datos e IA y construyo proyectos propios con herramientas de data engineering. Fui docente siete años en una escuela secundaria técnica y di clases en la carrera de Psicología, donde estoy terminando la tesis."
       ],
       "experience": {
         "title": "Experiencia",

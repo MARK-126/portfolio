@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = ({ location }) =>
     path: location.pathname,
     title: 'Sobre mí',
     description:
-      'Marcos Rio: desarrollador backend en camino a data engineer, estudiante de Ciencia de Datos e IA y psicólogo. Experiencia, formación, stack y CV.',
+      'Marcos Rio: casi tres años trabajando con datos (PostgreSQL, SQL analítico e IA), estudiante de Ciencia de Datos e IA y psicólogo. Experiencia, formación, stack y CV.',
   })
 
 export default function AboutPage() {
@@ -17,7 +17,12 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageIntro tag={t('pages.about.tag')} title={t('pages.about.title')} intro={t('pages.about.intro')} />
+      <PageIntro
+        className="page-intro--about"
+        tag={t('pages.about.tag')}
+        title={t('pages.about.title')}
+        intro={t('pages.about.intro')}
+      />
       <section className="container page-section">
         <About />
       </section>
