@@ -84,8 +84,27 @@
   border: 1px solid var(--border);
 }
 
+/* Narrow screens: brand and actions on the first row, the section links on a second one */
 @media (max-width: 640px) {
+  .header__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 56px 1fr;
+    gap: 0;
+  }
+
+  .header__brand {
+    grid-area: 1 / 1;
+  }
+
+  .header__actions {
+    grid-area: 1 / 2;
+  }
+
   .header__nav {
-    display: none;
+    grid-area: 2 / 1 / 3 / -1;
+    align-items: center;
+    gap: 24px;
+    border-top: 1px solid var(--border);
   }
 }
