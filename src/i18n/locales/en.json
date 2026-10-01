@@ -170,19 +170,19 @@
       "title": "Let's talk.",
       "intro": "Tell me about your data problem, a project or an opportunity. Use the form or write to me directly.",
       "team": {
-        "title": "How I work with teams",
+        "title": "How I work with your team",
         "items": {
           "firstToKnow": {
             "title": "We find the problem before the user does",
-            "text": "Freshness, volume and null checks with alerts on every pipeline. If something breaks, the team knows before it reaches a dashboard."
+            "text": "Freshness, volume and null checks with alerts on every pipeline. If something breaks, your team knows before it reaches a dashboard."
           },
           "product": {
-            "title": "Data is a team product",
-            "text": "Documented, owned and designed for the people who use it. A table nobody understands is a table nobody uses."
+            "title": "Data built as a product",
+            "text": "Documented, owned and designed for the people on your team who use it. A table nobody understands is a table nobody uses."
           },
           "small": {
             "title": "Small and in production",
-            "text": "A simple pipeline running this week beats a perfect one next month. Then we iterate with real usage."
+            "text": "A simple pipeline running this week beats a perfect one next month. Then we iterate together with real usage."
           }
         }
       }
