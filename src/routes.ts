@@ -13,6 +13,7 @@ export default [
   ...contentRoutes('projects', projectSlugs(), 'routes/project.tsx'),
   route('notes', 'routes/notes.tsx'),
   ...contentRoutes('notes', noteArticleSlugs(), 'routes/note-article.tsx'),
+  route('about', 'routes/about.tsx'),
   route('contact', 'routes/contact.tsx'),
   route('*', 'routes/not-found.tsx'),
 ] satisfies RouteConfig

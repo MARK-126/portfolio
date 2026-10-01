@@ -2,6 +2,7 @@
   "nav": {
     "projects": "Proyectos",
     "notes": "Notas",
+    "about": "Sobre mí",
     "contact": "Contacto",
     "label": "Navegación principal",
     "footerLabel": "Navegación del pie de página",
@@ -15,7 +16,7 @@
     "headline2": "Construyamos",
     "headline2Accent": "la señal.",
     "branches": ["analítica", "producto", "machine learning", "negocio"],
-    "subtitle": "Casi tres años construyendo pipelines de datos y analítica. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
+    "subtitle": "Desarrollador backend con casi tres años trabajando con bases de datos, SQL y, hoy, integración de IA. Terminando la tecnicatura en Ciencia de Datos e IA y por recibirme de psicólogo — entiendo los sistemas y a las personas detrás de cada fila.",
     "ctaProjects": "Ver proyectos",
     "scroll": "scroll"
   },
@@ -164,6 +165,105 @@
       "tag": "Notas",
       "title": "Notas.",
       "intro": "Textos propios y lecturas seleccionadas del mundo de los datos y la IA, con un breve comentario en cada una."
+    },
+    "about": {
+      "tag": "Sobre mí",
+      "title": "Del backend a los datos.",
+      "intro": "Hoy construyo APIs y bases de datos; lo que busco es construir pipelines.",
+      "photoAlt": "Marcos Rio con un mate, en la montaña nevada de Mendoza.",
+      "bio": [
+        "Soy desarrollador en una empresa de software desde 2024. Mi trabajo diario pasa por las bases de datos: modelado en PostgreSQL, migraciones, SQL para reportes y, hoy, integración de IA para que la analítica se pueda consultar en lenguaje natural.",
+        "Busco mi primer rol como data engineer y, mientras tanto, construyo proyectos de práctica. Antes y en paralelo fui docente: siete años en una escuela secundaria técnica y clases en la carrera de Psicología, donde estoy terminando la tesis."
+      ],
+      "experience": {
+        "title": "Experiencia",
+        "items": [
+          {
+            "role": "Desarrollador full-stack",
+            "org": "Empresa de software (plataforma SaaS)",
+            "period": "2024 — actualidad",
+            "points": [
+              "Diseño del modelo de datos relacional en PostgreSQL de la plataforma.",
+              "Procesos ETL para migrar datos desde un sistema legacy, cuidando la integridad referencial.",
+              "Métricas de negocio con SQL (CTEs, funciones de ventana) para reportes y dashboards, definidas junto a las áreas que las usan.",
+              "Búsqueda semántica con pgvector y agentes con tool calling.",
+              "Hoy: integración de IA para chats y consultas en lenguaje natural sobre analítica y dashboards."
+            ]
+          },
+          {
+            "role": "Docente",
+            "org": "Escuela San José 4-118 · secundaria técnica",
+            "period": "7 años",
+            "points": []
+          },
+          {
+            "role": "Docente",
+            "org": "Carrera de Psicología",
+            "period": "",
+            "points": []
+          }
+        ]
+      },
+      "education": {
+        "title": "Formación",
+        "items": [
+          {
+            "title": "Tecnicatura en Ciencia de Datos e IA",
+            "org": "Inst. Manuel Belgrano 9-008",
+            "status": "Estudiante avanzado"
+          },
+          {
+            "title": "Psicología",
+            "org": "Universidad de Congreso, Mendoza",
+            "status": "Terminando la tesis"
+          },
+          {
+            "title": "Machine Learning Specialization",
+            "org": "DeepLearning.AI · Stanford University",
+            "status": "Certificado"
+          },
+          {
+            "title": "Introduction to Data Engineering",
+            "org": "Amazon Web Services",
+            "status": "Certificado"
+          }
+        ]
+      },
+      "stack": {
+        "title": "Stack",
+        "groups": [
+          {
+            "label": "Datos",
+            "items": "PostgreSQL · MySQL · SQL avanzado · PySpark · pgvector · Qdrant · Chroma"
+          },
+          {
+            "label": "Python",
+            "items": "pandas · numpy · matplotlib · Jupyter"
+          },
+          {
+            "label": "Backend",
+            "items": "TypeScript · Node.js · NestJS"
+          },
+          {
+            "label": "IA",
+            "items": "tool calling · búsqueda semántica · SDKs de OpenAI y Anthropic"
+          },
+          {
+            "label": "Infra",
+            "items": "AWS S3 · Docker · Git"
+          },
+          {
+            "label": "Aprendiendo",
+            "items": "Airflow · AWS Glue y Athena · Power BI / Superset"
+          },
+          {
+            "label": "Idiomas",
+            "items": "Español nativo · Inglés B1"
+          }
+        ]
+      },
+      "cv": "Descargar CV (PDF)",
+      "contact": "Escribirme"
     },
     "contact": {
       "tag": "Contacto",
