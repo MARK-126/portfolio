@@ -134,6 +134,13 @@
   }
 }
 
+/* Short laptop screens: less vertical padding so the hero text fits in the first screen */
+@media (max-height: 760px) and (min-width: 641px) {
+  .hero {
+    padding-block: 32px 96px;
+  }
+}
+
 /* Narrow screens: the text sits near the top and the free space goes to the particles below it */
 @media (max-width: 640px) {
   .hero {

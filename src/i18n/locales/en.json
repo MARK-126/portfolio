@@ -16,7 +16,7 @@
     "headline2": "Let’s engineer",
     "headline2Accent": "the signal.",
     "branches": ["analytics", "product", "machine learning", "business"],
-    "subtitle": "Backend developer with almost three years working with databases, SQL and, lately, AI integration. Finishing a degree in Data Science & AI and about to graduate as a psychologist — I understand the systems and the people behind the rows.",
+    "subtitle": "Almost three years working with data: PostgreSQL modeling, analytical SQL and AI integration. Finishing degrees in Data Science & AI and Psychology — I understand the systems and the people behind the rows.",
     "ctaProjects": "See projects",
     "scroll": "scroll"
   },
@@ -168,12 +168,12 @@
     },
     "about": {
       "tag": "About",
-      "title": "From backend to data.",
-      "intro": "Today I build APIs and databases; what I want to build is pipelines.",
+      "title": "From source to decision.",
+      "intro": "I model databases, write the SQL behind reports and connect AI to the data.",
       "photoAlt": "Marcos Rio holding a mate in the snowy mountains of Mendoza.",
       "bio": [
-        "I’ve been a developer at a software company since 2024. My day-to-day work revolves around databases: modeling in PostgreSQL, migrations, SQL for reporting and, lately, AI integration so analytics can be queried in natural language.",
-        "I’m looking for my first role as a data engineer and, in the meantime, I build practice projects. Before and alongside that I taught: seven years at a technical secondary school and classes in the Psychology degree, where I’m finishing my thesis."
+        "Since 2024 I’ve worked at a software company where my day-to-day revolves around data: I designed the platform’s PostgreSQL model, migrated data from a legacy system and build the metrics behind reports and dashboards. Today I integrate AI so that analytics can be queried in natural language.",
+        "Alongside that I’m finishing an associate degree in Data Science & AI and building my own projects with data engineering tools. I taught for seven years at a technical secondary school and gave classes in the Psychology degree, where I’m finishing my thesis."
       ],
       "experience": {
         "title": "Experience",

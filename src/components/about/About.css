@@ -1,6 +1,15 @@
+/* The intro is tighter on this page so the photo and the bio fit on the first screen */
+.page-intro--about {
+  padding-bottom: 48px;
+}
+
+.page-intro--about .page-intro__text {
+  max-width: 44rem;
+}
+
 .about__intro {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
   gap: 64px;
   align-items: start;
   padding-bottom: 96px;
@@ -8,8 +17,11 @@
 
 .about__photo img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  /* Scales with the screen height so the whole photo fits on the first screen (it starts ~430px down) */
+  max-height: clamp(320px, calc(100svh - 470px), 620px);
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 50% 30%;
@@ -147,6 +159,10 @@
 
   .about__photo {
     max-width: 360px;
+  }
+
+  .about__photo img {
+    max-height: none;
   }
 }
 

@@ -8,6 +8,8 @@ type PageIntroProps = {
   intro: string
   /** Where "back" goes when there is no previous page in the visit. */
   back?: string
+  /** Extra class for page-specific tweaks. */
+  className?: string
   children?: ReactNode
 }
 
@@ -24,9 +26,9 @@ function AccentEnding({ text }: { text: string }) {
 }
 
 /** Opening block shared by the inner pages: back link, mono tag, big title and a short intro. */
-export function PageIntro({ tag, title, intro, back = '/', children }: PageIntroProps) {
+export function PageIntro({ tag, title, intro, back = '/', className, children }: PageIntroProps) {
   return (
-    <section className="page-intro container">
+    <section className={className ? `page-intro container ${className}` : 'page-intro container'}>
       <BackLink fallback={back} />
       <p className="page-intro__tag">{tag}</p>
       <h1 className="page-intro__title">
