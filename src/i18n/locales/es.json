@@ -5,7 +5,9 @@
     "contact": "Contacto",
     "label": "Navegación principal",
     "footerLabel": "Navegación del pie de página",
-    "back": "Volver"
+    "back": "Volver",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
     "disciplines": "Ingeniería de datos",

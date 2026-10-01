@@ -5,7 +5,9 @@
     "contact": "Contact",
     "label": "Main navigation",
     "footerLabel": "Footer navigation",
-    "back": "Back"
+    "back": "Back",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "disciplines": "Data engineering",
