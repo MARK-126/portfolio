@@ -1,10 +1,16 @@
 .page-intro {
-  padding-block: 72px 80px;
+  margin-top: var(--panel-gap);
+  margin-bottom: 56px;
+  background: var(--surface);
+}
+
+.page-intro__inner {
+  padding-block: 56px 64px;
 }
 
 .page-intro__tag {
   margin-top: 48px;
-  color: var(--accent);
+  color: var(--muted);
   font: 500 0.7rem var(--mono);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -12,12 +18,10 @@
 
 .page-intro__title {
   margin-top: 24px;
-  font: 700 clamp(2.6rem, 7vw, 5.5rem) / 0.98 var(--display);
-  letter-spacing: -0.035em;
-}
-
-.page-intro__dot {
-  color: var(--accent);
+  font: 700 clamp(2.8rem, 8vw, 6.5rem) / 1.05 var(--display);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .page-intro__text {
@@ -33,6 +37,10 @@
 
 @media (max-width: 640px) {
   .page-intro {
-    padding-block: 48px 64px;
+    margin-bottom: 40px;
+  }
+
+  .page-intro__inner {
+    padding-block: 40px 48px;
   }
 }

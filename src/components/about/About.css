@@ -1,6 +1,10 @@
 /* The intro is tighter on this page so the photo and the bio fit on the first screen */
 .page-intro--about {
-  padding-bottom: 48px;
+  margin-bottom: 40px;
+}
+
+.page-intro--about .page-intro__inner {
+  padding-bottom: 40px;
 }
 
 .page-intro--about .page-intro__text {
@@ -59,8 +63,8 @@
   display: flex;
   align-items: baseline;
   gap: 16px;
-  font: 700 clamp(1.5rem, 2.6vw, 2rem) / 1.1 var(--display);
-  letter-spacing: -0.02em;
+  font: 700 clamp(1.5rem, 2.6vw, 2rem) / 1.05 var(--display);
+  text-transform: uppercase;
 }
 
 .about-list {
