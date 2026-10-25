@@ -14,13 +14,13 @@
 .prose h3 {
   color: var(--text);
   font-family: var(--display);
-  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .prose h2 {
   margin-top: 2.5em;
   font-size: 1.75rem;
+  text-transform: uppercase;
 }
 
 .prose h3 {

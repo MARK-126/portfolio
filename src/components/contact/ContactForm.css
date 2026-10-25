@@ -160,8 +160,8 @@
 
 .contact-form__done-title {
   color: var(--text);
-  font: 700 clamp(1.6rem, 3vw, 2.2rem) / 1.1 var(--display);
-  letter-spacing: -0.03em;
+  font: 700 clamp(1.6rem, 3vw, 2.2rem) / 1.05 var(--display);
+  text-transform: uppercase;
 }
 
 @media (max-width: 640px) {

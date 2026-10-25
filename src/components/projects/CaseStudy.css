@@ -6,7 +6,8 @@
   max-width: 18ch;
   margin-top: 40px;
   font: 700 clamp(2.4rem, 6.5vw, 5rem) / 1 var(--display);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .case-study__summary {
@@ -67,7 +68,6 @@
   background: var(--bg);
   color: var(--accent);
   font: 700 clamp(1.25rem, 2.2vw, 1.6rem) / 1.2 var(--display);
-  letter-spacing: -0.02em;
 }
 
 .case-study__body {

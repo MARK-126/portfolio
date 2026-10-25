@@ -15,7 +15,7 @@
 
 .anticipation__title {
   max-width: 18ch;
-  font: 700 clamp(2rem, 4.6vw, 4.2rem) / 0.92 var(--display);
+  font: 700 clamp(2rem, 4.6vw, 4.2rem) / 1 var(--display);
   text-transform: uppercase;
   text-wrap: balance;
 }
