@@ -1,8 +1,17 @@
 .article {
-  padding-block: 72px 96px;
+  padding-bottom: 96px;
 }
 
 .article__header {
+  margin-top: var(--panel-gap);
+  background: var(--surface);
+}
+
+.article__header-inner {
+  padding-block: 56px 64px;
+}
+
+.article__header-inner > * {
   max-width: 48rem;
 }
 
@@ -55,12 +64,14 @@
 
 .article__body {
   margin-top: 56px;
-  padding-top: 48px;
-  border-top: 1px solid var(--border);
 }
 
 @media (max-width: 640px) {
   .article {
-    padding-block: 48px 72px;
+    padding-bottom: 72px;
+  }
+
+  .article__header-inner {
+    padding-block: 40px 48px;
   }
 }
