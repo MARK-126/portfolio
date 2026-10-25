@@ -1,5 +1,14 @@
 .case-study {
-  padding-block: 72px 96px;
+  padding-bottom: 96px;
+}
+
+.case-study__header {
+  margin-top: var(--panel-gap);
+  background: var(--surface);
+}
+
+.case-study__header-inner {
+  padding-block: 56px 64px;
 }
 
 .case-study__title {
@@ -21,7 +30,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 24px;
-  margin: 64px 0 0;
+  margin: 48px 0 0;
   padding: 28px 0;
   border-block: 1px solid var(--border);
 }
@@ -76,6 +85,10 @@
 
 @media (max-width: 640px) {
   .case-study {
-    padding-block: 48px 72px;
+    padding-bottom: 72px;
+  }
+
+  .case-study__header-inner {
+    padding-block: 40px 48px;
   }
 }

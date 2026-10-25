@@ -209,7 +209,7 @@
       "photoAlt": "Marcos Rio holding a mate in the snowy mountains of Mendoza.",
       "bio": [
         "Since 2024 I’ve worked at a software company where my day-to-day revolves around data: I designed the platform’s PostgreSQL model, migrated data from a legacy system and build the metrics behind reports and dashboards. Today I integrate AI so that analytics can be queried in natural language.",
-        "Alongside that I’m finishing an associate degree in Data Science & AI and building my own projects with data engineering tools. I taught for seven years at a technical secondary school and gave classes in the Psychology degree, where I’m finishing my thesis."
+        "I’m drawn to the work that happens before the first record: deciding what gets measured, how it gets captured and which questions a piece of data has to answer. As AI does more of the analysis on its own, I think the value lies in what feeds it: clear models, agreements on what each field means and quality you can check."
       ],
       "experience": {
         "title": "Experience",
@@ -298,7 +298,7 @@
           }
         ]
       },
-      "cv": "Download CV (PDF)",
+      "cv": "Download resume (PDF)",
       "contact": "Get in touch"
     },
     "contact": {
