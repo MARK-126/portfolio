@@ -89,6 +89,21 @@
   }
 
   .case-study__header-inner {
-    padding-block: 40px 48px;
+    padding-block: 28px 32px;
+  }
+
+  .case-study__title {
+    margin-top: 28px;
+  }
+
+  .case-study__summary {
+    margin-top: 16px;
+  }
+
+  /* Two columns of short facts instead of one long list */
+  .case-study__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 16px;
+    margin-top: 28px;
   }
 }
