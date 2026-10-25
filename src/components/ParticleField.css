@@ -9,3 +9,10 @@
   mask-image: linear-gradient(to right, transparent, #000 22%);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 22%);
 }
+
+/* Phones: no field (ParticleField does not start it either) */
+@media (max-width: 640px) {
+  .particle-field {
+    display: none;
+  }
+}

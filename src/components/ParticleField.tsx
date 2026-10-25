@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useSyncExternalStore } from 'react'
 import { SIGNAL_DROP, type SignalDropEvent } from './motion/signal'
 import './ParticleField.css'
 
@@ -37,6 +37,18 @@ function readRgb(element: Element, name: string, fallback: Rgb): Rgb {
 }
 
 const rgba = ([r, g, b]: Rgb, alpha: number) => `rgba(${r}, ${g}, ${b}, ${alpha})`
+
+const NARROW_QUERY = '(max-width: 640px)'
+
+function subscribeNarrow(onChange: () => void) {
+  const query = window.matchMedia(NARROW_QUERY)
+  query.addEventListener('change', onChange)
+  return () => query.removeEventListener('change', onChange)
+}
+
+const getNarrow = () => window.matchMedia(NARROW_QUERY).matches
+// Prerendered HTML assumes a wide screen; the client corrects it right after hydration
+const getServerNarrow = () => false
 
 /** 1 far from every text block, fading to 0 inside them, so particles never sit behind text. */
 function textClearance(x: number, y: number, rects: Rect[]) {
@@ -81,8 +93,11 @@ function repel(
  */
 export function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  // Phones get no field at all (hidden in CSS too): it costs battery and the text needs the room
+  const narrow = useSyncExternalStore(subscribeNarrow, getNarrow, getServerNarrow)
 
   useEffect(() => {
+    if (narrow) return
     const canvas = canvasRef.current
     const ctx = canvas?.getContext('2d')
     const hero = canvas?.parentElement
@@ -291,7 +306,7 @@ export function ParticleField() {
       observer.disconnect()
       themeObserver.disconnect()
     }
-  }, [])
+  }, [narrow])
 
   return <canvas ref={canvasRef} className="particle-field" aria-hidden="true" />
 }
