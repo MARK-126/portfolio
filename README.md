@@ -12,7 +12,7 @@ search engines.
 ```bash
 yarn dev             # local dev server (drafts visible)
 yarn build           # typegen + type-check + static build into build/client
-yarn preview         # serve the static build
+yarn preview         # serve the static build the way Cloudflare does
 yarn typecheck       # typegen + type-check only
 yarn lint            # ESLint
 yarn prettier:write  # format

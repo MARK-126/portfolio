@@ -1,49 +1,51 @@
 /* ---------- Design tokens ---------- */
+/* Black, white and greys only: the signal is contrast, not color. `--invert-*` is the grey block
+   that flips against the page (grey with black letters on the dark theme, black on the light one). */
 :root,
 :root[data-theme='dark'] {
-  --bg: #0a0a0b;
-  --surface: #141416;
-  --border: #232326;
-  --text: #f2f2f2;
-  --muted: #a1a1a6;
-  --faint: #6e6e73;
-  --accent: #f5b041;
-  --accent-rgb: 245, 176, 65;
-  --accent-2: #ffd98a;
-  --headline-warm: #f3d2a0;
-  --headline-start: #8f8f97;
-  --headline-shade: rgba(0, 0, 0, 0.22);
-  --particle-rgb: 235, 235, 240;
-  --accent-soft: rgba(245, 176, 65, 0.12);
-  --accent-contrast: #1a1204;
-  --header-bg: rgba(10, 10, 11, 0.7);
+  --bg: #050505;
+  --surface: #0c0c0c;
+  --border: #232323;
+  --text: #f1f1ef;
+  --muted: #a3a3a0;
+  --faint: #8c8c8a;
+  --accent: #f1f1ef;
+  --accent-contrast: #050505;
+  --particle-rgb: 241, 241, 239;
+  --invert-bg: #bdbdbb;
+  --invert-text: #050505;
+  --invert-muted: #47474a;
+  --invert-border: #8e8e8c;
+  --header-bg: rgba(5, 5, 5, 0.72);
   color-scheme: dark;
 }
 
 :root[data-theme='light'] {
-  --bg: #f4f3ef;
-  --surface: #ffffff;
-  --border: #dcdad3;
-  --text: #0e0e10;
-  --muted: #4a4a50;
-  --faint: #76767c;
-  --accent: #a4570b;
-  --accent-rgb: 164, 87, 11;
-  --accent-2: #c97a1a;
-  --headline-warm: #6b3f14;
-  --headline-start: #55555c;
-  --headline-shade: rgba(255, 255, 255, 0.12);
-  --particle-rgb: 20, 20, 24;
-  --accent-soft: rgba(164, 87, 11, 0.1);
-  --accent-contrast: #ffffff;
-  --header-bg: rgba(244, 243, 239, 0.75);
+  --bg: #c8c8c5;
+  --surface: #d4d4d1;
+  --border: #a2a29f;
+  --text: #050505;
+  --muted: #2e2e2f;
+  --faint: #484848;
+  --accent: #050505;
+  --accent-contrast: #f1f1ef;
+  --particle-rgb: 5, 5, 5;
+  --invert-bg: #0c0c0c;
+  --invert-text: #f1f1ef;
+  --invert-muted: #a3a3a0;
+  --invert-border: #3a3a3a;
+  --header-bg: rgba(200, 200, 197, 0.78);
   color-scheme: light;
 }
 
 :root {
-  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --display: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  --sans: 'IBM Plex Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* Cyber display face for headlines; Doto (dot matrix) is the face text falls into when it glitches */
+  --display: 'Chakra Petch', 'Arial Narrow', system-ui, sans-serif;
+  --glitch: 'Doto', ui-monospace, monospace;
   --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --panel-gap: clamp(8px, 1.2vw, 14px);
+  --panel-radius: 12px;
   --header-h: 56px;
   --container: 1200px;
   --gutter: 48px;
@@ -174,6 +176,25 @@ button {
   }
 }
 
+/* Framed block on the home page: a rounded panel inset from the screen edges */
+.panel {
+  margin-inline: var(--panel-gap);
+  border-radius: var(--panel-radius);
+  overflow: hidden;
+}
+
+/* Coarse grain over the whole page, like a photocopy of a photocopy */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 /* ---------- Buttons ---------- */
 .button {
   display: inline-flex;
@@ -197,7 +218,7 @@ button {
   transform: translateX(3px);
 }
 
-/* Primary: the one amber action on a screen */
+/* Primary: the one solid action on a screen */
 .button--solid {
   background: var(--accent);
   color: var(--accent-contrast);

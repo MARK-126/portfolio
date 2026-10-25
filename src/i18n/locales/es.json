@@ -11,14 +11,15 @@
     "closeMenu": "Cerrar menú"
   },
   "hero": {
-    "disciplines": "Ingeniería de datos",
-    "headline1": "Los datos son conducta.",
-    "headline2": "Construyamos",
-    "headline2Accent": "la señal.",
-    "branches": ["analítica", "producto", "machine learning", "negocio"],
-    "subtitle": "Casi tres años trabajando con datos: modelado en PostgreSQL, SQL analítico e integración de IA. Terminando Ciencia de Datos e IA y Psicología — entiendo los sistemas y a las personas detrás de cada fila.",
+    "kicker": "Para quien llegue después",
+    "lede": {
+      "before": "Las máquinas ya analizan lo que pasó. Mi trabajo empieza antes:",
+      "strong": "ver qué se va a convertir en dato y cómo se va a procesar,",
+      "after": "para que cuando llegue el primer registro ya sirva para algo. Soy Marcos Rio, ingeniero de datos."
+    },
     "ctaProjects": "Ver proyectos",
-    "scroll": "scroll"
+    "omen": "Todo será dato.",
+    "answer": "Lo vemos venir."
   },
   "behavior": {
     "label": "Registro en vivo de tu comportamiento en esta página",
@@ -43,25 +44,59 @@
     "privacy": "Todo ocurre en tu navegador. No se guarda ni se envía nada."
   },
   "home": {
-    "approach": {
-      "title": "Enfoque",
-      "intro": "La psicología y los datos comparten un problema: medir cosas que no se ven directamente. Tres ideas de la psicometría que aplico a cada pipeline.",
+    "manifesto": {
+      "label": "Manifiesto",
+      "intro": "Cuatro cosas que vamos a necesitar recordar cuando todo lo que hagamos deje un registro.",
       "items": {
-        "validity": {
-          "label": "Validez",
-          "title": "¿Mide lo que dice medir?",
-          "text": "«Usuarios activos» puede ser quien abrió la app o quien hizo algo en ella. Antes de construir una métrica escribo qué conducta tiene que capturar y la contrasto con casos reales."
+        "late": {
+          "claim": "El análisis llega tarde.",
+          "rest": "Las máquinas ya lo hacen solas."
         },
-        "reliability": {
-          "label": "Confiabilidad",
-          "title": "Misma entrada, mismo resultado",
-          "text": "Un pipeline que corre dos veces tiene que dar el mismo número. Cargas idempotentes, tests y fuentes versionadas: si un valor cambia, que sea porque cambió lo que mide."
+        "capture": {
+          "claim": "Lo que no se pensó al capturarlo",
+          "rest": "no se recupera después."
         },
-        "goodhart": {
-          "label": "Goodhart",
-          "title": "Cuando la métrica se vuelve objetivo",
-          "text": "Un número que se persigue deja de medir lo que medía. Por eso cada indicador principal va con otro que lo controla: ventas junto a devoluciones, velocidad junto a errores."
+        "design": {
+          "claim": "Diseñar qué será un dato",
+          "rest": "es decidir qué vamos a poder saber."
+        },
+        "foresight": {
+          "claim": "Hay que verlo antes de que exista.",
+          "rest": "Ese es el oficio."
         }
+      }
+    },
+    "anticipation": {
+      "title": "El dato se diseña antes de que exista.",
+      "label": "Ejemplo de trabajo · datos ficticios",
+      "anticipate": {
+        "step": "Anticipar",
+        "file": "contrato.yml",
+        "event": "evento",
+        "when": "cuándo",
+        "whenValue": "al confirmar el pago",
+        "fields": "campos",
+        "userId": "texto, obligatorio",
+        "amount": "decimal(10,2), mayor a 0",
+        "ts": "fecha y hora UTC",
+        "question": "pregunta",
+        "questionValue": "¿qué método de pago falla más?",
+        "note": "Escrito antes del primer evento. Todavía no existe ni un registro."
+      },
+      "capture": {
+        "step": "Capturar",
+        "user": "usuario",
+        "method": "método",
+        "amount": "monto",
+        "note": "Llega limpio porque ya tenía forma: 0 nulos, 0 duplicados, tests en verde."
+      },
+      "process": {
+        "step": "Procesar",
+        "file": "decisión",
+        "before": "Las transferencias fallan",
+        "mark": "3 veces más",
+        "after": "que la tarjeta. Se supo desde la primera semana.",
+        "note": "La pregunta estaba en el contrato antes del primer registro."
       }
     },
     "projects": {
@@ -75,9 +110,10 @@
       "empty": "Primeras notas en camino: ingeniería de datos, IA y el lado humano de los datos."
     },
     "contact": {
-      "title": "¿Tienes datos que necesitan tener sentido?",
-      "text": "Pipelines, analítica o una segunda mirada sobre tu plataforma de datos. Hablemos.",
-      "cta": "Iniciar una conversación"
+      "line1": "Antes",
+      "line2": "del dato.",
+      "text": "Si tu equipo va a medir algo nuevo, hablemos antes de que exista el primer registro.",
+      "cta": "Escribirme"
     }
   },
   "note": {

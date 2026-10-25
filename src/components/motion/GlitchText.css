@@ -1,0 +1,41 @@
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.glitch__ch {
+  display: inline-block;
+  text-align: center;
+}
+
+/* A letter that lost its signal: dot-matrix face with random weight, roundness and offset */
+.glitch__ch.is-lost {
+  font-family: var(--glitch);
+  font-size: 0.86em;
+  font-weight: var(--glitch-weight, 900);
+  font-variation-settings: 'ROND' var(--glitch-round, 0);
+  letter-spacing: 0;
+  vertical-align: 0.06em;
+  opacity: var(--glitch-opacity, 1);
+  translate: var(--glitch-x, 0) var(--glitch-y, 0);
+}
+
+/* Tearing: a clean copy of the line, clipped to one strip and shifted sideways. Its background
+   (the surface the text sits on, `--glitch-tear-bg`) hides the original strip underneath. */
+.glitch__tear {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background: var(--glitch-tear-bg, var(--bg));
+  clip-path: inset(var(--tear-top, 40%) 0 calc(100% - var(--tear-top, 40%) - var(--tear-height, 10%)) 0);
+  translate: var(--tear-x, 0) 0;
+}
+
+.glitch.is-tearing .glitch__tear {
+  display: block;
+}

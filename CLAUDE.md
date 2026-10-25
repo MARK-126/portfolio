@@ -15,7 +15,7 @@ React 19 + React Router 8 (framework mode, static prerender) + TypeScript + Vite
 ```bash
 yarn dev          # dev server (draft content visible)
 yarn build        # typegen + tsc + static build (prerenders every route into build/client)
-yarn preview      # serve build/client
+yarn preview      # serve build/client like Cloudflare does (not `vite preview`: it breaks inner pages)
 yarn lint         # ESLint (must pass; pre-commit runs eslint --fix + prettier via lint-staged)
 yarn prettier:write
 ```
@@ -48,17 +48,18 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
 - Plain CSS, one `.css` file next to each component, BEM-like class names. Colors only through the
   tokens in `src/index.css` (`--bg`, `--text`, `--muted`, `--faint`, `--border`...), never
   hard-coded, so both themes keep working.
-- Visual style: minimal, dark, editorial. Big tight grotesk headlines (`--display`, Inter Tight),
-  uppercase mono labels (`--mono`), thin borders, notebook-style indices (`.cell-index`, e.g.
-  `[01]`). White/grey plus one accent, amber (`--accent`), used sparingly for "the signal": the
-  accent words of the headline, the primary action, the end of the particle wave, key figures.
-  The hero background is `ParticleField`: white noise (a main stream from the left plus fainter
-  streams from the bottom and, on large monitors, the top edge) converging into an amber wave that splits
-  into lines of dots flowing to each consumer of the pipeline (the fan opens over most of the height on large monitors) (`hero.branches` labels, right-aligned
-  to the page grid). Everything reacts to the pointer, and particles fade around the hero's text
-  (measured from the DOM) so it stays readable. The headline uses a white-to-amber gradient with a
-  subtle grey entry and bottom shade; gradient text is padded (with negative margins) so
-  descenders are not clipped at the tight line height. Keep the hero uncluttered. Inner pages start with `BackLink` (history
+- Visual style: cyber, apocalyptic manifesto in black, white and greys only (no color accent: the
+  "signal" is contrast, e.g. inverted blocks). Message: everything will become data; the work is to
+  see what will become data and how it will be processed before it exists. Headlines in uppercase
+  cyber display (`--display`, Chakra Petch); `--glitch` (Doto, dot matrix) is the face text falls
+  into when it glitches (`GlitchText`, used on the hero's answer line, every few seconds). Body in
+  IBM Plex Sans, uppercase mono labels (`--mono`), film grain over the page (`body::after`). The
+  home is built from rounded `.panel` blocks inset from the screen edges; `--invert-*` tokens are
+  the grey block that flips against the page (manifesto), the closing block inverts `--text`/`--bg`.
+  The hero background is `ParticleField`: static entering from the left that falls into a few
+  straight lanes, drawn dashed across the field before any data reaches them; it reacts to the
+  pointer and fades around the hero's text (measured from the DOM). The headline sits huge at the
+  hero's bottom-left. Keep the hero uncluttered. Inner pages start with `BackLink` (history
   back, or the parent section when the visitor landed directly) via `PageIntro`. Respect `prefers-reduced-motion`.
 - Motion: internal links use `viewTransition` (page fade, styled in `src/index.css`). Scroll reveals use
   `m.*` elements from `motion/react` with `reveal()` (`src/components/motion/reveal.ts`); `LazyMotion` in

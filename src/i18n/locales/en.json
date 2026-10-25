@@ -11,14 +11,15 @@
     "closeMenu": "Close menu"
   },
   "hero": {
-    "disciplines": "Data engineering",
-    "headline1": "Data is behavior.",
-    "headline2": "Let’s engineer",
-    "headline2Accent": "the signal.",
-    "branches": ["analytics", "product", "machine learning", "business"],
-    "subtitle": "Almost three years working with data: PostgreSQL modeling, analytical SQL and AI integration. Finishing degrees in Data Science & AI and Psychology — I understand the systems and the people behind the rows.",
+    "kicker": "For whoever comes next",
+    "lede": {
+      "before": "Machines already analyze what happened. My work starts earlier:",
+      "strong": "seeing what will become data and how it will be processed,",
+      "after": "so the first record is useful the moment it arrives. I’m Marcos Rio, a data engineer."
+    },
     "ctaProjects": "See projects",
-    "scroll": "scroll"
+    "omen": "Everything will be data.",
+    "answer": "We see it coming."
   },
   "behavior": {
     "label": "Live log of your behavior on this page",
@@ -43,25 +44,59 @@
     "privacy": "Everything happens in your browser. Nothing is stored or sent."
   },
   "home": {
-    "approach": {
-      "title": "Approach",
-      "intro": "Psychology and data share a problem: measuring things you can’t observe directly. Three ideas from psychometrics I apply to every pipeline.",
+    "manifesto": {
+      "label": "Manifesto",
+      "intro": "Four things we will need to remember once everything we do leaves a record.",
       "items": {
-        "validity": {
-          "label": "Validity",
-          "title": "Does it measure what it claims to?",
-          "text": "“Active users” can mean whoever opened the app or whoever did something in it. Before building a metric I write down which behavior it has to capture and check it against real cases."
+        "late": {
+          "claim": "Analysis comes too late.",
+          "rest": "Machines already do it on their own."
         },
-        "reliability": {
-          "label": "Reliability",
-          "title": "Same input, same result",
-          "text": "A pipeline that runs twice has to return the same number. Idempotent loads, tests and versioned sources: if a value changes, it should be because what it measures changed."
+        "capture": {
+          "claim": "What wasn’t thought through at capture",
+          "rest": "can’t be recovered later."
         },
-        "goodhart": {
-          "label": "Goodhart",
-          "title": "When the metric becomes the target",
-          "text": "A number people chase stops measuring what it used to. So every key metric comes with another one that keeps it honest: sales alongside returns, speed alongside errors."
+        "design": {
+          "claim": "Designing what becomes data",
+          "rest": "is deciding what we will be able to know."
+        },
+        "foresight": {
+          "claim": "You have to see it before it exists.",
+          "rest": "That’s the craft."
         }
+      }
+    },
+    "anticipation": {
+      "title": "Data is designed before it exists.",
+      "label": "Work sample · fictional data",
+      "anticipate": {
+        "step": "Anticipate",
+        "file": "contract.yml",
+        "event": "event",
+        "when": "when",
+        "whenValue": "when the payment is confirmed",
+        "fields": "fields",
+        "userId": "text, required",
+        "amount": "decimal(10,2), greater than 0",
+        "ts": "UTC timestamp",
+        "question": "question",
+        "questionValue": "which payment method fails most?",
+        "note": "Written before the first event. Not a single record exists yet."
+      },
+      "capture": {
+        "step": "Capture",
+        "user": "user",
+        "method": "method",
+        "amount": "amount",
+        "note": "It arrives clean because it already had a shape: 0 nulls, 0 duplicates, tests passing."
+      },
+      "process": {
+        "step": "Process",
+        "file": "decision",
+        "before": "Transfers fail",
+        "mark": "3 times more",
+        "after": "than cards. It was known from the first week.",
+        "note": "The question was in the contract before the first record."
       }
     },
     "projects": {
@@ -75,9 +110,10 @@
       "empty": "First notes coming soon: data engineering, AI and the human side of data."
     },
     "contact": {
-      "title": "Got data that needs to make sense?",
-      "text": "Pipelines, analytics or a second pair of eyes on your data platform. Let's talk.",
-      "cta": "Start a conversation"
+      "line1": "Before",
+      "line2": "the data.",
+      "text": "If your team is about to measure something new, let’s talk before the first record exists.",
+      "cta": "Write to me"
     }
   },
   "note": {
