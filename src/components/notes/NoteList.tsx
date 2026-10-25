@@ -1,4 +1,6 @@
 import { Link } from 'react-router'
+import { m } from 'motion/react'
+import { reveal } from '../motion/reveal'
 import { useTranslation } from 'react-i18next'
 import type { NoteSummary } from '../../content/types'
 import { formatDate } from '../../utils/date'
@@ -36,19 +38,19 @@ function NoteRowContent({ note }: { note: NoteSummary }) {
 export function NoteList({ notes }: { notes: NoteSummary[] }) {
   return (
     <ol className="note-list">
-      {notes.map(note => (
-        <li key={note.slug}>
+      {notes.map((note, index) => (
+        <m.li key={note.slug} {...reveal(Math.min(index, 5) * 0.08)}>
           {/* Articles have their own page; links go straight to the source. */}
           {note.type === 'link' && note.url ? (
             <a href={note.url} className="note-row" target="_blank" rel="noreferrer">
               <NoteRowContent note={note} />
             </a>
           ) : (
-            <Link to={`/notes/${note.slug}`} className="note-row">
+            <Link viewTransition to={`/notes/${note.slug}`} className="note-row">
               <NoteRowContent note={note} />
             </Link>
           )}
-        </li>
+        </m.li>
       ))}
     </ol>
   )

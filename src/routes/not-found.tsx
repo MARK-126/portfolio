@@ -16,7 +16,7 @@ export default function NotFound() {
   return (
     <PageIntro tag="404" title={t('notFound.title')} intro={t('notFound.intro')}>
       <p className="page-intro__actions">
-        <Link to="/" className="button button--outline">
+        <Link viewTransition to="/" className="button button--outline">
           {t('notFound.home')}
         </Link>
       </p>

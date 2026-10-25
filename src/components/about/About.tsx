@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
+import { m } from 'motion/react'
+import { reveal } from '../motion/reveal'
 import { useTranslation } from 'react-i18next'
 import './About.css'
 
@@ -12,13 +14,13 @@ const CV_URL = '/files/cv-marcos-rio.pdf'
 /** Numbered block of the about page: label column on the left, content on the right. */
 function AboutBlock({ index, title, children }: { index: string; title: string; children: ReactNode }) {
   return (
-    <section className="about-block">
+    <m.section className="about-block" {...reveal()}>
       <h2 className="about-block__title">
         <span className="cell-index">[{index}]</span>
         {title}
       </h2>
       <div className="about-block__body">{children}</div>
-    </section>
+    </m.section>
   )
 }
 
@@ -45,7 +47,7 @@ export function About() {
             <a href={CV_URL} className="button button--solid" target="_blank" rel="noopener">
               {t('pages.about.cv')} <span aria-hidden="true">↓</span>
             </a>
-            <Link to="/contact" className="button button--outline">
+            <Link viewTransition to="/contact" className="button button--outline">
               {t('pages.about.contact')}
             </Link>
           </div>

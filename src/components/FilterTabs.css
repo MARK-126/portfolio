@@ -6,6 +6,8 @@
 }
 
 .filter-tabs button {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -27,8 +29,20 @@
 }
 
 .filter-tabs button[aria-pressed='true'] {
-  background: var(--accent);
   color: var(--accent-contrast);
+}
+
+.filter-tabs__indicator {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--accent);
+}
+
+.filter-tabs__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .filter-tabs__count {
