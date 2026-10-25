@@ -12,7 +12,7 @@
     "lint-all:fix": "eslint --fix .",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
-    "preview": "vite preview --outDir build/client",
+    "preview": "node scripts/preview.mjs",
     "prepare": "husky"
   },
   "dependencies": {

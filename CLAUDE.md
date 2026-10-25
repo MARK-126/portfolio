@@ -15,7 +15,7 @@ React 19 + React Router 8 (framework mode, static prerender) + TypeScript + Vite
 ```bash
 yarn dev          # dev server (draft content visible)
 yarn build        # typegen + tsc + static build (prerenders every route into build/client)
-yarn preview      # serve build/client
+yarn preview      # serve build/client like Cloudflare does (not `vite preview`: it breaks inner pages)
 yarn lint         # ESLint (must pass; pre-commit runs eslint --fix + prettier via lint-staged)
 yarn prettier:write
 ```
