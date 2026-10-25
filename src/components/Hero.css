@@ -6,6 +6,8 @@
   margin-top: var(--panel-gap);
   background: var(--surface);
   isolation: isolate;
+  /* The headline's torn strip covers the original with the panel's own color */
+  --glitch-tear-bg: var(--surface);
 }
 
 .hero__top {
@@ -62,49 +64,6 @@
 
 .hero__cta {
   margin-top: 8px;
-}
-
-/* Availability, linking to the contact page */
-.hero__status {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 14px 10px 10px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--header-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  font-size: 0.88rem;
-  line-height: 1.35;
-  transition: border-color 0.2s ease;
-}
-
-.hero__status:hover {
-  border-color: var(--faint);
-}
-
-.hero__status-thumb {
-  flex: none;
-  width: 52px;
-  height: 52px;
-  border-radius: 4px;
-  background:
-    repeating-linear-gradient(0deg, var(--text) 0 1px, transparent 1px 4px),
-    linear-gradient(90deg, var(--bg), var(--border) 60%, var(--text));
-  opacity: 0.85;
-}
-
-.hero__status-body {
-  display: grid;
-  gap: 4px;
-}
-
-.hero__status-label {
-  color: var(--muted);
-  font: 0.68rem var(--mono);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 /* The headline: anchored bottom-left, as big as the panel allows */

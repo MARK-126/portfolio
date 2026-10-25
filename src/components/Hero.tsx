@@ -31,16 +31,6 @@ export function Hero() {
             </Link>
           </div>
         </div>
-
-        <Link viewTransition to="/contact" className="hero__status">
-          <span className="hero__status-thumb" aria-hidden="true" />
-          <span className="hero__status-body">
-            <span className="hero__status-label">{t('hero.status.label')}</span>
-            <span>
-              {t('hero.status.text')} <span aria-hidden="true">→</span>
-            </span>
-          </span>
-        </Link>
       </div>
 
       <h1 className="hero__headline">

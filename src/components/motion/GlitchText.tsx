@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useRef } from 'react'
+import { SIGNAL_DROP } from './signal'
 import './GlitchText.css'
 
 const NOISE = '#%&@*+=/<>01:;░▒'
@@ -9,8 +10,9 @@ const rand = (min: number, max: number) => min + Math.random() * (max - min)
  * Text that loses its signal every few seconds: a run of letters (sometimes the whole line) falls
  * into the dot-matrix face (`--glitch`) for a dozen stuttering frames, with random weight,
  * roundness, offset and noise glyphs, then comes back clean. Each letter is locked to its clean
- * width so the line never reflows. The real text is rendered on the server and kept for screen
- * readers; nothing animates with "reduce motion" on.
+ * width so the line never reflows. While it lasts, a horizontal strip of the line tears sideways
+ * and `SIGNAL_DROP` tells the particle field to flood with static. The real text is rendered on the
+ * server and kept for screen readers; nothing animates with "reduce motion" on.
  */
 export function GlitchText({ text }: { text: string }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -33,6 +35,15 @@ export function GlitchText({ text }: { text: string }) {
       letter.textContent = letter.dataset.ch ?? ''
     }
 
+    // A clean copy of the line, clipped to a random strip and shifted sideways
+    const tear = (on: boolean) => {
+      root.classList.toggle('is-tearing', on)
+      if (!on) return
+      root.style.setProperty('--tear-top', `${Math.round(rand(0, 80))}%`)
+      root.style.setProperty('--tear-height', `${Math.round(rand(6, 28))}%`)
+      root.style.setProperty('--tear-x', `${rand(-0.35, 0.35).toFixed(3)}em`)
+    }
+
     const timers: number[] = []
     const later = (callback: () => void, delay: number) => timers.push(window.setTimeout(callback, delay))
 
@@ -43,8 +54,10 @@ export function GlitchText({ text }: { text: string }) {
       const run = burst ? letters : letters.slice(start, start + 4 + Math.floor(Math.random() * 6))
       const frames = burst ? 14 + Math.floor(Math.random() * 8) : 8 + Math.floor(Math.random() * 6)
       let frame = 0
+      window.dispatchEvent(new CustomEvent(SIGNAL_DROP, { detail: frames * 62 }))
 
       const tick = () => {
+        tear(frame < frames && Math.random() < 0.6)
         for (const letter of run) {
           if (frame >= frames || Math.random() < 0.25) {
             reset(letter)
@@ -71,6 +84,7 @@ export function GlitchText({ text }: { text: string }) {
     return () => {
       timers.forEach(timer => window.clearTimeout(timer))
       window.removeEventListener('resize', measure)
+      tear(false)
       letters.forEach(letter => {
         reset(letter)
         letter.style.width = ''
@@ -99,6 +113,7 @@ export function GlitchText({ text }: { text: string }) {
             </span>
           </Fragment>
         ))}
+        <span className="glitch__tear">{text}</span>
       </span>
     </>
   )

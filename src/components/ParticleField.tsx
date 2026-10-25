@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { SIGNAL_DROP, type SignalDropEvent } from './motion/signal'
 import './ParticleField.css'
 
 /** A unit of data: flickering static while raw, a hard streak once it falls into its lane. */
@@ -74,8 +75,9 @@ function repel(
 /**
  * Decorative canvas for the hero: static enters from the left and, past the middle, falls into a
  * few straight lanes that were drawn (dashed) across the whole field before any data reached them:
- * the shape of the data exists before the data does. Everything moves away from the pointer, and
- * particles fade out around the hero's text so it stays readable.
+ * the shape of the data exists before the data does. When the headline's signal drops
+ * (`SIGNAL_DROP`), the whole field floods with static for as long as the drop lasts. Everything
+ * moves away from the pointer, and particles fade out around the hero's text so it stays readable.
  */
 export function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -96,6 +98,7 @@ export function ParticleField() {
     let color: Rgb = [241, 241, 239]
     let frame = 0
     let visible = true
+    let stormUntil = 0 // timestamp until which the field is flooded with static
     const pointer = { x: -9999, y: -9999, active: false }
 
     const readColors = () => {
@@ -114,7 +117,7 @@ export function ParticleField() {
           bottom: rect.bottom - origin.top,
         }
       }
-      textRects = [...hero.querySelectorAll('.hero__kicker, .hero__lede, .hero__cta, .hero__status')].map(toRect)
+      textRects = [...hero.querySelectorAll('.hero__kicker, .hero__lede, .hero__cta')].map(toRect)
       const headline = hero.querySelector('.hero__headline')
       const top = Math.max(0, ...textRects.map(rect => rect.bottom)) + 32
       const bottom = headline ? toRect(headline).top - 24 : height * 0.7
@@ -202,10 +205,35 @@ export function ParticleField() {
       }
     }
 
-    const loop = () => {
-      if (visible) draw(true)
+    /** Interference while the headline's signal drops: dense static and torn horizontal bars. */
+    const drawStorm = () => {
+      for (let i = 0; i < (width * height) / 900; i++) {
+        ctx.fillStyle = rgba(color, 0.08 + Math.random() * 0.45)
+        ctx.fillRect(Math.random() * width, Math.random() * height, 1.5, 1.5)
+      }
+      for (let i = 0; i < 3 + Math.random() * 4; i++) {
+        ctx.fillStyle = rgba(color, 0.06 + Math.random() * 0.14)
+        ctx.fillRect(
+          Math.random() * width * 0.5,
+          Math.random() * height,
+          width * (0.2 + Math.random() * 0.5),
+          1 + Math.random() * 3,
+        )
+      }
+    }
+
+    const loop = (time: number) => {
+      if (visible) {
+        draw(true)
+        if (time < stormUntil) drawStorm()
+      }
       frame = requestAnimationFrame(loop)
     }
+
+    const onSignalDrop = (event: Event) => {
+      stormUntil = performance.now() + (event as SignalDropEvent).detail
+    }
+    window.addEventListener(SIGNAL_DROP, onSignalDrop)
 
     readColors()
     resize()
@@ -255,6 +283,7 @@ export function ParticleField() {
 
     return () => {
       cancelAnimationFrame(frame)
+      window.removeEventListener(SIGNAL_DROP, onSignalDrop)
       window.removeEventListener('resize', onResize)
       window.removeEventListener('pointermove', onPointerMove)
       document.documentElement.removeEventListener('pointerleave', onPointerLeave)
