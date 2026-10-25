@@ -13,7 +13,7 @@
 
 .home-section__title {
   font: 700 clamp(1.8rem, 3.6vw, 2.75rem) / 1.05 var(--display);
-  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
 
 .empty-state {

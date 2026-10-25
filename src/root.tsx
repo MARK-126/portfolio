@@ -16,7 +16,7 @@ export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap',
+    href: 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Doto:ROND,wght@0..100,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap',
   },
 ]
 
@@ -31,7 +31,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#0a0a0b" />
+        <meta name="theme-color" content="#050505" />
         {/* eslint-disable-next-line react-dom/no-dangerously-set-innerhtml -- static inline script, no user input */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Meta />

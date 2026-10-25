@@ -1,21 +1,31 @@
 .hero {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: calc(100svh - var(--header-h));
-  padding-block: 64px 128px;
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: min(calc(100svh - var(--header-h) - 2 * var(--panel-gap)), 1000px);
+  margin-top: var(--panel-gap);
+  background: var(--surface);
   isolation: isolate;
 }
 
-.hero__inner {
+.hero__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: clamp(28px, 6vh, 64px) clamp(20px, 3.5vw, 48px) 0;
+}
+
+.hero__intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 20px;
+  max-width: 32rem;
 }
 
-.hero__status {
+.hero__kicker {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -25,126 +35,104 @@
   text-transform: uppercase;
 }
 
-.hero__status-dot {
+/* A square cursor blinking like a terminal waiting for input */
+.hero__kicker-dot {
   width: 7px;
   height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
+  background: var(--text);
+  animation: hero-blink 1.2s steps(1) infinite;
 }
 
-.hero__headline {
-  display: flex;
-  flex-direction: column;
-  /* Each line only as wide as its text, so the particle field can measure it precisely */
-  align-items: flex-start;
-  max-width: 16ch;
-  margin-top: 28px;
-  font: 700 clamp(2.6rem, 7.2vw, 5.75rem) / 0.98 var(--display);
-  letter-spacing: -0.035em;
+@keyframes hero-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
-/*
- * Each line: a soft shade towards the base of the letters (volume), entering from grey at the start
- * and warming up to amber on the right, like the particles.
- * The gradient only paints inside the element's box, so the box is padded to include descenders
- * (g, y) and the padding is cancelled with negative margins to keep the lines tight.
- */
-.hero__headline > span {
-  padding-block: 0.06em 0.14em;
-  margin-block: -0.06em -0.14em;
-  background:
-    linear-gradient(180deg, transparent 45%, var(--headline-shade) 100%),
-    linear-gradient(100deg, var(--headline-start) 0%, var(--text) 18%, var(--text) 40%, var(--headline-warm) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* The signal (inline, so its vertical padding does not change the line height) */
-.hero__headline-accent {
-  padding-block: 0.06em 0.14em;
-  background:
-    linear-gradient(180deg, transparent 45%, var(--headline-shade) 100%),
-    linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero__subtitle {
-  max-width: 34rem;
-  margin-top: 32px;
+.hero__lede {
   color: var(--muted);
-  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   line-height: 1.65;
 }
 
-.hero__cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 40px;
+.hero__lede strong {
+  color: var(--text);
+  font-weight: 500;
 }
 
-/* Centered scroll cue: label above a vertical line with a moving segment */
-.hero__scroll {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
+.hero__cta {
+  margin-top: 8px;
+}
+
+/* Availability, linking to the contact page */
+.hero__status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px 10px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.88rem;
+  line-height: 1.35;
+  transition: border-color 0.2s ease;
+}
+
+.hero__status:hover {
+  border-color: var(--faint);
+}
+
+.hero__status-thumb {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 4px;
+  background:
+    repeating-linear-gradient(0deg, var(--text) 0 1px, transparent 1px 4px),
+    linear-gradient(90deg, var(--bg), var(--border) 60%, var(--text));
+  opacity: 0.85;
+}
+
+.hero__status-body {
+  display: grid;
+  gap: 4px;
+}
+
+.hero__status-label {
+  color: var(--muted);
+  font: 0.68rem var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* The headline: anchored bottom-left, as big as the panel allows */
+.hero__headline {
+  grid-row: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 8px;
-  transform: translateX(-50%);
-  color: var(--faint);
-  font: 0.65rem var(--mono);
-  letter-spacing: 0.2em;
+  padding: 0 clamp(14px, 2.5vw, 36px) clamp(10px, 2vw, 28px);
+  font: 700 calc(clamp(3.6rem, 15.5vw, 17rem) * 0.62) / 0.86 var(--display);
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  transition: color 0.2s ease;
 }
 
-.hero__scroll:hover {
+.hero__omen {
+  color: var(--faint);
+}
+
+.hero__answer {
   color: var(--text);
 }
 
-.hero__scroll-line {
-  position: relative;
-  width: 1px;
-  height: 48px;
-  background: var(--border);
-  overflow: hidden;
-}
-
-.hero__scroll-line::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  height: 40%;
-  background: var(--text);
-  animation: scan 2.4s ease-in-out infinite;
-}
-
-@keyframes scan {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(250%);
-  }
-}
-
-/* Short laptop screens: less vertical padding so the hero text fits in the first screen */
-@media (max-height: 760px) and (min-width: 641px) {
-  .hero {
-    padding-block: 32px 96px;
-  }
-}
-
-/* Narrow screens: the text sits near the top and the free space goes to the particles below it */
+/* Narrow screens: the headline takes four lines and grows to fill the width */
 @media (max-width: 640px) {
   .hero {
-    justify-content: flex-start;
-    padding-block: 40px 128px;
+    min-height: min(calc(100svh - var(--header-h) - 2 * var(--panel-gap)), 760px);
+  }
+
+  .hero__headline {
+    font-size: calc(21vw * 0.62);
   }
 }

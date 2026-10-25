@@ -1,0 +1,21 @@
+.glitch__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.glitch__ch {
+  display: inline-block;
+  text-align: center;
+}
+
+/* A letter that lost its signal: dot-matrix face with random weight, roundness and offset */
+.glitch__ch.is-lost {
+  font-family: var(--glitch);
+  font-size: 0.86em;
+  font-weight: var(--glitch-weight, 900);
+  font-variation-settings: 'ROND' var(--glitch-round, 0);
+  letter-spacing: 0;
+  vertical-align: 0.06em;
+  opacity: var(--glitch-opacity, 1);
+  translate: var(--glitch-x, 0) var(--glitch-y, 0);
+}

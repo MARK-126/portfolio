@@ -1,25 +1,45 @@
 .contact-cta {
-  padding-block: 128px;
-  border-top: 1px solid var(--border);
-  background:
-    linear-gradient(var(--bg), transparent 30%),
-    repeating-linear-gradient(90deg, var(--border) 0 1px, transparent 1px 64px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 6vw, 72px);
+  margin-block: var(--panel-gap);
+  padding: clamp(56px, 8vw, 120px) clamp(14px, 2.5vw, 36px) clamp(20px, 3vw, 36px);
+  background: var(--text);
+  color: var(--bg);
 }
 
 .contact-cta__title {
-  max-width: 16ch;
-  font: 700 clamp(2.2rem, 5.5vw, 4.5rem) / 1 var(--display);
-  letter-spacing: -0.035em;
+  display: flex;
+  flex-direction: column;
+  font: 700 calc(clamp(3.4rem, 14vw, 15rem) * 0.62) / 0.86 var(--display);
+  text-transform: uppercase;
+}
+
+/* The word again, hollow: an echo of the first line */
+.contact-cta__echo {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--bg);
+}
+
+.contact-cta__foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  padding-inline: clamp(6px, 1vw, 12px);
 }
 
 .contact-cta__text {
-  max-width: 32rem;
-  margin: 24px 0 40px;
-  color: var(--muted);
+  max-width: 30rem;
+  opacity: 0.75;
 }
 
-@media (max-width: 640px) {
-  .contact-cta {
-    padding-block: 88px;
-  }
+.contact-cta__button {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.contact-cta__button:hover {
+  background: var(--surface);
 }

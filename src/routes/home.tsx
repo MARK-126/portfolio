@@ -7,14 +7,15 @@ import { EmptyState, HomeSection } from '../components/home/HomeSection'
 import { ProjectList } from '../components/home/ProjectList'
 import { NoteList } from '../components/notes/NoteList'
 import { ContactCta } from '../components/home/ContactCta'
-import { Approach } from '../components/home/Approach'
+import { Manifesto } from '../components/home/Manifesto'
+import { Anticipation } from '../components/home/Anticipation'
 import { pageMeta } from '../config/meta'
 
 export const meta: Route.MetaFunction = ({ location }) =>
   pageMeta({
     path: location.pathname,
     description:
-      'Marcos Rio — ingeniero de datos con formación en psicología. Pipelines, analítica e IA pensados para las personas detrás de los datos.',
+      'Marcos Rio — ingeniero de datos. Diseño qué se va a convertir en dato y cómo se va a procesar antes de que exista: modelos, pipelines y calidad.',
   })
 
 // Runs at build time; the page ships with the data already rendered.
@@ -35,19 +36,18 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     <>
       <Hero />
       <div id="home-content">
-        <HomeSection index="01" title={t('home.approach.title')}>
-          <Approach />
-        </HomeSection>
+        <Manifesto />
+        <Anticipation />
 
         <HomeSection
-          index="02"
+          index="01"
           title={t('home.projects.title')}
           link={{ to: '/projects', label: t('home.projects.all') }}
         >
           {projects.length ? <ProjectList projects={projects} /> : <EmptyState>{t('home.projects.empty')}</EmptyState>}
         </HomeSection>
 
-        <HomeSection index="03" title={t('home.notes.title')} link={{ to: '/notes', label: t('home.notes.all') }}>
+        <HomeSection index="02" title={t('home.notes.title')} link={{ to: '/notes', label: t('home.notes.all') }}>
           {notes.length ? <NoteList notes={notes} /> : <EmptyState>{t('home.notes.empty')}</EmptyState>}
         </HomeSection>
 
