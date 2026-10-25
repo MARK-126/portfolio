@@ -171,6 +171,28 @@
 }
 
 @media (max-width: 640px) {
+  .page-intro--about {
+    margin-bottom: 28px;
+  }
+
+  .page-intro--about .page-intro__inner {
+    padding-bottom: 32px;
+  }
+
+  .about__intro {
+    gap: 24px;
+    padding-bottom: 48px;
+  }
+
+  .about__photo img {
+    margin-top: 0;
+  }
+
+  .about-block {
+    gap: 24px;
+    padding-block: 40px;
+  }
+
   .about-list__item,
   .about-stack__row {
     grid-template-columns: 1fr;

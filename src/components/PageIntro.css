@@ -35,12 +35,25 @@
   margin-top: 48px;
 }
 
+/* Phones: tighter rhythm, the panel already separates the intro from the page */
 @media (max-width: 640px) {
   .page-intro {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
 
   .page-intro__inner {
-    padding-block: 40px 48px;
+    padding-block: 28px 32px;
+  }
+
+  .page-intro__tag {
+    margin-top: 28px;
+  }
+
+  .page-intro__title {
+    margin-top: 14px;
+  }
+
+  .page-intro__text {
+    margin-top: 16px;
   }
 }

@@ -72,6 +72,26 @@
   }
 
   .article__header-inner {
-    padding-block: 40px 48px;
+    padding-block: 28px 32px;
+  }
+
+  .article__meta {
+    margin-top: 28px;
+  }
+
+  .article__title {
+    margin-top: 14px;
+  }
+
+  .article__summary {
+    margin-top: 16px;
+  }
+
+  .article__tags {
+    margin-top: 20px;
+  }
+
+  .article__body {
+    margin-top: 36px;
   }
 }

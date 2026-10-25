@@ -42,12 +42,13 @@
 
 @media (max-width: 720px) {
   .home-section {
-    padding-block: 72px;
+    padding-block: 56px;
   }
 
   .home-section__header {
     grid-template-columns: 1fr;
     gap: 12px;
+    margin-bottom: 32px;
   }
 
   .home-section__all {
