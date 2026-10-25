@@ -60,6 +60,10 @@ theme, EN and ES, desktop and ~390px mobile) and watch the console for hydration
   subtle grey entry and bottom shade; gradient text is padded (with negative margins) so
   descenders are not clipped at the tight line height. Keep the hero uncluttered. Inner pages start with `BackLink` (history
   back, or the parent section when the visitor landed directly) via `PageIntro`. Respect `prefers-reduced-motion`.
+- Motion: internal links use `viewTransition` (page fade, styled in `src/index.css`). Scroll reveals use
+  `m.*` elements from `motion/react` with `reveal()` (`src/components/motion/reveal.ts`); `LazyMotion` in
+  `root.tsx` loads the features as a separate chunk (`strict`: never import `motion.*`, always `m.*`).
+  Mono labels can use `DecodeText`. Keep animations subtle and for content below the fold.
 - The behavior panel (`BehaviorPanel` / `useBehaviorLog`) lives in the "Tu comportamiento como
   dato" project, embedded with `<div data-embed="behavior-panel"></div>` (see
   `src/components/projects/ProjectBody.tsx`). It only records interactions in memory in the

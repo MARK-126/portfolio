@@ -41,13 +41,13 @@ export function Header() {
   return (
     <header className="header">
       <div className="header__inner container">
-        <Link to="/" className="header__brand">
+        <Link viewTransition to="/" className="header__brand">
           {site.name}
         </Link>
 
         <nav id="header-nav" className="header__nav" data-open={menuOpen} aria-label={t('nav.label')}>
           {sections.map(section => (
-            <NavLink key={section} to={`/${section}`} onClick={() => setMenuOpen(false)}>
+            <NavLink viewTransition key={section} to={`/${section}`} onClick={() => setMenuOpen(false)}>
               {t(`nav.${section}`)}
             </NavLink>
           ))}

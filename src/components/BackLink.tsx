@@ -18,6 +18,7 @@ export function BackLink({ fallback }: { fallback: string }) {
 
   return (
     <Link
+      viewTransition
       to={fallback}
       className="back-link"
       onClick={event => {
