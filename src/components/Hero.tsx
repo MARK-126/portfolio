@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import { ParticleField } from './ParticleField'
+import { DecodeText } from './motion/DecodeText'
 import './Hero.css'
 
 export function Hero() {
@@ -14,7 +15,9 @@ export function Hero() {
       <div className="hero__inner container">
         <p className="hero__status">
           <span className="hero__status-dot" aria-hidden="true" />
-          <span>{t('hero.disciplines')}</span>
+          <span>
+            <DecodeText text={t('hero.disciplines')} />
+          </span>
         </p>
 
         <h1 className="hero__headline">
@@ -27,7 +30,7 @@ export function Hero() {
         <p className="hero__subtitle">{t('hero.subtitle')}</p>
 
         <div className="hero__cta">
-          <Link to="/projects" className="button button--solid">
+          <Link viewTransition to="/projects" className="button button--solid">
             {t('hero.ctaProjects')} <span aria-hidden="true">→</span>
           </Link>
         </div>

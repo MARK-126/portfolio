@@ -24,7 +24,7 @@ export function Footer() {
 
         <nav className="footer__links" aria-label={t('nav.footerLabel')}>
           {sections.map(section => (
-            <Link key={section} to={`/${section}`}>
+            <Link viewTransition key={section} to={`/${section}`}>
               {t(`nav.${section}`)}
             </Link>
           ))}

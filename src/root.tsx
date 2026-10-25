@@ -1,5 +1,6 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from 'react-router'
 import type { ReactNode } from 'react'
+import { LazyMotion, MotionConfig } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 import type { Route } from './+types/root'
 import './i18n'
@@ -19,6 +20,8 @@ export const links: Route.LinksFunction = () => [
   },
 ]
 
+const loadMotionFeatures = () => import('./components/motion/features').then(module => module.default)
+
 // Applies the saved theme before first paint to avoid a flash; dark is the default.
 const themeScript = `try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(_){}`
 
@@ -35,7 +38,10 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        {/* Animation features load in a separate chunk after the first render; "user" honours reduce motion */}
+        <LazyMotion features={loadMotionFeatures} strict>
+          <MotionConfig reducedMotion="user">{children}</MotionConfig>
+        </LazyMotion>
         <ScrollRestoration />
         <Scripts />
       </body>

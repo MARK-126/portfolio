@@ -1,4 +1,6 @@
 import { Link } from 'react-router'
+import { m } from 'motion/react'
+import { reveal } from '../motion/reveal'
 import { useTranslation } from 'react-i18next'
 import './ContactCta.css'
 
@@ -7,13 +9,13 @@ export function ContactCta() {
 
   return (
     <section className="contact-cta">
-      <div className="container">
+      <m.div className="container" {...reveal()}>
         <h2 className="contact-cta__title">{t('home.contact.title')}</h2>
         <p className="contact-cta__text">{t('home.contact.text')}</p>
-        <Link to="/contact" className="button button--solid">
+        <Link viewTransition to="/contact" className="button button--solid">
           {t('home.contact.cta')}
         </Link>
-      </div>
+      </m.div>
     </section>
   )
 }

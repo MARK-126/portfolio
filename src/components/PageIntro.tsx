@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { BackLink } from './BackLink'
+import { DecodeText } from './motion/DecodeText'
 import './PageIntro.css'
 
 type PageIntroProps = {
@@ -30,7 +31,9 @@ export function PageIntro({ tag, title, intro, back = '/', className, children }
   return (
     <section className={className ? `page-intro container ${className}` : 'page-intro container'}>
       <BackLink fallback={back} />
-      <p className="page-intro__tag">{tag}</p>
+      <p className="page-intro__tag">
+        <DecodeText text={tag} />
+      </p>
       <h1 className="page-intro__title">
         <AccentEnding text={title} />
       </h1>
