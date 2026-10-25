@@ -16,6 +16,14 @@ export function Hero() {
     <section className="hero panel">
       <ParticleField />
 
+      {/* The headline comes first in reading order; on wide screens the grid sets it at the bottom */}
+      <h1 className="hero__headline">
+        <span className="hero__omen">{t('hero.omen')}</span>
+        <span className="hero__answer">
+          <GlitchText text={t('hero.answer')} />
+        </span>
+      </h1>
+
       <div className="hero__top">
         <div className="hero__intro">
           <p className="hero__kicker">
@@ -32,13 +40,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      <h1 className="hero__headline">
-        <span className="hero__omen">{t('hero.omen')}</span>
-        <span className="hero__answer">
-          <GlitchText text={t('hero.answer')} />
-        </span>
-      </h1>
     </section>
   )
 }

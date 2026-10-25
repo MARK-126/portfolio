@@ -11,6 +11,7 @@
 }
 
 .hero__top {
+  grid-row: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -85,13 +86,21 @@
   color: var(--text);
 }
 
-/* Narrow screens: the headline takes four lines and grows to fill the width */
+/* Phones: no particle field, so the hero is only as tall as its content: the headline first
+   (four lines, filling the width), the lede and the button below it */
 @media (max-width: 640px) {
   .hero {
-    min-height: min(calc(100svh - var(--header-h) - 2 * var(--panel-gap)), 760px);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
   }
 
   .hero__headline {
+    padding: 36px 20px 0;
     font-size: calc(21vw * 0.62);
+  }
+
+  .hero__top {
+    padding: 28px 20px 36px;
   }
 }
