@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#0a0a0b"/><path d="M8 22V10l8 7 8-7v12" fill="none" stroke="#f5b041" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- M in a 5x5 dot matrix, like Doto: the face the headline falls into when it glitches -->
+  <rect width="32" height="32" rx="6" fill="#050505" />
+  <g fill="#f1f1ef">
+    <rect x="6.0" y="6.0" width="3.4" height="3.4" />
+    <rect x="23.6" y="6.0" width="3.4" height="3.4" />
+    <rect x="6.0" y="10.4" width="3.4" height="3.4" />
+    <rect x="10.4" y="10.4" width="3.4" height="3.4" />
+    <rect x="19.2" y="10.4" width="3.4" height="3.4" />
+    <rect x="23.6" y="10.4" width="3.4" height="3.4" />
+    <rect x="6.0" y="14.8" width="3.4" height="3.4" />
+    <rect x="14.8" y="14.8" width="3.4" height="3.4" />
+    <rect x="23.6" y="14.8" width="3.4" height="3.4" />
+    <rect x="6.0" y="19.2" width="3.4" height="3.4" />
+    <rect x="23.6" y="19.2" width="3.4" height="3.4" />
+    <rect x="6.0" y="23.6" width="3.4" height="3.4" />
+    <rect x="23.6" y="23.6" width="3.4" height="3.4" />
+  </g>
+</svg>
